@@ -1,6 +1,21 @@
 {
   "name": "shikibetsuhyo",
   "version": "0.1.0",
+  "browser": {
+    "jquery": "./bower_components/jquery/dist/jquery.js"
+  },
+  "style": [
+    "less/style.less"
+  ],
+  "browserify-shim": {
+    "jquery": "$",
+    "jquery-ui": { "depends": "jquery:$" },
+    "jquery-ui-touch-punch": { "depends": "jquery:$" },
+    "jquery.cookie": { "depends": "jquery:$" }
+  },
+  "browserify": {
+    "transform": [ "browserify-shim" ]
+  },
   "devDependencies": {
     "babel": "^5.1.13",
     "babelify": "^6.0.2",
@@ -13,7 +28,10 @@
     "watchify": "^3.2.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "browserify -t babelify -t debowerify es6/main.js -o js/bundle.js -p [ parcelify -o css/bundle.css -t less-css-stream -d . ]",
+    "init": "bower install && cp -rf bower_components/flat-ui/fonts .",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "watchify -t babelify -t debowerify es6/main.js -o js/bundle.js -p [ parcelify -wo css/bundle.css -t less-css-stream -d . ] --debug --verbose"
   },
   "repository": {
     "type": "git",
