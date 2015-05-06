@@ -1,0 +1,26 @@
+{
+  "name": "shikibetsuhyo",
+  "version": "0.1.0",
+  "devDependencies": {
+    "babel": "^5.1.13",
+    "babelify": "^6.0.2",
+    "bower": "^1.4.1",
+    "browserify": "^9.0.8",
+    "browserify-shim": "^3.8.5",
+    "debowerify": "^1.2.1",
+    "less-css-stream": "^1.0.0",
+    "parcelify": "^1.1.1",
+    "watchify": "^3.2.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yysaki/shikibetsuhyo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yysaki/shikibetsuhyo/issues"
+  },
+  "homepage": "https://github.com/yysaki/shikibetsuhyo"
+}
