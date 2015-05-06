@@ -1,0 +1,6 @@
+bower_components/
+css/
+js/
+node_modules/
+.sv*
+.sw*
