@@ -36,6 +36,7 @@
     "browserify-shim": "^3.8.5",
     "debowerify": "^1.2.1",
     "express": "^4.12.3",
+    "jade": "^1.9.2",
     "less-css-stream": "^1.0.0",
     "parcelify": "^1.1.1",
     "watchify": "^3.2.0"
