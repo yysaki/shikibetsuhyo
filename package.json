@@ -37,6 +37,7 @@
   "scripts": {
     "build": "browserify -t babelify -t debowerify es6/main.js -o js/bundle.js -p [ parcelify -o css/bundle.css -t less-css-stream -d . ]",
     "init": "bower install && cp -rf bower_components/flat-ui/fonts .",
+    "postinstall": "npm run init && npm run build",
     "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "watchify -t babelify -t debowerify es6/main.js -o js/bundle.js -p [ parcelify -wo css/bundle.css -t less-css-stream -d . ] --debug --verbose"
