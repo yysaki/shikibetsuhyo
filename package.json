@@ -13,12 +13,20 @@
   ],
   "browserify-shim": {
     "jquery": "$",
-    "jquery-ui": { "depends": "jquery:$" },
-    "jquery-ui-touch-punch": { "depends": "jquery:$" },
-    "jquery.cookie": { "depends": "jquery:$" }
+    "jquery-ui": {
+      "depends": "jquery:$"
+    },
+    "jquery-ui-touch-punch": {
+      "depends": "jquery:$"
+    },
+    "jquery.cookie": {
+      "depends": "jquery:$"
+    }
   },
   "browserify": {
-    "transform": [ "browserify-shim" ]
+    "transform": [
+      "browserify-shim"
+    ]
   },
   "dependencies": {
     "babel": "^5.1.13",
