@@ -13,7 +13,4 @@ require('select2');
 require('../bower_components/flat-ui/js/radiocheck.js');
 
 $(() => {
-  alert("hello");
-//  $.cookie('test', ' with jQuery cookie plugin');
-  $('#content').text('Hello jQuery ' + $.fn.jquery + $.cookie('test'));
 });
