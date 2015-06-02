@@ -6,3 +6,4 @@ public/js/
 .sv*
 .sw*
 !.gitkeep
+npm-debug.log
