@@ -1,5 +1,5 @@
 import express from 'express';
-import * as shiren4_udewa from './shiren4_udewa';
+import * as shiren4_udewa from './es6/model/shiren4.js';
 
 var app = express();
 
