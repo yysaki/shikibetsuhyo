@@ -30,5 +30,40 @@ export var data = [
       {name: 'ワナ師の腕輪',     buy: 30000, sell: 10500}
     ]
   },
+  {
+    type: 'kusa',
+    name: '草',
+    items: [
+      {name: '雑草',           buy: 10,   sell: 3},
+      {name: '薬草',           buy: 50,   sell: 17},
+      {name: '弟切草',         buy: 100,  sell: 35},
+      {name: '高飛び草',       buy: 100,  sell: 35},
+      {name: '毒消し草',       buy: 100,  sell: 35},
+      {name: '毒草',           buy: 100,  sell: 35},
+      {name: 'いやし草',       buy: 200,  sell: 70},
+      {name: '胃拡張の種',     buy: 300,  sell: 105},
+      {name: '胃縮小の種',     buy: 300,  sell: 105},
+      {name: '混乱草',         buy: 300,  sell: 105},
+      {name: 'すばやさ草',     buy: 300,  sell: 105},
+      {name: '成長の種',       buy: 300,  sell: 105},
+      {name: 'パワーアップ草', buy: 300,  sell: 105},
+      {name: 'めぐすり草',     buy: 300,  sell: 105},
+      {name: '目つぶし草',     buy: 300,  sell: 105},
+      {name: '命の草',         buy: 500,  sell: 175},
+      {name: '狂戦士の種',     buy: 500,  sell: 175},
+      {name: '睡眠草',         buy: 500,  sell: 175},
+      {name: 'ちからの草',     buy: 500,  sell: 175},
+      {name: 'ドラゴン草',     buy: 500,  sell: 175},
+      {name: '復活の草',       buy: 1000, sell: 350},
+      {name: 'やりなおし草',   buy: 1500, sell: 525},
+      {name: '忌火起草',       buy: 2000, sell: 700},
+      {name: 'しあわせ草',     buy: 2000, sell: 700},
+      {name: '不幸の種',       buy: 2000, sell: 700},
+      {name: '無敵草',         buy: 2000, sell: 700},
+      {name: '物忘れの草',     buy: 2000, sell: 700},
+      {name: '超不幸の種',     buy: 5000, sell: 1750},
+      {name: '天使の種',       buy: 5000, sell: 1750}
+    ]
+  }
 ]
 
