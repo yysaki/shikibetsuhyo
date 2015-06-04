@@ -64,6 +64,49 @@ export var data = [
       {name: '超不幸の種',     buy: 5000, sell: 1750},
       {name: '天使の種',       buy: 5000, sell: 1750}
     ]
+  },
+  {
+    type: 'makimono',
+    name: '巻物',
+    items: [
+      {name: '紹介状',           buy: 10,    sell: 3},
+      {name: 'ただの紙切れ',     buy: 10,    sell: 3},
+      {name: 'ぬれた巻物',       buy: 10,    sell: 3},
+      {name: 'あかりの巻物',     buy: 100,   sell: 35},
+      {name: '脱出の巻物',       buy: 100,   sell: 35},
+      {name: 'いかすしの巻物',   buy: 200,   sell: 70},
+      {name: '識別の巻物',       buy: 300,   sell: 105},
+      {name: 'おはらいの巻物',   buy: 500,   sell: 175},
+      {name: '吸出しの巻物',     buy: 500,   sell: 175},
+      {name: 'タグの巻物',       buy: 500,   sell: 175},
+      {name: '地の恵みの巻物',   buy: 500,   sell: 175},
+      {name: '壺増大の巻物',     buy: 500,   sell: 175},
+      {name: '天の恵みの巻物',   buy: 500,   sell: 175},
+      {name: 'バナナの巻物',     buy: 500,   sell: 175},
+      {name: 'メッキの巻物',     buy: 500,   sell: 175},
+      {name: 'くちなしの巻物',   buy: 800,   sell: 280},
+      {name: 'ゾワゾワの巻物',   buy: 800,   sell: 280},
+      {name: 'ひきよせの巻物',   buy: 800,   sell: 280},
+      {name: '拾えずの巻物',     buy: 800,   sell: 280},
+      {name: '水がれの巻物',     buy: 800,   sell: 280},
+      {name: '与薬の巻物',       buy: 800,   sell: 280},
+      {name: 'ワナ消しの巻物',   buy: 800,   sell: 280},
+      {name: 'ワナの巻物',       buy: 800,   sell: 280},
+      {name: 'オーラ消しの巻物', buy: 1000,  sell: 350},
+      {name: '困った時の巻物',   buy: 1000,  sell: 350},
+      {name: '混乱の巻物',       buy: 1000,  sell: 350},
+      {name: '真空斬りの巻物',   buy: 1000,  sell: 350},
+      {name: '昼夜の巻物',       buy: 1000,  sell: 350},
+      {name: '敵加速の巻物',     buy: 1000,  sell: 350},
+      {name: 'バクスイの巻物',   buy: 1000,  sell: 350},
+      {name: '魔物部屋の巻物',   buy: 1000,  sell: 350},
+      {name: '技回復の巻物',     buy: 1000,  sell: 350},
+      {name: '聖域の巻物',       buy: 3000,  sell: 1050},
+      {name: '全滅の巻物',       buy: 3000,  sell: 1050},
+      {name: '迷子の巻物',       buy: 3000,  sell: 1050},
+      {name: '白紙の巻物',       buy: 5000,  sell: 1750},
+      {name: 'ねだやしの巻物',   buy: 10000, sell: 3500}
+    ]
   }
 ]
 
