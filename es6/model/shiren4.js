@@ -107,6 +107,36 @@ export var data = [
       {name: '白紙の巻物',       buy: 5000,  sell: 1750},
       {name: 'ねだやしの巻物',   buy: 10000, sell: 3500}
     ]
+  },
+  {
+    type: 'tsubo',
+    name: '壺',
+    items: [
+      {name: '識別の壺',       buy: 600,   sell: 210},
+      {name: 'ただの壺',       buy: 600,   sell: 210},
+      {name: '保存の壺',       buy: 600,   sell: 210},
+      {name: 'やりすごしの壺', buy: 600,   sell: 210},
+      {name: '四ニ鉢',         buy: 600,   sell: 210},
+      {name: '油壺',           buy: 1000,  sell: 350},
+      {name: '換金の壺',       buy: 1000,  sell: 350},
+      {name: 'チョコの壺',     buy: 1000,  sell: 350},
+      {name: '手封じの壺',     buy: 1000,  sell: 350},
+      {name: '変化の壺',       buy: 1000,  sell: 350},
+      {name: '水がめ',         buy: 1000,  sell: 350},
+      {name: '割れない壺',     buy: 1000,  sell: 350},
+      {name: 'おはらいの壺',   buy: 1600,  sell: 560},
+      {name: '祝福の壺',       buy: 1600,  sell: 560},
+      {name: 'たたりの壺',     buy: 1600,  sell: 560},
+      {name: '蔵の壺',         buy: 2500,  sell: 875},
+      {name: '底抜けの壺',     buy: 2500,  sell: 875},
+      {name: '背中の壺',       buy: 3800,  sell: 1330},
+      {name: 'トドの壺',       buy: 3800,  sell: 1330},
+      {name: '魔物の壺',       buy: 3800,  sell: 1330},
+      {name: '呼び出しの壺',   buy: 3800,  sell: 1330},
+      {name: '合成の壺',       buy: 6000,  sell: 2100},
+      {name: '強化の壺',       buy: 10000, sell: 3500},
+      {name: '弱化の壺',       buy: 10000, sell: 3500}
+    ]
   }
 ]
 
