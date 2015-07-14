@@ -7,11 +7,12 @@ html(lang='ja')
     script(src='/js/bundle.js', charset='UTF-8')
 
   body
-    div(class="#{data.type}")
-      h1= data.name
-      table.table.table-striped
-        each item in data.items
-          tr
-            th= item.name
-            td= item.buy
-            td= item.sell
+    - each datum in data
+      div(class="#{datum.type}")
+        h1= datum.name
+        table.table.table-striped
+          - each item in datum.items
+            tr
+              th= item.name
+              td= item.buy
+              td= item.sell
