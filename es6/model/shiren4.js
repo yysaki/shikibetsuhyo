@@ -137,6 +137,31 @@ export var data = [
       {name: '強化の壺',       buy: 10000, sell: 3500},
       {name: '弱化の壺',       buy: 10000, sell: 3500}
     ]
+  },
+  {
+    type: 'tsue',
+    name: '杖',
+    items: [
+      {name: '加速の杖',       buy: 1000, sell: 350},
+      {name: '飛びつきの杖',   buy: 1000, sell: 350},
+      {name: '鈍足の杖',       buy: 1000, sell: 350},
+      {name: '場所がえの杖',   buy: 1000, sell: 350},
+      {name: '吹き飛ばしの杖', buy: 1000, sell: 350},
+      {name: '魔道の杖',       buy: 1000, sell: 350},
+      {name: '雷光の杖',       buy: 1000, sell: 350},
+      {name: '痛み分けの杖',   buy: 1500, sell: 525},
+      {name: '一時しのぎの杖', buy: 1500, sell: 525},
+      {name: 'かなしばりの杖', buy: 1500, sell: 525},
+      {name: '転ばぬ先の杖',   buy: 1500, sell: 525},
+      {name: 'ただの杖',       buy: 1500, sell: 525},
+      {name: 'ワナ消しの杖',   buy: 1500, sell: 525},
+      {name: '封印の杖',       buy: 2000, sell: 700},
+      {name: '身代わりの杖',   buy: 2000, sell: 700},
+      {name: '土塊の杖',       buy: 3000, sell: 1050},
+      {name: 'トンネルの杖',   buy: 3000, sell: 1050},
+      {name: '幸せの杖',       buy: 4000, sell: 1400},
+      {name: '不幸の杖',       buy: 4000, sell: 1400}
+    ]
   }
 ]
 
