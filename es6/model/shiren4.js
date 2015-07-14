@@ -162,6 +162,23 @@ export var data = [
       {name: '幸せの杖',       buy: 4000, sell: 1400},
       {name: '不幸の杖',       buy: 4000, sell: 1400}
     ]
+  },
+  {
+    type: 'huda',
+    name: '札',
+    items: [
+      {name: '睡眠の札',       buy: 500, sell: 175},
+      {name: '封印の札',       buy: 500, sell: 175},
+      {name: '混乱の札',       buy: 500, sell: 175},
+      {name: '空振りの札',     buy: 500, sell: 175},
+      {name: 'ゾワゾワの札',   buy: 500, sell: 175},
+      {name: '影縫いの札',     buy: 500, sell: 175},
+      {name: '加速の札',       buy: 500, sell: 175},
+      {name: '鈍足の札',       buy: 500, sell: 175},
+      {name: '狂戦士の札',     buy: 500, sell: 175},
+      {name: 'イカリの札',     buy: 500, sell: 175},
+      {name: 'オオイカリの札', buy: 500, sell: 175}
+    ]
   }
 ]
 
