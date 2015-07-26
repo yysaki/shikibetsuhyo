@@ -12,15 +12,10 @@ html(lang='ja')
       div(data-role="header")
         h1 風来のシレン4
       div(data-role="content")
-        - each datum in data
-          div(class="#{datum.type}")
-            h1= datum.name
-            table.table.table-striped
-              - each item in datum.items
-                tr
-                  th= item.name
-                  td= item.buy
-                  td= item.sell
+        ul(data-role="listview")
+          - each datum in data
+            li
+              a(href="\##{datum.type}")= datum.name
       div(data-role="footer")
         h4 Copy right 2015
 
