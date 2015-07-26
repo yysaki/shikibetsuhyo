@@ -23,3 +23,14 @@ html(lang='ja')
                   td= item.sell
       div(data-role="footer")
         h4 Copy right 2015
+
+    - each datum in data
+      div(data-role="page" id="#{datum.type}")
+        div(data-role="header")
+          h1= datum.name
+        div(data-role="content")
+          ul(data-role="listview")
+            - each item in datum.items
+              li name: #{item.name} buy: #{item.buy} sell: #{item.sell}
+        div(data-role="footer")
+          h5 Copy right 2015
