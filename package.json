@@ -2,14 +2,16 @@
   "name": "shikibetsuhyo",
   "version": "0.1.0",
   "browser": {
-    "jquery": "./node_modules/jquery/dist/jquery.js"
+    "jquery": "./node_modules/jquery/dist/jquery.js",
+    "jquery-mobile": "./node_modules/jquery-mobile-babel-safe/js/jquery.mobile-1.4.5.js"
   },
   "engines": {
     "node": "0.12.0",
     "npm": "2.5.1"
   },
   "style": [
-    "less/style.less"
+    "less/style.less",
+    "node_modules/jquery-mobile-babel-safe/css/jquery.mobile-1.4.5.min.css"
   ],
   "browserify-shim": {
     "jquery": "$",
@@ -21,7 +23,10 @@
     },
     "jquery.cookie": {
       "depends": "jquery:$"
-    }
+    },
+    "jquery-mobile": {
+       "depends": "jquery:$"
+     }
   },
   "browserify": {
     "transform": [
@@ -38,6 +43,7 @@
     "express": "^4.12.3",
     "jade": "^1.9.2",
     "jquery": "^2.1.4",
+    "jquery-mobile-babel-safe": "^1.4.5-1",
     "less-css-stream": "^1.0.0",
     "parcelify": "^1.1.1",
     "watchify": "^3.2.0"
