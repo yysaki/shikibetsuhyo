@@ -8,9 +8,10 @@ html(lang='ja')
     script(src='/js/bundle.js', charset='UTF-8')
 
   body
+    - var headerName = "風来のシレン4"
     div(data-role="page")
       div(data-role="header")
-        h1 風来のシレン4
+        h1= headerName
       div(data-role="content")
         ul(data-role="listview")
           - each datum in data
