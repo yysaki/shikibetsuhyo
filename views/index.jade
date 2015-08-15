@@ -12,6 +12,11 @@ html(lang='ja')
     div(data-role="page")
       div(data-role="header")
         h1= headerName
+        div(data-role="navbar")
+          ul
+            - each navbarDatum in data
+              li(class="six-tab")
+                a(href="\##{navbarDatum.type}")= navbarDatum.name
       div(data-role="content")
         ul(data-role="listview")
           - each datum in data
@@ -24,6 +29,11 @@ html(lang='ja')
       div(data-role="page" id="#{datum.type}")
         div(data-role="header")
           h1= datum.name + " - " + headerName
+          div(data-role="navbar")
+            ul
+              - each navbarDatum in data
+                li(class="six-tab")
+                  a(href="\##{navbarDatum.type}")= navbarDatum.name
         div(data-role="content")
           ul(data-role="listview")
             - each item in datum.items
