@@ -23,7 +23,7 @@ html(lang='ja')
     - each datum in data
       div(data-role="page" id="#{datum.type}")
         div(data-role="header")
-          h1= datum.name
+          h1= datum.name + " - " + headerName
         div(data-role="content")
           ul(data-role="listview")
             - each item in datum.items
