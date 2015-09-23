@@ -40,11 +40,9 @@ html(lang='ja')
         div(data-role="content")
           ul(data-role="listview")
             - each item in datum.items
-              li
-                a(href="#" style="padding-top: 0px;padding-bottom: 0px;padding-right: 0px;padding-left: 0px; border-top-width: 0px;")
-                  label(style="border-top-width: 0px;margin-top: 0px;border-bottom-width: 0px;margin-bottom: 0px;border-left-width: 0px;border-right-width: 0px;" data-corners="false")
-                    fieldset(deta-role="controlgroup")
-                      input(type="checkbox" name="checkbox-2b" id="" data-theme="c")
-                      label(for="") #{item.name} buy: #{item.buy} sell: #{item.sell}
+              li(class="item")
+                label
+                  input(type="checkbox")
+                  span #{item.name} buy: #{item.buy} sell: #{item.sell}
         div(data-role="footer")
           h5 Copy right 2015
