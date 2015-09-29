@@ -25,6 +25,19 @@ var loadFromCookie = () => {
   });
 };
 
+var saveToCookie = () => {
+  var ary = {};
+    $(':checkbox')
+    .each((index, val) => {
+      var t = $(val).data('type');
+      if (!(t in ary))
+        ary[t] = {};
+      ary[t][$(val).data('id')] = $(val).prop('checked');
+    });
+  var json = JSON.stringify(ary);
+  setCookie(json);
+};
+
 var setCookie = (data) => {
   document.cookie = `data=${encodeURIComponent(data)}`;
 };
