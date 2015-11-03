@@ -19,3 +19,20 @@ $(() => {
 var setCookie = (data) => {
   document.cookie = `data=${encodeURIComponent(data)}`;
 };
+
+var getCookie = () => {
+	if (!document.cookie) return;
+
+  var targetCookie =
+    document.cookie
+    .split("; ")
+    .map((elem) => {
+      var str = elem.split('=');
+      return {key: str[0], value: str[1]};
+    })
+    .filter((cookie) => cookie.key == 'data');
+
+  if (!targetCookie.some((cookie) => cookie.key == 'data')) return;
+
+  return decodeURIComponent(targetCookie[0].value);
+}
