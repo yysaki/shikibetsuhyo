@@ -42,7 +42,7 @@ html(lang='ja')
             - each item in datum.items
               li(class="item")
                 label
-                  input(type="checkbox")
+                  input(type="checkbox" data-id="#{item.id}" data-type="#{datum.type}")
                   span #{item.name} buy: #{item.buy} sell: #{item.sell}
         div(data-role="footer")
           h5 Copy right 2015
