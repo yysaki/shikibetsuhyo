@@ -18,6 +18,8 @@ $(() => {
   $(':checkbox').change(() => saveToCookie());
 });
 
+// Save/Load Cookie Data "{{{1
+
 var loadFromCookie = () => {
   var cookieData = JSON.parse(getCookie());
   Object.keys(cookieData)
@@ -60,3 +62,7 @@ var getCookie = () => {
 
   return decodeURIComponent(targetCookie[0].value);
 }
+
+// __END__  "{{{1
+// vim: expandtab softtabstop=2 shiftwidth=2
+// vim: foldmethod=marker
