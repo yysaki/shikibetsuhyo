@@ -15,6 +15,7 @@ require('../bower_components/flat-ui/js/radiocheck.js');
 
 $(() => {
   loadFromCookie();
+  $(':checkbox').change(() => saveToCookie());
 });
 
 var loadFromCookie = () => {
