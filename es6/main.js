@@ -15,3 +15,7 @@ require('../bower_components/flat-ui/js/radiocheck.js');
 
 $(() => {
 });
+
+var setCookie = (data) => {
+  document.cookie = `data=${encodeURIComponent(data)}`;
+};
