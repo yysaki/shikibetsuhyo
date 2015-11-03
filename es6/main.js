@@ -14,6 +14,7 @@ require('select2');
 require('../bower_components/flat-ui/js/radiocheck.js');
 
 $(() => {
+  loadFromCookie();
 });
 
 var loadFromCookie = () => {
