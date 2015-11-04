@@ -20,6 +20,16 @@ $(() => {
   $(':checkbox').change(() => saveToCookie());
 });
 
+// Clear CheckBoxes "{{{1
+
+var clearCheckboxes = () => {
+  $(':checkbox')
+  .prop('checked', false)
+  .checkboxradio('refresh');
+
+  saveToCookie();
+};
+
 // Save/Load Cookie Data "{{{1
 
 var loadFromCookie = () => {
