@@ -10,7 +10,7 @@ html(lang='ja')
   body
     - var headerName = "風来のシレン4"
     div(data-role="page")
-      div(data-role="header")
+      div(data-role="header" data-position="fixed")
         h1= headerName
         a(href="" class="ui-btn-right" data-icon="gear") 設定
         div(data-role="navbar")
@@ -28,7 +28,7 @@ html(lang='ja')
 
     - each datum in data
       div(data-role="page" id="#{datum.type}")
-        div(data-role="header")
+        div(data-role="header" data-position="fixed")
           h1= datum.name + " - " + headerName
           a(href="" class="ui-btn-right" data-icon="gear") 設定
           div(data-role="navbar")
