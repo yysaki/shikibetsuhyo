@@ -21,6 +21,8 @@ $(() => {
 // Save/Load Cookie Data "{{{1
 
 var loadFromCookie = () => {
+  if (typeof getCookie() === "undefined") return;
+
   var cookieData = JSON.parse(getCookie());
   Object.keys(cookieData)
   .forEach((key) => {
