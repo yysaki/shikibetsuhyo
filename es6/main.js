@@ -14,6 +14,8 @@ require('select2');
 require('../bower_components/flat-ui/js/radiocheck.js');
 
 $(() => {
+  $(':checkbox').checkboxradio();
+
   loadFromCookie();
   $(':checkbox').change(() => saveToCookie());
 });
@@ -27,7 +29,11 @@ var loadFromCookie = () => {
   Object.keys(cookieData)
   .forEach((key) => {
     $(`#${key} :checkbox`)
-    .each((index, elem) => $(elem).prop('checked', cookieData[key][$(elem).data('id')]));
+    .each((index, elem) =>
+      $(elem)
+      .prop('checked', cookieData[key][$(elem).data('id')])
+      .checkboxradio('refresh')
+    );
   });
 };
 
