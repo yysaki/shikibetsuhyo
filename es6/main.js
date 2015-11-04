@@ -16,6 +16,11 @@ require('../bower_components/flat-ui/js/radiocheck.js');
 $(() => {
   $(':checkbox').checkboxradio();
 
+  $('a.reset-checkboxes').click(() => {
+    if(window.confirm('リセットしますか？'))
+      clearCheckboxes();
+  });
+
   loadFromCookie();
   $(':checkbox').change(() => saveToCookie());
 });
