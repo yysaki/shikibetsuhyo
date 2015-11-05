@@ -39,7 +39,13 @@ html(lang='ja')
                   a(href="\##{navbarDatum.type}" class="#{activeClass}")= navbarDatum.name
         div(data-role="content")
           ul(data-role="listview")
+            - var prevBuy  = -1
+            - var prevSell = -1
             - each item in datum.items
+              if prevBuy != item.buy || prevSell != item.sell
+                li(data-role="list-divider") 買: #{item.buy} / 売: #{item.sell}
+                - prevBuy  = item.buy
+                - prevSell = item.sell
               li(class="item")
                 label
                   input(type="checkbox" data-id="#{item.id}" data-type="#{datum.type}")
