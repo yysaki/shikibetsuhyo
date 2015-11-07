@@ -13,6 +13,8 @@ require('bootstrap-tagsinput');
 require('select2');
 require('../bower_components/flat-ui/js/radiocheck.js');
 
+import * as shiren4 from '../es6/model/shiren4.js';
+
 $(() => {
   $(':checkbox').checkboxradio();
 
