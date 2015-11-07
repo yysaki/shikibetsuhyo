@@ -9,23 +9,6 @@ html(lang='ja')
 
   body
     - var headerName = "風来のシレン4"
-    div(data-role="page")
-      div(data-role="header" data-position="fixed")
-        div(data-role="navbar")
-          ul
-            - each navbarDatum in data
-              li(class="six-tab")
-                a(href="\##{navbarDatum.type}")= navbarDatum.name
-      div(data-role="content")
-        ul(data-role="listview")
-          - each datum in data
-            li
-              a(href="\##{datum.type}")= datum.name
-      div(data-role="footer")
-        a(href="" class="reset-checkboxes ui-btn ui-corner-all ui-btn-inline ui-mini footer-button-left ui-btn-icon-left ui-icon-alert") Clear
-        h1= headerName
-        a(href="#about" class="ui-btn ui-corner-all ui-btn-inline ui-mini footer-button-right ui-btn-icon-left ui-icon-info" data-transition="pop") About
-
     - each datum in data
       div(data-role="page" id="#{datum.type}")
         div(data-role="header" data-position="fixed")

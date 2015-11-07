@@ -16,6 +16,7 @@ require('../bower_components/flat-ui/js/radiocheck.js');
 import * as shiren4 from '../es6/model/shiren4.js';
 
 $(() => {
+  // alert(shiren4.data[0].name)
   $(':checkbox').checkboxradio();
 
   $('a.reset-checkboxes').click(() => {
