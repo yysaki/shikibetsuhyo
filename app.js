@@ -8,8 +8,17 @@ app.set('view engine', 'jade');
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', (request, response) => {
-  response.render('index', { data: shiren4.data });
-});
+  var about = 'about/shiren4';
+
+  response.render(about, (err, aboutHtml) => {
+    response.render(
+      'index',
+      {
+        data: shiren4.data,
+        about: aboutHtml
+      });
+  });
+});;
 
 app.listen(app.get('port'), () => {
   console.log("Node app is running at localhost:" + app.get('port'))
