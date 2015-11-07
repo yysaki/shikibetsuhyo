@@ -14,9 +14,26 @@ require('select2');
 require('../bower_components/flat-ui/js/radiocheck.js');
 
 $(() => {
+  $(':checkbox').checkboxradio();
+
+  $('a.reset-checkboxes').click(() => {
+    if(window.confirm('リセットしますか？'))
+      clearCheckboxes();
+  });
+
   loadFromCookie();
   $(':checkbox').change(() => saveToCookie());
 });
+
+// Clear CheckBoxes "{{{1
+
+var clearCheckboxes = () => {
+  $(':checkbox')
+  .prop('checked', false)
+  .checkboxradio('refresh');
+
+  saveToCookie();
+};
 
 // Save/Load Cookie Data "{{{1
 
@@ -27,7 +44,11 @@ var loadFromCookie = () => {
   Object.keys(cookieData)
   .forEach((key) => {
     $(`#${key} :checkbox`)
-    .each((index, elem) => $(elem).prop('checked', cookieData[key][$(elem).data('id')]));
+    .each((index, elem) =>
+      $(elem)
+      .prop('checked', cookieData[key][$(elem).data('id')])
+      .checkboxradio('refresh')
+    );
   });
 };
 

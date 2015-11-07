@@ -11,8 +11,6 @@ html(lang='ja')
     - var headerName = "風来のシレン4"
     div(data-role="page")
       div(data-role="header" data-position="fixed")
-        h1= headerName
-        a(href="" class="ui-btn-right" data-icon="gear") 設定
         div(data-role="navbar")
           ul
             - each navbarDatum in data
@@ -24,13 +22,13 @@ html(lang='ja')
             li
               a(href="\##{datum.type}")= datum.name
       div(data-role="footer")
-        h4 Copy right 2015
+        a(href="" class="reset-checkboxes ui-btn ui-corner-all ui-btn-inline ui-mini footer-button-left ui-btn-icon-left ui-icon-alert") Clear
+        h1= headerName
+        a(href="#about" class="ui-btn ui-corner-all ui-btn-inline ui-mini footer-button-right ui-btn-icon-left ui-icon-info" data-transition="pop") About
 
     - each datum in data
       div(data-role="page" id="#{datum.type}")
         div(data-role="header" data-position="fixed")
-          h1= datum.name + " - " + headerName
-          a(href="" class="ui-btn-right" data-icon="gear") 設定
           div(data-role="navbar")
             ul
               - each navbarDatum in data
@@ -51,4 +49,12 @@ html(lang='ja')
                   input(type="checkbox" data-id="#{item.id}" data-type="#{datum.type}")
                   span #{item.name}
         div(data-role="footer")
-          h5 Copy right 2015
+          a(href="" class="reset-checkboxes ui-btn ui-corner-all ui-btn-inline ui-mini footer-button-left ui-btn-icon-left ui-icon-alert") Clear
+          h1= headerName
+          a(href="#about" class="ui-btn ui-corner-all ui-btn-inline ui-mini footer-button-right ui-btn-icon-left ui-icon-info" data-transition="pop") About
+
+    div(data-role="page" data-dialog="true" id="about")
+      div(data-role="header")
+        h1 About
+      div(data-role="content")
+        TODO
