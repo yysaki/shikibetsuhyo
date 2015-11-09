@@ -69,7 +69,8 @@ var saveToCookie = () => {
 };
 
 var setCookie = (data) => {
-  document.cookie = `data=${encodeURIComponent(data)}`;
+  var thirtyDaysLater = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000);
+  document.cookie = `data=${encodeURIComponent(data)};expires=${thirtyDaysLater.toGMTString()}`;
 };
 
 var getCookie = () => {
