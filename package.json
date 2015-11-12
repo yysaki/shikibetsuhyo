@@ -51,7 +51,8 @@
     "watchify": "^3.2.0"
   },
   "devDependencies": {
-    "mocha": "^2.3.3"
+    "mocha": "^2.3.3",
+    "supertest": "^1.1.0"
   },
   "scripts": {
     "build": "browserify -t babelify -t debowerify es6/main.js -o public/js/bundle.js -p [ parcelify -o public/css/bundle.css -t less-css-stream -d . ]",
