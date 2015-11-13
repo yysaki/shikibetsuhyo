@@ -1,23 +1,23 @@
 doctype html
-html(lang='ja')
+html(lang="ja")
   head
-    meta(charset='UTF-8')
+    meta(charset="UTF-8")
     title 値段識別表 - 不思議のダンジョン 風来のシレン4 神の眼と悪魔のヘソ
-    meta(name='viewport' content='width=device-width, initialize-scale=1')
-    link(rel='stylesheet', href='/css/bundle.css')
-    script(src='/js/bundle.js', charset='UTF-8')
+    meta(name="viewport" content="width=device-width, initialize-scale=1")
+    link(rel="stylesheet", href="/css/bundle.css")
+    script(src="/js/bundle.js", charset="UTF-8")
 
   body
     - var headerName = "風来のシレン4"
     - each datum in data
-      div(data-role="page" id="#{datum.type}")
+      div(data-role="page" id=datum.type)
         div(data-role="header" data-position="fixed")
           div(data-role="navbar")
             ul
               - each navbarDatum in data
                 li(class="six-tab")
-                  - var activeClass = datum.type == navbarDatum.type ? "ui-btn-active ui-state-persist" : ""
-                  a(href="\##{navbarDatum.type}" class="#{activeClass}")= navbarDatum.name
+                  - var activeClass = (datum.type == navbarDatum.type) ? ["ui-btn-active", "ui-state-persist"] : ""
+                  a(href="##{navbarDatum.type}" class=activeClass)= navbarDatum.name
         div(data-role="content")
           ul(data-role="listview")
             - var prevBuy  = -1
@@ -29,12 +29,13 @@ html(lang='ja')
                 - prevSell = item.sell
               li(class="item")
                 label
-                  input(type="checkbox" data-id="#{item.id}" data-type="#{datum.type}")
-                  span #{item.name}
+                  input(type="checkbox" data-id=item.id data-type=datum.type)
+                  span= item.name
         div(data-role="footer")
-          a(href="" class="reset-checkboxes ui-btn ui-corner-all ui-btn-inline ui-mini footer-button-left ui-btn-icon-left ui-icon-alert") Clear
+          - var footerButton = ["ui-btn", "ui-corner-all", "ui-btn-inline", "ui-mini", "ui-btn-icon-left"]
+          a(href="" class=footerButton class="reset-checkboxes footer-button-left ui-icon-alert") Clear
           h1= headerName
-          a(href="#about" class="ui-btn ui-corner-all ui-btn-inline ui-mini footer-button-right ui-btn-icon-left ui-icon-info" data-transition="pop") About
+          a(href="#about" class=footerButton class="footer-button-right ui-icon-info" data-transition="pop") About
 
     div(data-role="page" data-dialog="true" id="about")
-      |!{ about }
+      | !{about}
