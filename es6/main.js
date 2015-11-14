@@ -70,8 +70,8 @@ var saveToCookie = () => {
 
 var setCookie = (data) => {
   var thirtyDaysLater = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000);
-  document.cookie = `data=${encodeURIComponent(data)};expires=${thirtyDaysLater.toGMTString()}`;
-};
+  document.cookie = `data=${encodeURIComponent(data)};path=${location.pathname};expires=${thirtyDaysLater.toGMTString()}`;
+}
 
 var getCookie = () => {
 	if (!document.cookie) return;
