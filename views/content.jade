@@ -17,7 +17,7 @@ html(lang="ja")
               - each navbarDatum in data
                 li(class="six-tab")
                   - var activeClass = (datum.type == navbarDatum.type) ? ["ui-btn-active", "ui-state-persist"] : ""
-                  a(href="##{navbarDatum.type}" class=activeClass)= navbarDatum.name
+                  a(href="./##{navbarDatum.type}" class=activeClass)= navbarDatum.name
         div(data-role="content")
           ul(data-role="listview")
             - var prevBuy  = -1
@@ -35,7 +35,7 @@ html(lang="ja")
           - var footerButton = ["ui-btn", "ui-corner-all", "ui-btn-inline", "ui-mini", "ui-btn-icon-left"]
           a(href="" class=footerButton class="reset-checkboxes footer-button-left ui-icon-alert") Clear
           h1= headerName
-          a(href="#about" class=footerButton class="footer-button-right ui-icon-info" data-transition="pop") About
+          a(href="./#about" class=footerButton class="footer-button-right ui-icon-info" data-transition="pop") About
 
     div(data-role="page" data-dialog="true" id="about")
       | !{about}
