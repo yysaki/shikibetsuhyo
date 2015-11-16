@@ -18,7 +18,7 @@ app.get('/', (request, response) => {
         about: aboutHtml
       });
   });
-});;
+});
 
 module.exports = app;
 
