@@ -7,7 +7,7 @@ app.set('port', (process.env.PORT || 5000));
 app.set('view engine', 'jade');
 app.use(express.static(__dirname + '/public'));
 
-app.get('/', (request, response) => {
+app.get('/shiren/', (request, response) => {
   var about = 'about/shiren4';
 
   response.render(about, (err, aboutHtml) => {
