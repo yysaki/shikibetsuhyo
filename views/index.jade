@@ -1,41 +1,21 @@
 doctype html
 html(lang="ja")
+  - var headerTitle = "不思議のダンジョン 値段識別表"
   head
     meta(charset="UTF-8")
-    title 値段識別表 - 不思議のダンジョン 風来のシレン4 神の眼と悪魔のヘソ
+    title= headerTitle
     meta(name="viewport" content="width=device-width, initialize-scale=1")
     link(rel="stylesheet", href="/css/bundle.css")
     script(src="/js/bundle.js", charset="UTF-8")
 
   body
-    - var headerName = "風来のシレン4"
-    - each datum in data
-      div(data-role="page" id=datum.type)
-        div(data-role="header" data-position="fixed")
-          div(data-role="navbar")
-            ul
-              - each navbarDatum in data
-                li(class="six-tab")
-                  - var activeClass = (datum.type == navbarDatum.type) ? ["ui-btn-active", "ui-state-persist"] : ""
-                  a(href="##{navbarDatum.type}" class=activeClass)= navbarDatum.name
-        div(data-role="content")
-          ul(data-role="listview")
-            - var prevBuy  = -1
-            - var prevSell = -1
-            - each item in datum.items
-              if prevBuy != item.buy || prevSell != item.sell
-                li(data-role="list-divider") 買: #{item.buy} / 売: #{item.sell}
-                - prevBuy  = item.buy
-                - prevSell = item.sell
-              li(class="item")
-                label
-                  input(type="checkbox" data-id=item.id data-type=datum.type)
-                  span= item.name
-        div(data-role="footer")
-          - var footerButton = ["ui-btn", "ui-corner-all", "ui-btn-inline", "ui-mini", "ui-btn-icon-left"]
-          a(href="" class=footerButton class="reset-checkboxes footer-button-left ui-icon-alert") Clear
-          h1= headerName
-          a(href="#about" class=footerButton class="footer-button-right ui-icon-info" data-transition="pop") About
-
-    div(data-role="page" data-dialog="true" id="about")
-      | !{about}
+    - var headerName = "不思議のダンジョン"
+    div(data-role="page" data-title=headerTitle)
+      div(data-role="header" data-position="fixed")
+        h1= headerName
+      div(data-role="content")
+        ul(data-role="listview")
+          li(class="item")
+            a(href="/shiren4/" data-ajax="false") シレン4
+      div(data-role="footer")
+        h1= headerName

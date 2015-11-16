@@ -16,16 +16,17 @@ require('../bower_components/flat-ui/js/radiocheck.js');
 import * as shiren4 from '../es6/model/shiren4.js';
 
 $(() => {
-  // alert(shiren4.data[0].name)
-  $(':checkbox').checkboxradio();
+  if (location.pathname == '/shiren4/') {
+    $(':checkbox').checkboxradio();
 
-  $('a.reset-checkboxes').click(() => {
-    if(window.confirm('リセットしますか？'))
-      clearCheckboxes();
-  });
+    $('a.reset-checkboxes').click(() => {
+      if(window.confirm('リセットしますか？'))
+        clearCheckboxes();
+    });
 
-  loadFromCookie();
-  $(':checkbox').change(() => saveToCookie());
+    loadFromCookie();
+    $(':checkbox').change(() => saveToCookie());
+  }
 });
 
 // Clear CheckBoxes "{{{1
@@ -70,8 +71,8 @@ var saveToCookie = () => {
 
 var setCookie = (data) => {
   var thirtyDaysLater = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000);
-  document.cookie = `data=${encodeURIComponent(data)};expires=${thirtyDaysLater.toGMTString()}`;
-};
+  document.cookie = `data=${encodeURIComponent(data)};path=${location.pathname};expires=${thirtyDaysLater.toGMTString()}`;
+}
 
 var getCookie = () => {
 	if (!document.cookie) return;
