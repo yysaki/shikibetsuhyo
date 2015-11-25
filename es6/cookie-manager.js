@@ -4,9 +4,9 @@ export default class CookieManager {
   }
 
   loadFromCookie() {
-    if (typeof this.getCookie() === "undefined") return;
+    if (typeof this._getCookie() === "undefined") return;
 
-    var cookieData = JSON.parse(this.getCookie());
+    var cookieData = JSON.parse(this._getCookie());
     Object.keys(cookieData)
     .forEach((key) => {
       $(`#${key} :checkbox`)
@@ -36,7 +36,7 @@ export default class CookieManager {
     this.doc.cookie = `data=${encodeURIComponent(data)};path=${location.pathname};expires=${thirtyDaysLater.toGMTString()}`;
   }
 
-  getCookie() {
+  _getCookie() {
     if (!this.doc.cookie) return;
 
     var targetCookie =
