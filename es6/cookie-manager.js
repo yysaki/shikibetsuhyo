@@ -33,14 +33,14 @@ export default class CookieManager {
 
   setCookie(data) {
     var thirtyDaysLater = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000);
-    document.cookie = `data=${encodeURIComponent(data)};path=${location.pathname};expires=${thirtyDaysLater.toGMTString()}`;
+    this.doc.cookie = `data=${encodeURIComponent(data)};path=${location.pathname};expires=${thirtyDaysLater.toGMTString()}`;
   }
 
   getCookie() {
-    if (!document.cookie) return;
+    if (!this.doc.cookie) return;
 
     var targetCookie =
-      document.cookie
+      this.doc.cookie
       .split("; ")
       .map((elem) => {
         var str = elem.split('=');
