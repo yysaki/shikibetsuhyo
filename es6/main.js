@@ -41,6 +41,12 @@ var clearCheckboxes = () => {
 
 // Save/Load Cookie Data "{{{1
 
+class CookieManager {
+  constructor(doc) {
+    this.doc = doc;
+  }
+}
+
 var loadFromCookie = () => {
   if (typeof getCookie() === "undefined") return;
 
