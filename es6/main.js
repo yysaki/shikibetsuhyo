@@ -14,6 +14,7 @@ require('select2');
 require('../bower_components/flat-ui/js/radiocheck.js');
 
 import * as shiren4 from '../es6/model/shiren4.js';
+import CookieManager from '../es6/cookie-manager.js';
 
 $(() => {
   var cm = new CookieManager(document);

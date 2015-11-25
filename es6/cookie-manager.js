@@ -1,4 +1,4 @@
-class CookieManager {
+export default class CookieManager {
   constructor(doc) {
     this.doc = doc;
   }
