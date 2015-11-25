@@ -28,10 +28,10 @@ export default class CookieManager {
         ary[t][$(val).data('id')] = $(val).prop('checked');
       });
     var json = JSON.stringify(ary);
-    this.setCookie(json);
+    this._setCookie(json);
   }
 
-  setCookie(data) {
+  _setCookie(data) {
     var thirtyDaysLater = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000);
     this.doc.cookie = `data=${encodeURIComponent(data)};path=${location.pathname};expires=${thirtyDaysLater.toGMTString()}`;
   }
