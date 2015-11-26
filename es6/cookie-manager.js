@@ -27,12 +27,16 @@ export default class CookieManager {
           ary[t] = {};
         ary[t][$(val).data('id')] = $(val).prop('checked');
       });
-    var json = JSON.stringify(ary);
-    this._setCookie(json);
+
+    this._setCookie(this._encode(ary));
   }
 
   _decode(fromCookie) {
     return JSON.parse(fromCookie);
+  }
+
+  _encode(ary) {
+    return JSON.stringify(ary);
   }
 
   _setCookie(data) {
