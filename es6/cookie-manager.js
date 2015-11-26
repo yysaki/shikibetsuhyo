@@ -5,7 +5,7 @@ export default class CookieManager {
 
   loadFromCookie() {
     var rawData = this._getCookie();
-    if (typeof rawData === "undefined") return;
+    if (!this._isValid(rawData)) return;
 
     var cookieData = this._decode(rawData);
     Object.keys(cookieData)
@@ -38,6 +38,10 @@ export default class CookieManager {
 
   _encode(ary) {
     return JSON.stringify(ary);
+  }
+
+  _isValid(rawData) {
+    return typeof rawData !== "undefined";
   }
 
   _setCookie(data) {
