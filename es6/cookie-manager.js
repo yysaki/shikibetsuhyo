@@ -6,7 +6,7 @@ export default class CookieManager {
   loadFromCookie() {
     if (typeof this._getCookie() === "undefined") return;
 
-    var cookieData = JSON.parse(this._getCookie());
+    var cookieData = this._decode(this._getCookie());
     Object.keys(cookieData)
     .forEach((key) => {
       $(`#${key} :checkbox`)
@@ -29,6 +29,10 @@ export default class CookieManager {
       });
     var json = JSON.stringify(ary);
     this._setCookie(json);
+  }
+
+  _decode(fromCookie) {
+    return JSON.parse(fromCookie);
   }
 
   _setCookie(data) {
