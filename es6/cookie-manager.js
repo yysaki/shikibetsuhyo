@@ -4,9 +4,10 @@ export default class CookieManager {
   }
 
   loadFromCookie() {
-    if (typeof this._getCookie() === "undefined") return;
+    var rawData = this._getCookie();
+    if (typeof rawData === "undefined") return;
 
-    var cookieData = this._decode(this._getCookie());
+    var cookieData = this._decode(rawData);
     Object.keys(cookieData)
     .forEach((key) => {
       $(`#${key} :checkbox`)
