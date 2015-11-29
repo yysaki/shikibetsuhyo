@@ -74,8 +74,20 @@ export default class CookieManager {
     return JSON.stringify(jsonObject);
   }
 
-  _isValid(rawData) {
-    return typeof rawData !== "undefined";
+  _isValid(rawJson) {
+    if (typeof rawJson === "undefined") return false;
+
+    var fromCookie = JSON.parse(rawJson);
+    if (!Array.isArray(fromCookie)) return false;
+
+    return fromCookie.every(tuple =>
+      Array.isArray(tuple)
+      && tuple.length == 3
+      && typeof tuple[0] == 'string'
+      && typeof tuple[1] == 'number'
+      && typeof tuple[2] == 'string'
+      && parseInt(tuple[2], 36) < Math.pow(2, tuple[1] + 1)
+    );
   }
 
   _setCookie(data) {
