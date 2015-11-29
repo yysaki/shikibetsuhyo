@@ -24,5 +24,12 @@ var rawJson = '[["udewa",25,"jz6rj"],["kusa",29,"0"],["makimono",37,"l1nv92i"],[
 
     expect(JSON.stringify(cm._decode(rawJson))).to.equal(JSON.stringify(cbData));
   });
+
+  it('should _isValid correctly', () => {
+    var cm = new CookieManager();
+
+    expect(cm._isValid(undefined)).to.be.false;
+    expect(cm._isValid(rawJson)).to.be.true;
+  });
 });
 
