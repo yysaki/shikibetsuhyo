@@ -32,8 +32,27 @@ export default class CookieManager {
     this._setCookie(this._encode(ary));
   }
 
-  _decode(fromCookie) {
-    return JSON.parse(fromCookie);
+  _decode(rawJson) {
+    var fromCookie = JSON.parse(rawJson);
+    var cbData = {};
+
+    fromCookie
+    .forEach(tuple => {
+      var key = tuple[0];
+      var len = tuple[1];
+      var bits = parseInt(tuple[2], 36);
+
+      var data = {};
+      for (var i = 1; i <= len; i++)
+      {
+        data[i] = (bits % 2 == 1);
+        bits = Math.floor(bits / 2);
+      }
+
+      cbData[key] = data;
+    });
+
+    return cbData;
   }
 
   _encode(cbData) {
