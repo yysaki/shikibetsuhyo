@@ -31,5 +31,12 @@ var rawJson = '[["udewa",25,"jz6rj"],["kusa",29,"0"],["makimono",37,"l1nv92i"],[
     expect(cm._isValid(undefined)).to.be.false;
     expect(cm._isValid(rawJson)).to.be.true;
   });
+
+  it('should judge old cookie data not _isValid ', () => {
+    var cm = new CookieManager();
+
+    var oldRawJson = '{"udewa":{"1":true,"2":true,"3":false,"4":false,"5":false,"6":false,"7":false,"8":false,"9":false,"10":false,"11":false,"12":false,"13":false,"14":false,"15":false,"16":false,"17":false,"18":false,"19":false,"20":false,"21":false,"22":false,"23":false,"24":false,"25":false},"kusa":{"1":false,"2":false,"3":false,"4":false,"5":false,"6":false,"7":false,"8":false,"9":false,"10":false,"11":false,"12":false,"13":false,"14":false,"15":false,"16":false,"17":false,"18":false,"19":false,"20":false,"21":false,"22":false,"23":false,"24":false,"25":false,"26":false,"27":false,"28":false,"29":false},"makimono":{"1":false,"2":false,"3":false,"4":false,"5":false,"6":false,"7":false,"8":false,"9":false,"10":false,"11":false,"12":false,"13":false,"14":false,"15":false,"16":false,"17":false,"18":false,"19":false,"20":false,"21":false,"22":false,"23":false,"24":false,"25":false,"26":false,"27":false,"28":false,"29":false,"30":false,"31":false,"32":false,"33":false,"34":false,"35":false,"36":false,"37":false},"tsubo":{"1":false,"2":false,"3":false,"4":false,"5":false,"6":false,"7":false,"8":false,"9":false,"10":false,"11":false,"12":false,"13":false,"14":false,"15":false,"16":false,"17":false,"18":false,"19":false,"20":false,"21":false,"22":false,"23":false,"24":false},"tsue":{"1":false,"2":false,"3":false,"4":false,"5":false,"6":false,"7":false,"8":false,"9":false,"10":false,"11":false,"12":false,"13":false,"14":false,"15":false,"16":false,"17":false,"18":false,"19":false},"huda":{"1":false,"2":false,"3":false,"4":false,"5":false,"6":false,"7":false,"8":false,"9":false,"10":false,"11":false}}';
+    expect(cm._isValid(oldRawJson)).to.be.false;
+  });
 });
 
