@@ -36,8 +36,23 @@ export default class CookieManager {
     return JSON.parse(fromCookie);
   }
 
-  _encode(ary) {
-    return JSON.stringify(ary);
+  _encode(cbData) {
+    var jsonObject =
+      Object.keys(cbData)
+      .map(key => {
+        var len = Object.keys(cbData[key]).length;
+        var radix36Bits =
+          Object.keys(cbData[key])
+          .map(index1Str => parseInt(index1Str, 10))
+          .reduce((prev, curr, idx, array) => {
+            return prev + (cbData[key][curr] ? Math.pow(2, curr - 1) : 0);
+          }, 0)
+          .toString(36);
+
+        return [key, len, radix36Bits];
+      });
+
+    return JSON.stringify(jsonObject);
   }
 
   _isValid(rawData) {
