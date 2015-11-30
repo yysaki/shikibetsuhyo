@@ -1,4 +1,4 @@
-export var data = [
+export default [
   {
     type: 'udewa',
     name: '腕輪',
