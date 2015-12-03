@@ -14,4 +14,12 @@ class ItemList {
   }
 }
 
-export {Game, ItemList}
+class Item {
+  constructor(itemish) {
+    this.name = itemish.name;
+    this.buy = itemish.buy;
+    this.sell = itemish.sell;
+  }
+}
+
+export {Game, ItemList, Item}
