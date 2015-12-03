@@ -21,7 +21,7 @@ app.get('/shiren4/', (request, response) => {
     response.render(
       'content',
       {
-        data: shiren4,
+        game: shiren4,
         about: aboutHtml
       });
   });

@@ -9,27 +9,27 @@ html(lang="ja")
 
   body
     - var headerName = "風来のシレン4"
-    - each datum in data
-      div(data-role="page" id=datum.type)
+    - each list in game.lists
+      div(data-role="page" id=list.type)
         div(data-role="header" data-position="fixed")
           div(data-role="navbar")
             ul
-              - each navbarDatum in data
+              - each navbarList in game.lists
                 li(class="six-tab")
-                  - var activeClass = (datum.type == navbarDatum.type) ? ["ui-btn-active", "ui-state-persist"] : ""
-                  a(href="./##{navbarDatum.type}" class=activeClass)= navbarDatum.name
+                  - var activeClass = (list.type == navbarList.type) ? ["ui-btn-active", "ui-state-persist"] : ""
+                  a(href="./##{navbarList.type}" class=activeClass)= navbarList.name
         div(data-role="content")
           ul(data-role="listview")
             - var prevBuy  = -1
             - var prevSell = -1
-            - each item, index0 in datum.items
+            - each item, index0 in list.items
               if prevBuy != item.buy || prevSell != item.sell
                 li(data-role="list-divider") 買: #{item.buy} / 売: #{item.sell}
                 - prevBuy  = item.buy
                 - prevSell = item.sell
               li(class="item")
                 label
-                  input(type="checkbox" data-id=(index0 + 1) data-type=datum.type)
+                  input(type="checkbox" data-id=(index0 + 1) data-type=list.type)
                   span= item.name
         div(data-role="footer" data-position="fixed")
           - var footerButton = ["ui-btn", "ui-corner-all", "ui-btn-inline", "ui-mini", "ui-btn-icon-left"]
