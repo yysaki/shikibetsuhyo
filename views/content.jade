@@ -22,14 +22,14 @@ html(lang="ja")
           ul(data-role="listview")
             - var prevBuy  = -1
             - var prevSell = -1
-            - each item in datum.items
+            - each item, index0 in datum.items
               if prevBuy != item.buy || prevSell != item.sell
                 li(data-role="list-divider") 買: #{item.buy} / 売: #{item.sell}
                 - prevBuy  = item.buy
                 - prevSell = item.sell
               li(class="item")
                 label
-                  input(type="checkbox" data-id=item.id data-type=datum.type)
+                  input(type="checkbox" data-id=(index0 + 1) data-type=datum.type)
                   span= item.name
         div(data-role="footer" data-position="fixed")
           - var footerButton = ["ui-btn", "ui-corner-all", "ui-btn-inline", "ui-mini", "ui-btn-icon-left"]
