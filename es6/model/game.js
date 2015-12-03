@@ -6,4 +6,12 @@ class Game {
   }
 }
 
-export {Game}
+class ItemList {
+  constructor(listish) {
+    this.type = listish.type;
+    this.name = listish.name;
+    this.items = listish.items;
+  }
+}
+
+export {Game, ItemList}
