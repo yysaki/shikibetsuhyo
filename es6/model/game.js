@@ -20,6 +20,12 @@ class Item {
     this.buy = itemish.buy;
     this.sell = itemish.sell;
   }
+
+  equals(that) {
+    return this.name === that.name
+      && this.buy === that.buy
+      && this.sell === that.sell;
+  }
 }
 
 export {Game, ItemList, Item}
