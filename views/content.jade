@@ -20,13 +20,9 @@ html(lang="ja")
                   a(href="./##{navbarList.type}" class=activeClass)= navbarList.name
         div(data-role="content")
           ul(data-role="listview")
-            - var prevBuy  = -1
-            - var prevSell = -1
             - each item, index0 in list.items
-              if prevBuy != item.buy || prevSell != item.sell
+              if list.isHeadOfGroup(item)
                 li(data-role="list-divider") 買: #{item.buy} / 売: #{item.sell}
-                - prevBuy  = item.buy
-                - prevSell = item.sell
               li(class="item")
                 label
                   input(type="checkbox" data-id=(index0 + 1) data-type=list.type)
