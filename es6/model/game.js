@@ -21,6 +21,10 @@ class ItemList {
     });
     this._heads = Object.keys(hs).map(key => hs[key]);
   }
+
+  isHeadOfGroup(item) {
+    return this._heads.some(i => i.equals(item));
+  }
 }
 
 class Item {
