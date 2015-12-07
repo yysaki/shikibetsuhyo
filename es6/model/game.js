@@ -11,6 +11,15 @@ class ItemList {
     this.type = listish.type;
     this.name = listish.name;
     this.items = listish.items;
+
+    var hs = {};
+    this.items
+    .forEach(item => {
+      var key = JSON.stringify([item.buy, item.sell]);
+      if (!hs[key])
+        hs[key] = item;
+    });
+    this._heads = Object.keys(hs).map(key => hs[key]);
   }
 }
 
