@@ -34,3 +34,14 @@ describe('ItemList', () => {
     expect(hudaList.isHeadOfGroup(huuin)).to.be.false;
   });
 });
+
+describe('Item', () => {
+  it('should equals correctly', () => {
+    var suimin = new Item({name: '睡眠の札', buy: 500, sell: 175});
+    var suimin2 = new Item({name: '睡眠の札', buy: 500, sell: 175});
+    var huuin  = new Item({name: '封印の札', buy: 500, sell: 175});
+
+    expect(suimin.equals(suimin2)).to.be.true;
+    expect(suimin.equals(huuin)).to.be.false;
+  });
+});
