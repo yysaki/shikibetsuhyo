@@ -1,11 +1,14 @@
 import express from 'express';
-import * as shiren4 from './es6/model/shiren4.js';
+import * as shiren4 from './model/shiren4.js';
 
 var app = express();
+var basedir = __dirname
+  .replace(/\\/g, '/')
+  .replace(/\/[^\/]*\/?$/, '');
 
 app.set('port', (process.env.PORT || 5000));
 app.set('view engine', 'jade');
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(basedir + '/public'));
 
 app.get('/', (request, response) => {
   response.render('index');
