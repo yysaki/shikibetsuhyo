@@ -1,8 +1,10 @@
 bower_components/
+js/
 node_modules/
 public/css/
 public/fonts/
 public/js/
+test-js/
 .sv*
 .sw*
 !.gitkeep
