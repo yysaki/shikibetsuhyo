@@ -1,5 +1,5 @@
 import express from 'express';
-import * as shiren4 from './model/shiren4.js';
+import shiren4 from './model/shiren4.js';
 
 var app = express();
 var basedir = __dirname
@@ -21,7 +21,7 @@ app.get('/shiren4/', (request, response) => {
     response.render(
       'content',
       {
-        data: shiren4.data,
+        game: shiren4,
         about: aboutHtml
       });
   });
