@@ -1,5 +1,5 @@
 import request from 'supertest';
-import app from '../app';
+import app from '../js/app';
 import {expect} from 'chai';
 
 describe('root path', () => {

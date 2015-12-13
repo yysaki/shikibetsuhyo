@@ -1,4 +1,4 @@
-import CookieManager from '../es6/cookie-manager.js';
+import CookieManager from '../js/cookie-manager.js';
 import {expect} from 'chai';
 
 describe('CookieManager', () => {
