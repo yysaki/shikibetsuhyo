@@ -1,5 +1,6 @@
 class Game {
   constructor(gameish) {
+    this.id = gameish.id;
     this.title = gameish.title;
     this.shortTitle = gameish.shortTitle;
     this.lists = gameish.lists;

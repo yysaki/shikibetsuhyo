@@ -1,6 +1,7 @@
 import {Game, ItemList, Item} from './game.js'
 
 export default new Game({
+  id: 'shiren4',
   title: '風来のシレン4 神の眼と悪魔のヘソ',
   shortTitle: '風来のシレン4',
   lists: [
