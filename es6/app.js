@@ -1,5 +1,5 @@
 import express from 'express';
-import shiren4 from './model/shiren4.js';
+import gameList from './model/game-list.js';
 
 var app = express();
 var basedir = __dirname
@@ -14,22 +14,26 @@ app.get('/', (request, response) => {
   response.render('index');
 });
 
-app.get('/shiren4/', (request, response) => {
-  var about = 'about/shiren4';
+gameList.forEach(g => {
+  app.get(`/${g.id}/`, (request, response) => {
+    var about = `about/${g.id}`;
 
-  response.render(about, (err, aboutHtml) => {
-    response.render(
-      'content',
-      {
-        game: shiren4,
-        about: aboutHtml
-      });
+    response.render(about, (err, aboutHtml) => {
+      response.render(
+        'content',
+        {
+          game: g,
+          about: aboutHtml
+        });
+    });
   });
-});
+})
 
 module.exports = app;
 
 if (!module.parent) {
+  gameList
+  .forEach(game => {console.log(game.id)});
   app.listen(app.get('port'), () => {
     console.log("Node app is running at localhost:" + app.get('port'))
   });
