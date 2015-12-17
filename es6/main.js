@@ -14,11 +14,12 @@ require('select2');
 require('../bower_components/flat-ui/js/radiocheck.js');
 
 import CookieManager from './cookie-manager.js';
+import gameList from './model/game-list.js';
 
 $(() => {
   var cm = new CookieManager(document);
 
-  if (location.pathname == '/shiren4/') {
+  if (gameList.some(game => location.pathname == `/${game.id}/`)) {
     $(':checkbox').checkboxradio();
 
     $('a.reset-checkboxes').click(() => {
