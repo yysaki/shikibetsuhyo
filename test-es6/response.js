@@ -29,3 +29,17 @@ describe('shiren4 path', () => {
       });
   });
 });
+
+describe('shiren5 path', () => {
+  it('should return 200 with correct title', done => {
+    request(app)
+      .get('/shiren5/')
+      .expect(200)
+      .end((err, res) => {
+        expect(res.text).to.contain('<title>風来のシレン5 フォーチュンタワーと運命のダイス - 不思議のダンジョン 値段識別表</title>');
+
+        if (err) return done(err);
+        done();
+      });
+  });
+});
