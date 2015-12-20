@@ -32,8 +32,6 @@ gameList.forEach(g => {
 module.exports = app;
 
 if (!module.parent) {
-  gameList
-  .forEach(game => {console.log(game.id)});
   app.listen(app.get('port'), () => {
     console.log("Node app is running at localhost:" + app.get('port'))
   });
