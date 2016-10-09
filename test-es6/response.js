@@ -16,6 +16,20 @@ describe('root path', () => {
   });
 });
 
+describe('shiren path', () => {
+  it('should return 200 with correct title', done => {
+    request(app)
+      .get('/shiren/')
+      .expect(200)
+      .end((err, res) => {
+        expect(res.text).to.contain('<title>不思議のダンジョン2 風来のシレン - 不思議のダンジョン 値段識別表</title>');
+
+        if (err) return done(err);
+        done();
+      });
+  });
+});
+
 describe('shiren4 path', () => {
   it('should return 200 with correct title', done => {
     request(app)
