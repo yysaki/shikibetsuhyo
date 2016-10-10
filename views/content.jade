@@ -22,8 +22,8 @@ html(lang="ja")
           div(data-role="navbar")
             ul
               - each navbarList in game.lists
-                - var tabCount = (game.lists.length == 6) ? "six-tab" : ""
-                li(class="#{tabCount}")
+                - var listCount = (game.lists.length == 6) ? "six-lists" : ""
+                li(class="#{listCount}")
                   - var activeClass = (list.type == navbarList.type) ? ["ui-btn-active", "ui-state-persist"] : ""
                   a(href="./##{navbarList.type}" class=activeClass)= navbarList.name
         div(data-role="content")
