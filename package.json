@@ -50,11 +50,6 @@
     "parcelify": "^1.1.1",
     "watchify": "^3.2.0"
   },
-  "devDependencies": {
-    "chai": "^3.4.1",
-    "mocha": "^2.3.3",
-    "supertest": "^1.1.0"
-  },
   "scripts": {
     "build": "babel es6 -d js && browserify -t debowerify js/main.js -o public/js/bundle.js -p [ parcelify -o public/css/bundle.css -t less-css-stream -d . ]",
     "init": "bower install && cp -rf bower_components/flat-ui/fonts public/",
