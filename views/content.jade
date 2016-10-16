@@ -30,7 +30,7 @@ html(lang="ja")
           ul(data-role="listview")
             - each item, index0 in list.items
               if list.isHeadOfGroup(item)
-                li(data-role="list-divider") 買: #{item.buy} / 売: #{item.sell}
+                li(data-role="list-divider") 買: #{item.displayBuy()} / 売: #{item.sell}
               li(class="item")
                 label
                   input(type="checkbox" data-id=(index0 + 1) data-type=list.type)
