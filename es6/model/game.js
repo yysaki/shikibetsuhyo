@@ -40,6 +40,10 @@ class Item {
       && this.buy === that.buy
       && this.sell === that.sell;
   }
+
+  displayBuy() {
+    return (this.buy >= 0) ? String(this.buy) : "-";
+  }
 }
 
 export {Game, ItemList, Item}
