@@ -44,6 +44,10 @@ class Item {
   displayBuy() {
     return (this.buy >= 0) ? String(this.buy) : "-";
   }
+
+  displaySell() {
+    return (this.sell >= 0) ? String(this.sell) : "-";
+  }
 }
 
 export {Game, ItemList, Item}
