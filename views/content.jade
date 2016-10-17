@@ -42,4 +42,22 @@ html(lang="ja")
           a(href="./#about" class=footerButton class="footer-button-right ui-icon-info" data-transition="pop") About
 
     div(data-role="page" data-dialog="true" id="about")
-      | !{about}
+      div(data-role="header")
+        h1 About
+      div(data-role="content")
+        p
+          | このサイトは
+          a(href=game.developerUrl)= game.developerName
+          | 様が発売した
+          a(href=game.gameUrl)= game.title
+          | にて識別済みアイテムを記録するためのチェックリストです。
+        p
+          | スマートフォンでの使用を想定しており、チェックした情報はCookieに保存されます。
+          | 新しくプレイし直す時は「Clear」から情報をリセットして下さい。
+        p
+          | このサイトでは未識別で登場しうる全てのアイテムをリストアップしています。「もっと不思議のダンジョン」のプレイにお役立て頂ければと思います。
+        p
+          | 参考にさせていただいたサイト:
+          a(href=game.referenceUrl)= game.referenceName
+        p
+          a(href="/") トップに戻る
