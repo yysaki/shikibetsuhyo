@@ -4,6 +4,11 @@ export default new Game({
   id: 'shiren2',
   title: '風来のシレン2 ～鬼襲来!シレン城!～',
   shortTitle: '風来のシレン2',
+  gameUrl: 'http://www.spike-chunsoft.co.jp/games/shiren2/',
+  developerName: 'スパイク・チュンソフト',
+  developerUrl: 'http://www.spike-chunsoft.co.jp/',
+  referenceName: '風来のシレン2 鬼襲来！シレン城！ 攻略Wiki',
+  referenceUrl: 'http://shiren2.lsx3.net/',
   lists: [
     new ItemList({
       type: 'udewa',
