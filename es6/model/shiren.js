@@ -4,6 +4,11 @@ export default new Game({
   id: 'shiren',
   title: '不思議のダンジョン2 風来のシレン',
   shortTitle: '風来のシレン',
+  gameUrl: 'https://www.nintendo.co.jp/wii/vc/vc_sr/',
+  developerName: 'スパイク・チュンソフト',
+  developerUrl: 'http://www.spike-chunsoft.co.jp/',
+  referenceName: 'SFCシレンwiki',
+  referenceUrl: 'http://twist.jpn.org/sfcsiren/',
   lists: [
     new ItemList({
       type: 'udewa',
