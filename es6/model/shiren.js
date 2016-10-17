@@ -119,8 +119,8 @@ export default new Game({
         new Item({name: '場所替えの杖',       buy: 700,  sell: 350}),
         new Item({name: '痛み分けの杖',       buy: 1000, sell: 500}),
         new Item({name: 'かなしばりの杖',     buy: 1000, sell: 500}),
-        new Item({name: '身がわりの杖',       buy: 1000, sell: 500}),
         new Item({name: '封印の杖    ',       buy: 1000, sell: 500}),
+        new Item({name: '身がわりの杖',       buy: 1000, sell: 500}),
         new Item({name: 'ブフーの杖',         buy: 2000, sell: 500}),
       ]
     }),
