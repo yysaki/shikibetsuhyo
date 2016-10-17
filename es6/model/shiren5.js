@@ -4,6 +4,11 @@ export default new Game({
   id: 'shiren5',
   title: '風来のシレン5 フォーチュンタワーと運命のダイス',
   shortTitle: '風来のシレン5',
+  gameUrl: 'http://www.spike-chunsoft.co.jp/shiren5plus/index.php',
+  developerName: 'スパイク・チュンソフト',
+  developerUrl: 'http://www.spike-chunsoft.co.jp/shiren5plus/index.php',
+  referenceName: '風来のシレン５ フォーチュンタワーと運命のダイス　Wiki',
+  referenceUrl: 'http://seesaawiki.jp/w/shiren5/',
   lists: [
     new ItemList({
       type: 'udewa',
