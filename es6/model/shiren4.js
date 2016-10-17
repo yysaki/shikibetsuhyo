@@ -4,6 +4,11 @@ export default new Game({
   id: 'shiren4',
   title: '風来のシレン4 神の眼と悪魔のヘソ',
   shortTitle: '風来のシレン4',
+  gameUrl: 'http://www.spike-chunsoft.co.jp/games/shiren4/',
+  developerName: 'スパイク・チュンソフト',
+  developerUrl: 'http://www.spike-chunsoft.co.jp/',
+  referenceName: '不思議のダンジョン 風来のシレン4 神の眼と悪魔のヘソ　Wiki',
+  referenceUrl: 'http://seesaawiki.jp/shiren_4/',
   lists: [
     new ItemList({
       type: 'udewa',
