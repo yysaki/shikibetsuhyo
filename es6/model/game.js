@@ -3,6 +3,11 @@ class Game {
     this.id = gameish.id;
     this.title = gameish.title;
     this.shortTitle = gameish.shortTitle;
+    this.gameUrl = gameish.gameUrl;
+    this.developerName = gameish.developerName;
+    this.developerUrl = gameish.developerUrl;
+    this.referenceName = gameish.referenceName;
+    this.referenceUrl = gameish.referenceUrl;
     this.lists = gameish.lists;
   }
 }
