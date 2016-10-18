@@ -47,9 +47,9 @@ html(lang="ja")
       div(data-role="content")
         p
           | このサイトは
-          a(href=game.developerUrl)= game.developerName
+          a(href=game.developerUrl target="_blank")= game.developerName
           | 様が発売した
-          a(href=game.gameUrl)= game.title
+          a(href=game.gameUrl target="_blank")= game.title
           | にて識別済みアイテムを記録するためのチェックリストです。
         p
           | スマートフォンでの使用を想定しており、チェックした情報はCookieに保存されます。
@@ -58,6 +58,6 @@ html(lang="ja")
           | このサイトでは未識別で登場しうる全てのアイテムをリストアップしています。「もっと不思議のダンジョン」のプレイにお役立て頂ければと思います。
         p
           | 参考にさせていただいたサイト:
-          a(href=game.referenceUrl)= game.referenceName
+          a(href=game.referenceUrl target="_blank")= game.referenceName
         p
           a(href="/") トップに戻る
