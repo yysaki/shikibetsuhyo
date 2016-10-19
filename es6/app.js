@@ -16,16 +16,7 @@ app.get('/', (request, response) => {
 
 gameList.forEach(g => {
   app.get(`/${g.id}/`, (request, response) => {
-    var about = `about/${g.id}`;
-
-    response.render(about, (err, aboutHtml) => {
-      response.render(
-        'content',
-        {
-          game: g,
-          about: aboutHtml
-        });
-    });
+    response.render('content', {game: g});
   });
 })
 
