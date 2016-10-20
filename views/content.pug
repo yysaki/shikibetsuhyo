@@ -23,9 +23,9 @@ html(lang="ja")
             ul
               each navbarList in game.lists
                 - var listCount = (game.lists.length == 6) ? "six-lists" : ""
-                li(class="#{listCount}")
+                li(class=listCount)
                   - var activeClass = (list.type == navbarList.type) ? ["ui-btn-active", "ui-state-persist"] : ""
-                  a(href="./##{navbarList.type}" class=activeClass)= navbarList.name
+                  a(href=`./#${navbarList.type}` class=activeClass)= navbarList.name
         div(data-role="content")
           ul(data-role="listview")
             each item, index0 in list.items
