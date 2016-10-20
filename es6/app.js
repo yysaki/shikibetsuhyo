@@ -7,7 +7,7 @@ var basedir = __dirname
   .replace(/\/[^\/]*\/?$/, '');
 
 app.set('port', (process.env.PORT || 5000));
-app.set('view engine', 'jade');
+app.set('view engine', 'pug');
 app.use(express.static(basedir + '/public'));
 
 app.get('/', (request, response) => {
