@@ -16,19 +16,19 @@ html(lang="ja")
     script(src="/js/bundle.js", charset="UTF-8")
 
   body
-    - each list in game.lists
+    each list in game.lists
       div(data-role="page" id=list.type)
         div(data-role="header" data-position="fixed")
           div(data-role="navbar")
             ul
-              - each navbarList in game.lists
+              each navbarList in game.lists
                 - var listCount = (game.lists.length == 6) ? "six-lists" : ""
                 li(class="#{listCount}")
                   - var activeClass = (list.type == navbarList.type) ? ["ui-btn-active", "ui-state-persist"] : ""
                   a(href="./##{navbarList.type}" class=activeClass)= navbarList.name
         div(data-role="content")
           ul(data-role="listview")
-            - each item, index0 in list.items
+            each item, index0 in list.items
               if list.isHeadOfGroup(item)
                 li(data-role="list-divider") 買: #{item.displayBuy()} / 売: #{item.displaySell()}
               li(class="item")
