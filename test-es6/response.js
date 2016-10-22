@@ -44,6 +44,20 @@ describe('shiren2 path', () => {
   });
 });
 
+describe('shiren3 path', () => {
+  it('should return 200 with correct title', done => {
+    request(app)
+      .get('/shiren3/')
+      .expect(200)
+      .end((err, res) => {
+        expect(res.text).to.contain('<title>風来のシレン3 からくり屋敷の眠り姫 - 不思議のダンジョン 値段識別表</title>');
+
+        if (err) return done(err);
+        done();
+      });
+  });
+});
+
 describe('shiren4 path', () => {
   it('should return 200 with correct title', done => {
     request(app)
