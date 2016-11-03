@@ -1,3 +1,4 @@
+// require libraries for browserify-shim
 require('jquery');
 require('jquery-mobile');
 
