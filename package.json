@@ -16,15 +16,6 @@
   ],
   "browserify-shim": {
     "jquery": "$",
-    "jquery-ui": {
-      "depends": "jquery:$"
-    },
-    "jquery-ui-touch-punch": {
-      "depends": "jquery:$"
-    },
-    "jquery.cookie": {
-      "depends": "jquery:$"
-    },
     "jquery-mobile": {
       "depends": "jquery:$"
     }
