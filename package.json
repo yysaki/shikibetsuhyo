@@ -33,7 +33,7 @@
     "browserify": "^16.2.2",
     "browserify-shim": "^3.8.12",
     "chai": "^4.1.2",
-    "clean-css": "^4.1.11",
+    "clean-css-cli": "^4.1.11",
     "express": "^4.14.0",
     "jquery": "^2.2.4",
     "jquery-mobile-babel-safe": "^1.4.5-1",
@@ -46,7 +46,7 @@
     "watchify": "^3.7.0"
   },
   "scripts": {
-    "build": "babel es6 -d js && browserify js/main.js -o public/js/bundle.js -p [ parcelify -o public/css/bundle.css -t less-css-stream -d . ] && uglifyjs public/js/bundle.js -c -o public/js/bundle.min.js --source-map public/js/bundle.js.map && cleancss public/css/bundle.css -o public/css/bundle.min.css",
+    "build": "babel es6 -d js && browserify js/main.js -o public/js/bundle.js -p [ parcelify -o public/css/bundle.css -t less-css-stream -d . ] && uglifyjs public/js/bundle.js -c -o public/js/bundle.min.js --source-map && cleancss public/css/bundle.css -o public/css/bundle.min.css",
     "postinstall": "npm run build",
     "start": "node js/app.js",
     "test": "babel es6 -d js && babel test-es6 -d test-js && mocha test-js/**/*.js",
