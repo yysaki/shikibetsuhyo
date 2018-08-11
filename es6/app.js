@@ -14,6 +14,7 @@ app.get('/', (request, response) => {
 
 gameList.default.forEach(g => {
   app.get(`/${g.id}/`, (request, response) => {
+    response.set('Cache-Control', 'public, max-age=300, s-maxage=600');
     response.render('content', {game: g});
   });
 })
