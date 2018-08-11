@@ -1,4 +1,7 @@
 js/
+functions/index.js
+functions/model/
+functions/views/
 node_modules/
 public/css/
 public/fonts/
