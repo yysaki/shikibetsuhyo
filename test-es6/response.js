@@ -1,10 +1,10 @@
 import request from 'supertest';
-import app from '../js/app';
+import {raw_app} from '../js/app';
 import {expect} from 'chai';
 
 describe('root path', () => {
   it('should return 200 with correct title', done => {
-    request(app)
+    request(raw_app)
       .get('/')
       .expect(200)
       .end((err, res) => {
@@ -18,7 +18,7 @@ describe('root path', () => {
 
 describe('shiren path', () => {
   it('should return 200 with correct title', done => {
-    request(app)
+    request(raw_app)
       .get('/shiren/')
       .expect(200)
       .end((err, res) => {
@@ -32,7 +32,7 @@ describe('shiren path', () => {
 
 describe('shiren2 path', () => {
   it('should return 200 with correct title', done => {
-    request(app)
+    request(raw_app)
       .get('/shiren2/')
       .expect(200)
       .end((err, res) => {
@@ -46,7 +46,7 @@ describe('shiren2 path', () => {
 
 describe('shiren3 path', () => {
   it('should return 200 with correct title', done => {
-    request(app)
+    request(raw_app)
       .get('/shiren3/')
       .expect(200)
       .end((err, res) => {
@@ -60,7 +60,7 @@ describe('shiren3 path', () => {
 
 describe('shiren4 path', () => {
   it('should return 200 with correct title', done => {
-    request(app)
+    request(raw_app)
       .get('/shiren4/')
       .expect(200)
       .end((err, res) => {
@@ -74,7 +74,7 @@ describe('shiren4 path', () => {
 
 describe('shiren5 path', () => {
   it('should return 200 with correct title', done => {
-    request(app)
+    request(raw_app)
       .get('/shiren5/')
       .expect(200)
       .end((err, res) => {

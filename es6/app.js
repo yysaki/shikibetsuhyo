@@ -18,4 +18,5 @@ gameList.default.forEach(g => {
   });
 })
 
+exports.raw_app = app;
 exports.app = functions.https.onRequest(app);
