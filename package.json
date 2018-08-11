@@ -35,6 +35,8 @@
     "chai": "^4.1.2",
     "clean-css-cli": "^4.1.11",
     "express": "^4.14.0",
+    "firebase-admin": "^6.0.0",
+    "firebase-functions": "^2.0.4",
     "jquery": "^2.2.4",
     "jquery-mobile-babel-safe": "^1.4.5-1",
     "less-css-stream": "^1.0.0",
@@ -47,6 +49,7 @@
   },
   "scripts": {
     "build": "babel es6 -d js && browserify js/main.js -o public/js/bundle.js -p [ parcelify -o public/css/bundle.css -t less-css-stream -d . ] && uglifyjs public/js/bundle.js -c -o public/js/bundle.min.js --source-map && cleancss public/css/bundle.css -o public/css/bundle.min.css",
+    "postbuild": "cp -r js/app.js functions/index.js && cp -r views functions && cp -r js/model functions/",
     "postinstall": "npm run build",
     "start": "node js/app.js",
     "test": "babel es6 -d js && babel test-es6 -d test-js && mocha test-js/**/*.js",
