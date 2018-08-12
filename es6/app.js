@@ -9,6 +9,7 @@ app.set('view engine', 'pug');
 app.set('views', './views');
 
 app.get('/', (request, response) => {
+  response.set('Cache-Control', 'public, max-age=300, s-maxage=600');
   response.render('index');
 });
 
