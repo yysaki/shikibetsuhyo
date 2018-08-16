@@ -3,5 +3,5 @@
 
 [![Build Status](https://secure.travis-ci.org/yysaki/shikibetsuhyo.png?branch=master)](http://travis-ci.org/yysaki/shikibetsuhyo)
 
-[http://shikibetsuhyo.herokuapp.com](http://shikibetsuhyo.herokuapp.com)
+[https://shikibetsuhyo.yysaki.com](https://shikibetsuhyo.yysaki.com)
 
