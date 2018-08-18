@@ -1,6 +1,9 @@
 language: node_js
 node_js:
   - "6.9.1"
+before_install:
+  - 'npm i -g eslint'
+  - 'npm i -g eslint-plugin-promise'
 deploy:
   provider: firebase
   skip_cleanup: true
