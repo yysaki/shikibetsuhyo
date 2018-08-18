@@ -49,6 +49,7 @@
   },
   "scripts": {
     "build": "babel es6 -d js && browserify js/main.js -o public/js/bundle.js -p [ parcelify -o public/css/bundle.css -t less-css-stream -d . ] && cd public/js/ && uglifyjs bundle.js -c -o bundle.min.js --source-map \"url='bundle.min.js.map'\" && cd ../css && cleancss bundle.css -o bundle.min.css --source-map",
+    "lint": "eslint js/",
     "postbuild": "cp -r js/app.js functions/index.js && cp -r views functions && cp -r js/model functions/",
     "postinstall": "npm run build",
     "start": "node js/app.js",
@@ -62,5 +63,9 @@
   "bugs": {
     "url": "https://github.com/yysaki/shikibetsuhyo/issues"
   },
-  "homepage": "https://github.com/yysaki/shikibetsuhyo"
+  "homepage": "https://github.com/yysaki/shikibetsuhyo",
+  "devDependencies": {
+    "eslint": "^5.4.0",
+    "eslint-plugin-promise": "^4.0.0"
+  }
 }
