@@ -52,8 +52,9 @@
     "lint": "eslint js/",
     "postbuild": "cp -r js/app.js functions/index.js && cp -r views functions && cp -r js/model functions/",
     "postinstall": "npm run build",
+    "pretest": "babel es6 -d js && babel test-es6 -d test-js",
     "start": "node js/app.js",
-    "test": "babel es6 -d js && babel test-es6 -d test-js && mocha test-js/**/*.js && npm run lint",
+    "test": "npm run pretest && mocha test-js/**/*.js && npm run lint",
     "watch": "watchify -t babelify es6/main.js -o public/js/bundle.js -p [ parcelify -wo public/css/bundle.css -t less-css-stream -d . ] --debug --verbose"
   },
   "repository": {
