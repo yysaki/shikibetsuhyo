@@ -45,7 +45,7 @@ export default class CookieManager {
       var data = {};
       for (var i = 1; i <= len; i++)
       {
-        data[i] = (bits % 2 == 1);
+        data[i] = (bits % 2 === 1);
         bits = Math.floor(bits / 2);
       }
 
@@ -82,10 +82,10 @@ export default class CookieManager {
 
     return fromCookie.every(tuple =>
       Array.isArray(tuple)
-      && tuple.length == 3
-      && typeof tuple[0] == 'string'
-      && typeof tuple[1] == 'number'
-      && typeof tuple[2] == 'string'
+      && tuple.length === 3
+      && typeof tuple[0] === 'string'
+      && typeof tuple[1] === 'number'
+      && typeof tuple[2] === 'string'
       && parseInt(tuple[2], 36) < Math.pow(2, tuple[1] + 1)
     );
   }
@@ -105,9 +105,9 @@ export default class CookieManager {
         var str = elem.split('=');
         return {key: str[0], value: str[1]};
       })
-      .filter((cookie) => cookie.key == 'data');
+      .filter((cookie) => cookie.key === 'data');
 
-    if (!targetCookie.some((cookie) => cookie.key == 'data')) return;
+    if (!targetCookie.some((cookie) => cookie.key === 'data')) return;
 
     return decodeURIComponent(targetCookie[0].value);
   }

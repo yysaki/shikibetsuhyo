@@ -8,7 +8,7 @@ import gameList from './model/game-list.js';
 $(() => {
   var cm = new CookieManager(document);
 
-  if (gameList.some(game => location.pathname == `/${game.id}/`)) {
+  if (gameList.some(game => location.pathname === `/${game.id}/`)) {
     $(':checkbox').checkboxradio();
 
     $('a.reset-checkboxes').click(() => {
