@@ -28,7 +28,7 @@ var rawJson = '[["udewa",25,"jz6rj"],["kusa",29,"0"],["makimono",37,"l1nv92i"],[
   it('should _isValid correctly', () => {
     var cm = new CookieManager();
 
-    expect(cm._isValid(undefined)).to.be.false;
+    expect(cm._isValid(null)).to.be.false;
     expect(cm._isValid(rawJson)).to.be.true;
   });
 
