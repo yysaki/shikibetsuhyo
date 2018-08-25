@@ -75,7 +75,7 @@ export default class CookieManager {
   }
 
   _isValid(rawJson) {
-    if (typeof rawJson === "undefined") return false;
+    if (rawJson === null) return false;
 
     var fromCookie = JSON.parse(rawJson);
     if (!Array.isArray(fromCookie)) return false;
@@ -96,7 +96,7 @@ export default class CookieManager {
   }
 
   _getCookie() {
-    if (!this.doc.cookie) return;
+    if (!this.doc.cookie) return null;
 
     var targetCookie =
       this.doc.cookie
@@ -107,7 +107,7 @@ export default class CookieManager {
       })
       .filter((cookie) => cookie.key === 'data');
 
-    if (!targetCookie.some((cookie) => cookie.key === 'data')) return;
+    if (!targetCookie.some((cookie) => cookie.key === 'data')) return null;
 
     return decodeURIComponent(targetCookie[0].value);
   }
