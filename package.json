@@ -67,6 +67,9 @@
   },
   "homepage": "https://github.com/yysaki/shikibetsuhyo",
   "devDependencies": {
+    "@babel/core": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "babel-loader": "^8.0.2",
     "eslint": "^5.4.0",
     "eslint-plugin-promise": "^4.0.0",
     "webpack": "^4.19.1",
