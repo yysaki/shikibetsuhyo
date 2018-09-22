@@ -1,6 +1,5 @@
 // require libraries for browserify-shim
 require('jquery');
-require('jquery-mobile');
 
 import CookieManager from './cookie-manager.js';
 import gameList from './model/game-list.js';

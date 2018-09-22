@@ -2,24 +2,13 @@
   "name": "shikibetsuhyo",
   "version": "0.1.0",
   "license": "MIT",
-  "browser": {
-    "jquery": "./node_modules/jquery/dist/jquery.js",
-    "jquery-mobile": "./node_modules/jquery-mobile-babel-safe/js/jquery.mobile-1.4.5.js"
-  },
   "engines": {
     "node": ">=6.9.1",
     "npm": ">=3.10.8"
   },
   "style": [
-    "less/style.less",
-    "node_modules/jquery-mobile-babel-safe/css/jquery.mobile-1.4.5.min.css"
+    "less/style.less"
   ],
-  "browserify-shim": {
-    "jquery": "$",
-    "jquery-mobile": {
-      "depends": "jquery:$"
-    }
-  },
   "browserify": {
     "transform": [
       "browserify-shim"
@@ -38,7 +27,6 @@
     "firebase-admin": "^6.0.0",
     "firebase-functions": "^2.0.4",
     "jquery": "^2.2.4",
-    "jquery-mobile-babel-safe": "^1.4.5-1",
     "less-css-stream": "^1.0.0",
     "mocha": "^5.2.0",
     "parcelify": "^2.2.0",
@@ -72,7 +60,6 @@
     "babel-loader": "^8.0.2",
     "eslint": "^5.4.0",
     "eslint-plugin-promise": "^4.0.0",
-    "jquery-mobile": "^1.5.0-alpha.1",
     "webpack": "^4.19.1",
     "webpack-cli": "^3.1.0"
   }
