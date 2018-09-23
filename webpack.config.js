@@ -1,7 +1,9 @@
 const path = require('path');
+const webpack = require('webpack');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 const clientConfig = {
-  target: 'node',
+  mode: 'development',
   entry: './src/main.js',
   output: {
     filename: 'bundle.js',
@@ -9,6 +11,10 @@ const clientConfig = {
   },
   module: {
     rules: [
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader'
+      },
       {
         test: /\/.js$/,
         exclude: /(node_modules|bower_components)/,
@@ -27,7 +33,10 @@ const clientConfig = {
         ]
       }
     ]
-  }
+  },
+  plugins: [
+    new VueLoaderPlugin()
+  ]
 };
 
 module.exports = [ clientConfig ];
