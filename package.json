@@ -2,13 +2,24 @@
   "name": "shikibetsuhyo",
   "version": "0.1.0",
   "license": "MIT",
+  "browser": {
+    "jquery": "./node_modules/jquery/dist/jquery.js",
+    "jquery-mobile": "./node_modules/jquery-mobile-babel-safe/js/jquery.mobile-1.4.5.js"
+  },
   "engines": {
     "node": ">=6.9.1",
     "npm": ">=3.10.8"
   },
   "style": [
-    "less/style.less"
+    "less/style.less",
+    "node_modules/jquery-mobile-babel-safe/css/jquery.mobile-1.4.5.min.css"
   ],
+  "browserify-shim": {
+    "jquery": "$",
+    "jquery-mobile": {
+      "depends": "jquery:$"
+    }
+  },
   "browserify": {
     "transform": [
       "browserify-shim"
@@ -27,6 +38,7 @@
     "firebase-admin": "^6.0.0",
     "firebase-functions": "^2.0.4",
     "jquery": "^2.2.4",
+    "jquery-mobile-babel-safe": "^1.4.5-1",
     "less-css-stream": "^1.0.0",
     "mocha": "^5.2.0",
     "parcelify": "^2.2.0",
@@ -36,7 +48,7 @@
     "watchify": "^3.7.0"
   },
   "scripts": {
-    "build": "webpack",
+    "build": "babel es6 -d js && browserify js/main.js -o public/js/bundle.js -p [ parcelify -o public/css/bundle.css -t less-css-stream -d . ] && npm run minify",
     "minify": "cd public/js/ && uglifyjs bundle.js -c -o bundle.min.js --source-map \"url='bundle.min.js.map'\" && cd ../css && cleancss bundle.css -o bundle.min.css --source-map",
     "lint": "eslint js/",
     "postbuild": "cp -r js/app.js functions/index.js && cp -r views functions && cp -r js/model functions/",
@@ -55,15 +67,7 @@
   },
   "homepage": "https://github.com/yysaki/shikibetsuhyo",
   "devDependencies": {
-    "@babel/core": "^7.1.0",
-    "@babel/preset-env": "^7.1.0",
-    "babel-loader": "^8.0.2",
-    "babel-preset-stage-2": "^6.24.1",
     "eslint": "^5.4.0",
-    "eslint-plugin-promise": "^4.0.0",
-    "vue-loader": "^15.4.2",
-    "vue-template-compiler": "^2.5.17",
-    "webpack": "^4.19.1",
-    "webpack-cli": "^3.1.0"
+    "eslint-plugin-promise": "^4.0.0"
   }
 }

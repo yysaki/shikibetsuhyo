@@ -1,9 +1,9 @@
 // require libraries for browserify-shim
-// require('jquery');
+require('jquery');
+require('jquery-mobile');
 
-import HelloVue from './HelloVue.vue';
-// import CookieManager from './cookie-manager.js';
-// import gameList from './model/game-list.js';
+import CookieManager from './cookie-manager.js';
+import gameList from './model/game-list.js';
 
 $(() => {
   var cm = new CookieManager(document);
@@ -30,11 +30,6 @@ var clearCheckboxes = cm => {
 
   cm.saveToCookie();
 };
-
-new Vue({
-  el: '#app',
-  render: h => h(HelloVue)
-})
 
 // __END__  "{{{1
 // vim: expandtab softtabstop=2 shiftwidth=2
