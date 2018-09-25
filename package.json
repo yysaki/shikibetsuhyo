@@ -41,6 +41,7 @@
     "jquery-mobile-babel-safe": "^1.4.5-1",
     "less-css-stream": "^1.0.0",
     "mocha": "^5.2.0",
+    "nuxt": "^2.0.0",
     "parcelify": "^2.2.0",
     "pug": "^2.0.0-beta6",
     "supertest": "^3.1.0",
@@ -48,6 +49,7 @@
     "watchify": "^3.7.0"
   },
   "scripts": {
+    "dev": "nuxt",
     "build": "babel es6 -d js && browserify js/main.js -o public/js/bundle.js -p [ parcelify -o public/css/bundle.css -t less-css-stream -d . ] && npm run minify",
     "minify": "cd public/js/ && uglifyjs bundle.js -c -o bundle.min.js --source-map \"url='bundle.min.js.map'\" && cd ../css && cleancss bundle.css -o bundle.min.css --source-map",
     "lint": "eslint js/",
