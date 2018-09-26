@@ -7,7 +7,7 @@
             <template v-for="(game, index) in games">
               <v-list-tile
                 :key="game.id"
-                to="/foo"
+                :to="`/${game.id}/`"
               >
                 {{ game.title }}
               </v-list-tile>
