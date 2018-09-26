@@ -1,10 +1,25 @@
 <template>
   <div id="index">
-    <ul>
-      <li v-for="game in games">
-        {{ game.title }}
-      </li>
-    </ul>
+    <v-layout row>
+      <v-flex xs12 sm12>
+        <v-card>
+          <v-list>
+            <template v-for="(game, index) in games">
+              <v-list-tile
+                :key="game.id"
+                to="/foo"
+              >
+                {{ game.title }}
+              </v-list-tile>
+              <v-divider
+                v-if="index + 1 < games.length"
+                :key="index"
+              />
+            </template>
+          </v-list>
+        </v-card>
+      </v-flex>
+    </v-layout>
   </div>
 </template>
 <script>
@@ -18,4 +33,3 @@ export default {
   }
 };
 </script>
-
