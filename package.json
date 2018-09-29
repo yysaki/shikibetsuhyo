@@ -58,7 +58,7 @@
     "postinstall": "npm run build",
     "pretest": "babel es6 -d js && babel test-es6 -d test-js",
     "start": "node js/app.js",
-    "test": "npm run pretest && mocha test-js/**/*.js && npm run lint",
+    "test": "npm run pretest && mocha test-js/**/*.js && npm run lint && npm run test-ava",
     "test-ava": "ava --verbose",
     "watch": "watchify -t babelify es6/main.js -o public/js/bundle.js -p [ parcelify -wo public/css/bundle.css -t less-css-stream -d . ] --debug --verbose"
   },
