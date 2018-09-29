@@ -19,9 +19,9 @@ test.before('Init Nuxt.js', async t => {
 test('Route / exits and render HTML', async t => {
   let context = {}
   const { html } = await nuxt.renderRoute('/', context);
-  t.true(html.includes('<h1 class="red">Hello world!</h1>'));
+  t.true(html.includes('不思議のダンジョン 値段識別表'));
 });
 
-nuxt.after('Closing server', t => {
+test.after('Closing server', t => {
   nuxt.close();
 })
