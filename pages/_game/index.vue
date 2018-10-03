@@ -32,7 +32,7 @@ export default {
   data: function () {
     return {
       g: null,
-      title: "title"
+      title: ""
     }
   },
   asyncData: function ({ params }) {
