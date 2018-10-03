@@ -4,14 +4,14 @@
       <v-flex xs12 sm12>
         <v-card>
           <v-list>
-            <template v-for="(item, index) in g.lists[0].items">
+            <template v-for="(item, index) in gameObject.lists[0].items">
               <v-list-tile
                 :key="item.id"
               >
                 {{ `${item.name} - buy: ${item.buy} - sell: ${item.sell}` }}
               </v-list-tile>
               <v-divider
-                v-if="index + 1 < g.lists[0].items.length"
+                v-if="index + 1 < gameObject.lists[0].items.length"
                 :key="index"
               />
             </template>
@@ -31,13 +31,13 @@ export default {
   },
   data: function () {
     return {
-      g: null,
+      gameObject: null,
       title: ""
     }
   },
   asyncData: function ({ params }) {
     return {
-      g: games.filter(game => game.id === params.game)[0],
+      gameObject: games.filter(game => game.id === params.game)[0],
       title: games.filter(game => game.id === params.game)[0].title,
     }
   },
