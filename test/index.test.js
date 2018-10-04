@@ -56,11 +56,11 @@ test('Route /shiren/ exits and render tab header', async t => {
   let context = {}
   const { html } = await nuxt.renderRoute('/shiren/', context);
 
-  t.true(html.includes('腕輪',));
-  t.true(html.includes('草',));
-  t.true(html.includes('巻物',));
-  t.true(html.includes('壺',));
-  t.true(html.includes('杖',));
+  t.true(html.includes('腕輪'));
+  t.true(html.includes('草'));
+  t.true(html.includes('巻物'));
+  t.true(html.includes('壺'));
+  t.true(html.includes('杖'));
 });
 
 test.after('Closing server', t => {
