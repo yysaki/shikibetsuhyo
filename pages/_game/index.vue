@@ -18,14 +18,14 @@
                 {{ list.name }}
               </v-tab>
             </v-tabs>
-            <template v-for="(item, index) in gameObject.lists[0].items">
+            <template v-for="(item, index) in gameObject.lists.filter(x => x.type === selectedType)[0].items">
               <v-list-tile
                 :key="item.id"
               >
                 {{ `${item.name} - buy: ${item.buy} - sell: ${item.sell}` }}
               </v-list-tile>
               <v-divider
-                v-if="index + 1 < gameObject.lists[0].items.length"
+                v-if="index + 1 < gameObject.lists.filter(x => x.type === selectedType)[0].length"
                 :key="index"
               />
             </template>
