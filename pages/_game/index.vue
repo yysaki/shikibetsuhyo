@@ -3,7 +3,20 @@
     <v-layout row>
       <v-flex xs12 sm12>
         <v-card>
-          <v-list>
+          <v-list class="pt-0">
+            <v-tabs
+              color="primary"
+              dark
+              slider-color="yellow"
+              fixed-tabs
+            >
+              <v-tab
+                v-for="list in gameObject.lists"
+                :key="list.type"
+              >
+                {{ list.name }}
+              </v-tab>
+            </v-tabs>
             <template v-for="(item, index) in gameObject.lists[0].items">
               <v-list-tile
                 :key="item.id"
