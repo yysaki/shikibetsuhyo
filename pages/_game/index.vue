@@ -50,9 +50,10 @@ export default {
     }
   },
   asyncData: function ({ params }) {
+    const target = games.filter(game => game.id === params.game)[0];
     return {
-      gameObject: games.filter(game => game.id === params.game)[0],
-      selectedType: games.filter(game => game.id === params.game)[0].lists[0].type
+      gameObject: target,
+      selectedType: target.lists[0].type
     }
   },
   computed: {
