@@ -45,16 +45,19 @@ export default {
   },
   data: function () {
     return {
-      gameObject: null,
-      selectedType: null,
-      title: ""
+      gameObject: games[0],
+      selectedType: null
     }
   },
   asyncData: function ({ params }) {
     return {
       gameObject: games.filter(game => game.id === params.game)[0],
-      title: games.filter(game => game.id === params.game)[0].title,
       selectedType: games.filter(game => game.id === params.game)[0].lists[0].type
+    }
+  },
+  computed: {
+    title: function () {
+      return this.gameObject.title;
     }
   },
   head: function () {
