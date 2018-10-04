@@ -13,6 +13,7 @@
               <v-tab
                 v-for="list in gameObject.lists"
                 :key="list.type"
+                @click="selectedType=list.type"
               >
                 {{ list.name }}
               </v-tab>
@@ -45,6 +46,7 @@ export default {
   data: function () {
     return {
       gameObject: null,
+      selectedType: null,
       title: ""
     }
   },
@@ -52,6 +54,7 @@ export default {
     return {
       gameObject: games.filter(game => game.id === params.game)[0],
       title: games.filter(game => game.id === params.game)[0].title,
+      selectedType: games.filter(game => game.id === params.game)[0].lists[0].type
     }
   },
   head: function () {
