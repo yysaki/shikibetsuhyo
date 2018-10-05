@@ -37,6 +37,7 @@
 </template>
 <script>
 const games = require('~/es6/model/game-list').default;
+const dummyObject = games[0];
 
 export default {
   name: "game",
@@ -45,8 +46,8 @@ export default {
   },
   data: function () {
     return {
-      gameObject: games[0],
-      selectedType: null
+      gameObject: dummyObject,
+      selectedType: dummyObject.lists[0].type
     }
   },
   asyncData: function ({ params }) {
