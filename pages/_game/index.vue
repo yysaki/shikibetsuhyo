@@ -25,7 +25,7 @@
                 {{ `${item.name} - buy: ${item.buy} - sell: ${item.sell}` }}
               </v-list-tile>
               <v-divider
-                v-if="index + 1 < selectedList.length"
+                v-if="index + 1 < selectedList.items.length"
                 :key="index"
               />
             </template>
