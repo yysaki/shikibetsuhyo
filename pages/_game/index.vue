@@ -18,17 +18,25 @@
                 {{ list.name }}
               </v-tab>
             </v-tabs>
-            <template v-for="(item, index) in selectedList.items">
-              <v-list-tile
-                :key="item.id"
-              >
-                {{ `${item.name} - buy: ${item.buy} - sell: ${item.sell}` }}
-              </v-list-tile>
-              <v-divider
-                v-if="index + 1 < selectedList.items.length"
-                :key="index"
-              />
-            </template>
+            <v-list>
+              <template v-for="(item, index) in selectedList.items">
+                <v-subheader
+                  v-if="index === 0 || `${item.buy}:${item.sell}` !== `${selectedList.items[index-1].buy}:${selectedList.items[index-1].sell}`"
+                  :key="`${item.buy}:${item.sell}`"
+                >
+                  {{ `買: ${item.buy} /売: ${item.sell}` }}
+                </v-subheader>
+                <v-list-tile
+                  :key="item.id"
+                >
+                  {{ item.name }}
+                </v-list-tile>
+                <v-divider
+                  v-if="index + 1 < selectedList.items.length"
+                  :key="index"
+                />
+              </template>
+            </v-list>
           </v-list>
         </v-card>
       </v-flex>
