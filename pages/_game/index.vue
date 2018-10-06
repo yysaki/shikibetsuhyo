@@ -29,7 +29,9 @@
                 <v-list-tile
                   :key="item.id"
                 >
-                  {{ item.name }}
+                  <v-checkbox
+                    :label="item.name"
+                  />
                 </v-list-tile>
                 <v-divider
                   v-if="index + 1 < selectedList.items.length"
