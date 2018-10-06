@@ -23,7 +23,7 @@
   </div>
 </template>
 <script>
-const games = require('~/es6/model/game-list').default;
+import games from '~/es6/model/game-list.js';
 export default {
   name: "index",
   data: function () {

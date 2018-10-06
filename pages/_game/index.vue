@@ -36,7 +36,7 @@
   </div>
 </template>
 <script>
-const games = require('~/es6/model/game-list').default;
+import games from '~/es6/model/game-list.js';
 const dummyObject = games[0];
 
 export default {
