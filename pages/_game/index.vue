@@ -1,5 +1,13 @@
 <template>
-  <div id="index">
+  <v-app id="geme">
+    <v-toolbar
+      color="primary"
+      dark
+    >
+      <v-toolbar-title>
+        不思議のダンジョン
+      </v-toolbar-title>
+    </v-toolbar>
     <v-layout row>
       <v-flex xs12 sm12>
         <v-card>
@@ -43,7 +51,7 @@
         </v-card>
       </v-flex>
     </v-layout>
-  </div>
+  </v-app>
 </template>
 <script>
 import games from '~/es6/model/game-list.js';
