@@ -1,5 +1,38 @@
 <template>
   <v-app id="geme">
+    <v-navigation-drawer
+      v-model="drawer"
+      app
+      fixed
+      right
+    >
+      <v-list dense>
+        <v-list-tile>
+          <v-list-tile-action>
+            <v-icon>delete_sweep</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>リストをリセットする</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+        <v-list-tile>
+          <v-list-tile-action>
+            <v-icon>info</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>このゲームについて</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+        <v-list-tile>
+          <v-list-tile-action>
+            <v-icon>home</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>TOPに戻る</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+      </v-list>
+    </v-navigation-drawer>
     <v-toolbar
       color="primary"
       dark
@@ -7,6 +40,10 @@
       <v-toolbar-title>
         不思議のダンジョン
       </v-toolbar-title>
+      <v-spacer/>
+      <v-toolbar-side-icon
+        @click.stop="drawer = !drawer"
+      />
     </v-toolbar>
     <v-layout row>
       <v-flex xs12 sm12>
@@ -72,7 +109,8 @@ export default {
     const target = games.filter(game => game.id === params.game)[0];
     return {
       gameObject: target,
-      selectedType: target.lists[0].type
+      selectedType: target.lists[0].type,
+      drawer: null
     }
   },
   computed: {
