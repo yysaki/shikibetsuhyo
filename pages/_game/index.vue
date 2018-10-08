@@ -76,6 +76,7 @@
                 >
                   <v-checkbox
                     :label="item.name"
+                    v-model="checkData[selectedList.type][index]"
                   />
                 </v-list-tile>
                 <v-divider
@@ -107,9 +108,19 @@ export default {
   },
   asyncData: function ({ params }) {
     const target = games.filter(game => game.id === params.game)[0];
+    var generateCheckData = function (lists) {
+      let ary = {};
+      lists.forEach(list => {
+        const type = list.type;
+        ary[type] = new Array(list.items.length).fill(false);
+      })
+      return ary;
+    };
+
     return {
       gameObject: target,
       selectedType: target.lists[0].type,
+      checkData: generateCheckData(target.lists),
       drawer: null
     }
   },
