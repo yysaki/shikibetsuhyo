@@ -3,7 +3,7 @@ export default class CookieManager {
     this.doc = doc;
   }
 
-  loadFromCookie() {
+  loadFromCookie(isLegacy = true) {
     var rawData = this._getCookie();
     if (!this._isValid(rawData)) return;
 
@@ -19,7 +19,7 @@ export default class CookieManager {
     });
   }
 
-  saveToCookie() {
+  saveToCookie(isLegacy = true) {
     var ary = {};
       $(':checkbox')
       .each((index, val) => {
