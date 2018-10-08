@@ -8,15 +8,19 @@ export default class CookieManager {
     if (!this._isValid(rawData)) return;
 
     var cookieData = this._decode(rawData);
-    Object.keys(cookieData)
-    .forEach((key) => {
-      $(`#${key} :checkbox`)
-      .each((index, elem) =>
-        $(elem)
-        .prop('checked', cookieData[key][$(elem).data('id')])
-        .checkboxradio('refresh')
-      );
-    });
+    if (isLegacy) {
+      Object.keys(cookieData)
+      .forEach((key) => {
+        $(`#${key} :checkbox`)
+        .each((index, elem) =>
+          $(elem)
+          .prop('checked', cookieData[key][$(elem).data('id')])
+          .checkboxradio('refresh')
+        );
+      });
+    } else {
+      return cookieData;
+    }
   }
 
   saveToCookie(isLegacy = true) {
