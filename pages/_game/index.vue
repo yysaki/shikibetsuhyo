@@ -93,6 +93,7 @@
 </template>
 <script>
 import games from '~/es6/model/game-list.js';
+import {loadFromCookie, saveToCookie} from '~/es6/cookie-manager.js';
 const dummyObject = games[0];
 
 export default {
