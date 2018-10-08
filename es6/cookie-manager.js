@@ -23,8 +23,9 @@ export default class CookieManager {
     }
   }
 
-  saveToCookie(isLegacy = true) {
+  saveToCookie(isLegacy = true, cookieData = null) {
     var ary = {};
+    if (isLegacy) {
       $(':checkbox')
       .each((index, val) => {
         var t = $(val).data('type');
@@ -32,6 +33,9 @@ export default class CookieManager {
           ary[t] = {};
         ary[t][$(val).data('id')] = $(val).prop('checked');
       });
+    } else {
+      ary = cookieData;
+    }
 
     this._setCookie(this._encode(ary));
   }
