@@ -76,7 +76,8 @@
                 >
                   <v-checkbox
                     :label="item.name"
-                    v-model="checkData[selectedList.type][index]"
+                    :value="checkData[selectedList.type][index]"
+                    @click.stop="clickOnly(index)"
                   />
                 </v-list-tile>
                 <v-divider
@@ -131,6 +132,12 @@ export default {
     },
     selectedList: function () {
       return this.gameObject.lists.filter(x => x.type === this.selectedType)[0]
+    }
+  },
+  methods: {
+    clickOnly: function (index) {
+      const current = this.checkData[this.selectedType][index];
+      this.checkData[this.selectedType].splice(index, 1, !current);
     }
   },
   head: function () {
