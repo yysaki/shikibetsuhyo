@@ -78,7 +78,7 @@
                   <v-checkbox
                     :label="item.name"
                     :value="checkData[selectedList.type][index]"
-                    @click.stop="clickOnly(index)"
+                    @click.stop="clickWithSave(index)"
                   />
                 </v-list-tile>
                 <v-divider
@@ -136,9 +136,12 @@ export default {
     }
   },
   methods: {
-    clickOnly: function (index) {
+    clickWithSave: function (index) {
       const current = this.checkData[this.selectedType][index];
       this.checkData[this.selectedType].splice(index, 1, !current);
+
+      let cm = new CookieManager(document);
+      cm.saveToCookie(false, this.checkData);
     }
   },
   head: function () {
