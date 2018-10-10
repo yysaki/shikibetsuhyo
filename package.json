@@ -50,7 +50,7 @@
     "watchify": "^3.7.0"
   },
   "scripts": {
-    "dev": "nuxt",
+    "dev": "nuxt --spa",
     "build": "babel es6 -d js && browserify js/main.js -o public/js/bundle.js -p [ parcelify -o public/css/bundle.css -t less-css-stream -d . ] && npm run minify",
     "minify": "cd public/js/ && uglifyjs bundle.js -c -o bundle.min.js --source-map \"url='bundle.min.js.map'\" && cd ../css && cleancss bundle.css -o bundle.min.css --source-map",
     "lint": "eslint js/",
