@@ -110,15 +110,30 @@ export default {
       drawer: null
     }
   },
+  mounted: function () {
+    alert(JSON.stringify(this.checkData['udewa']));
+  },
   asyncData: function ({ params }) {
     const target = games.filter(game => game.id === params.game)[0];
     var generateCheckData = function (lists) {
-      let ary = {};
-      lists.forEach(list => {
-        const type = list.type;
-        ary[type] = new Array(list.items.length).fill(false);
-      })
-      return ary;
+      let cm = new CookieManager(document);
+      let cookieData = cm.loadFromCookie(false);
+      if (cookieData !== null) {
+        let ary = {};
+        Object.keys(cookieData).forEach(function (t) {
+          ary[t] = Object.keys(cookieData[t])
+            .map(function (key1) { return cookieData[t][key1]})
+          });
+        alert(JSON.stringify(ary['udewa']));
+        return ary;
+      } else {
+        let ary = {};
+        lists.forEach(list => {
+          const type = list.type;
+          ary[type] = new Array(list.items.length).fill(false);
+        })
+        return ary;
+      }
     };
 
     return {
