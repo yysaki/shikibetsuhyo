@@ -5,6 +5,7 @@
       app
       fixed
       right
+      temporary
     >
       <v-list dense>
         <v-list-tile>
@@ -105,7 +106,8 @@ export default {
   data: function () {
     return {
       gameObject: dummyObject,
-      selectedType: dummyObject.lists[0].type
+      selectedType: dummyObject.lists[0].type,
+      drawer: null
     }
   },
   asyncData: function ({ params }) {
@@ -122,8 +124,7 @@ export default {
     return {
       gameObject: target,
       selectedType: target.lists[0].type,
-      checkData: generateCheckData(target.lists),
-      drawer: null
+      checkData: generateCheckData(target.lists)
     }
   },
   computed: {
