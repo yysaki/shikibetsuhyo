@@ -110,9 +110,6 @@ export default {
       drawer: null
     }
   },
-  mounted: function () {
-    alert(JSON.stringify(this.checkData['udewa']));
-  },
   asyncData: function ({ params }) {
     const target = games.filter(game => game.id === params.game)[0];
     var generateCheckData = function (lists) {
