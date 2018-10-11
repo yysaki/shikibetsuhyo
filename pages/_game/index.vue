@@ -116,24 +116,21 @@ export default {
   asyncData: function ({ params }) {
     const target = games.filter(game => game.id === params.game)[0];
     var generateCheckData = function (lists) {
-      let cm = new CookieManager(document);
-      let cookieData = cm.loadFromCookie(false);
-      if (cookieData !== null) {
-        let ary = {};
-        Object.keys(cookieData).forEach(function (t) {
-          ary[t] = Object.keys(cookieData[t])
-            .map(function (key1) { return cookieData[t][key1]})
-          });
-        alert(JSON.stringify(ary['udewa']));
-        return ary;
-      } else {
-        let ary = {};
-        lists.forEach(list => {
-          const type = list.type;
-          ary[type] = new Array(list.items.length).fill(false);
-        })
-        return ary;
+      const raw = localStorage.getItem('shikibetsuhyo');
+      if (raw !== undefined && raw !== null) {
+        const xs = JSON.parse(raw);
+        const x = xs[target.id];
+        if (x !== undefined && x !== null) {
+          return x;
+        }
       }
+
+      let ary = {};
+      lists.forEach(list => {
+        const type = list.type;
+        ary[type] = new Array(list.items.length).fill(false);
+      })
+      return ary;
     };
 
     return {
@@ -155,8 +152,11 @@ export default {
       const current = this.checkData[this.selectedType][index];
       this.checkData[this.selectedType].splice(index, 1, !current);
 
-      let cm = new CookieManager(document);
-      cm.saveToCookie(false, this.checkData);
+      const raw = localStorage.getItem('shikibetsuhyo');
+      let xs = raw !== null ? JSON.parse(raw) : {};
+      xs[this.gameObject.id] = this.checkData;
+
+      localStorage.setItem('shikibetsuhyo', JSON.stringify(xs));
     }
   },
   head: function () {
