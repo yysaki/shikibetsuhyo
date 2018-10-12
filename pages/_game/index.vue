@@ -65,9 +65,9 @@
               </v-tab>
             </v-tabs>
             <v-list>
-              <template v-for="(item, index) in selectedList.items">
+              <template v-for="(item, index) in selectedItems">
                 <v-subheader
-                  v-if="index === 0 || `${item.buy}:${item.sell}` !== `${selectedList.items[index-1].buy}:${selectedList.items[index-1].sell}`"
+                  v-if="index === 0 || `${item.buy}:${item.sell}` !== `${selectedItems[index-1].buy}:${selectedItems[index-1].sell}`"
                   :key="`${item.buy}:${item.sell}`"
                 >
                   {{ `買: ${item.buy} /売: ${item.sell}` }}
@@ -77,12 +77,12 @@
                 >
                   <v-checkbox
                     :label="item.name"
-                    :value="checkData[selectedList.type][index]"
+                    :value="item.checked"
                     @click.stop="clickWithSave(index)"
                   />
                 </v-list-tile>
                 <v-divider
-                  v-if="index + 1 < selectedList.items.length"
+                  v-if="index + 1 < selectedItems.length"
                   :key="index"
                 />
               </template>
