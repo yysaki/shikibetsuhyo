@@ -140,9 +140,6 @@ export default {
     title: function () {
       return this.gameObject.title;
     },
-    selectedList: function () {
-      return this.gameObject.lists.filter(x => x.type === this.selectedType)[0]
-    },
     selectedItems: function () {
       const items = this.gameObject.lists.filter(x => x.type === this.selectedType)[0].items;
       const checkData = this.checkData[this.selectedType];
