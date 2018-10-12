@@ -142,6 +142,16 @@ export default {
     },
     selectedList: function () {
       return this.gameObject.lists.filter(x => x.type === this.selectedType)[0]
+    },
+    selectedItems: function () {
+      const items = this.gameObject.lists.filter(x => x.type === this.selectedType)[0].items;
+      const checkData = this.checkData[this.selectedType];
+      return items.map((item, index) => ({
+        name: item.name,
+        buy: item.buy,
+        sell: item.sell,
+        checked: checkData[index]
+      }));
     }
   },
   methods: {
