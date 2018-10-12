@@ -73,7 +73,7 @@
                   {{ `買: ${item.buy} /売: ${item.sell}` }}
                 </v-subheader>
                 <v-list-tile
-                  :key="item.id"
+                  :key="item.name"
                 >
                   <v-checkbox
                     :label="item.name"
