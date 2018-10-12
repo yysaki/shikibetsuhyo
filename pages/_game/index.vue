@@ -96,6 +96,7 @@
 <script>
 import games from '~/es6/model/game-list.js';
 import CookieManager from '~/es6/cookie-manager.js';
+import Vue from 'vue';
 const dummyObject = games[0];
 
 export default {
@@ -110,18 +111,19 @@ export default {
       drawer: null
     }
   },
+  mounted: function () {
+    const raw = localStorage.getItem('shikibetsuhyo');
+    if (raw !== undefined && raw !== null) {
+      const xs = JSON.parse(raw);
+      const x = xs[this.gameObject.id];
+      if (x !== undefined && x !== null) {
+         Vue.set(this, 'checkData', x);
+      }
+    }
+  },
   asyncData: function ({ params }) {
     const target = games.filter(game => game.id === params.game)[0];
     var generateCheckData = function (lists) {
-      const raw = localStorage.getItem('shikibetsuhyo');
-      if (raw !== undefined && raw !== null) {
-        const xs = JSON.parse(raw);
-        const x = xs[target.id];
-        if (x !== undefined && x !== null) {
-          return x;
-        }
-      }
-
       let ary = {};
       lists.forEach(list => {
         const type = list.type;
