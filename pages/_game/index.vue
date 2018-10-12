@@ -77,7 +77,7 @@
                 >
                   <v-checkbox
                     :label="item.name"
-                    :value="item.checked"
+                    v-model="item.checked"
                     @click.stop="clickWithSave(index)"
                   />
                 </v-list-tile>
