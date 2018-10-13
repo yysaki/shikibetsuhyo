@@ -8,14 +8,43 @@
       temporary
     >
       <v-list dense>
-        <v-list-tile>
-          <v-list-tile-action>
-            <v-icon>delete_sweep</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>リストをリセットする</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
+        <v-dialog
+          v-model="dialogForReset"
+        >
+          <v-list-tile
+            slot="activator"
+          >
+            <v-list-tile-action>
+              <v-icon>delete_sweep</v-icon>
+            </v-list-tile-action>
+            <v-list-tile-content>
+              <v-list-tile-title>リストをリセットする</v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
+
+          <v-card>
+            <v-card-title
+              class="primary"
+            >
+              リストをリセットする
+            </v-card-title>
+            <v-card-text>
+              このゲームのリストにチェックした情報をクリアします。よろしいですか？
+            </v-card-text>
+
+            <v-divider/>
+            <v-card-actions>
+              <v-spacer/>
+              <v-btn
+                flat
+                color="info"
+                @click="clickWithReset"
+              >
+                はい
+              </v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-dialog>
         <v-list-tile>
           <v-list-tile-action>
             <v-icon>info</v-icon>
@@ -108,6 +137,7 @@ export default {
     return {
       gameObject: dummyObject,
       selectedType: dummyObject.lists[0].type,
+      dialogForReset: null,
       drawer: null
     }
   },
@@ -163,6 +193,10 @@ export default {
       xs[this.gameObject.id] = this.checkData;
 
       localStorage.setItem('shikibetsuhyo', JSON.stringify(xs));
+    },
+    clickWithReset: function (index) {
+      this.dialogForReset = false;
+      this.drawer = false;
     }
   },
   head: function () {
