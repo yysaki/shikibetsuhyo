@@ -45,14 +45,65 @@
             </v-card-actions>
           </v-card>
         </v-dialog>
-        <v-list-tile>
-          <v-list-tile-action>
-            <v-icon>info</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>このゲームについて</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
+        <v-dialog
+          v-model="dialogForAbout"
+        >
+          <v-list-tile
+            slot="activator"
+          >
+            <v-list-tile-action>
+              <v-icon>info</v-icon>
+            </v-list-tile-action>
+            <v-list-tile-content>
+              <v-list-tile-title>このゲームについて</v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
+
+          <v-card>
+            <v-card-title
+              class="primary"
+            >
+              このゲームについて
+            </v-card-title>
+            <v-card-text>
+              <p>
+                このサイトは
+                <a :href="gameObject.developerUrl" target="_blank">
+                  {{ gameObject.developerName }}
+                </a>
+                様が発売した
+                <a :href="gameObject.gameUrl" target="_blank">
+                  {{ gameObject.title }}
+                </a>
+                にて識別済みアイテムを記録するためのチェックリストです。
+              </p>
+              <p>
+                スマートフォンでの使用を想定しており、チェックした情報はCookieに保存されます。新しくプレイし直す時は「Clear」から情報をリセットして下さい。
+              </p>
+              <p>
+                このサイトでは未識別で登場しうる全てのアイテムをリストアップしています。「もっと不思議のダンジョン」のプレイにお役立て頂ければと思います。
+              </p>
+              <p>
+                参考にさせていただいたサイト:
+                <a :href="gameObject.referenceUrl" target="_blank">
+                  {{ gameObject.referenceName }}
+                </a>
+              </p>
+            </v-card-text>
+
+            <v-divider/>
+            <v-card-actions>
+              <v-spacer/>
+              <v-btn
+                flat
+                color="info"
+                @click="dialogForAbout = drawer = false"
+              >
+                リストに戻る
+              </v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-dialog>
         <v-list-tile to="/">
           <v-list-tile-action>
             <v-icon>home</v-icon>
@@ -137,6 +188,7 @@ export default {
     return {
       gameObject: dummyObject,
       selectedType: dummyObject.lists[0].type,
+      dialogForAbout: null,
       dialogForReset: null,
       drawer: null
     }
