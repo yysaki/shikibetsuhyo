@@ -197,6 +197,20 @@ export default {
     clickWithReset: function (index) {
       this.dialogForReset = false;
       this.drawer = false;
+
+      let x = {};
+      for (const list of this.gameObject.lists) {
+        const type = list.type;
+        x[type] = new Array(this.checkData[type].length).fill(false);
+      }
+
+      const raw = localStorage.getItem('shikibetsuhyo');
+      let xs = raw !== null ? JSON.parse(raw) : {};
+      xs[this.gameObject.id] = x;
+
+      localStorage.setItem('shikibetsuhyo', JSON.stringify(xs));
+
+      Vue.set(this, 'checkData', x);
     }
   },
   head: function () {
