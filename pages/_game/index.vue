@@ -130,20 +130,6 @@
       <v-flex xs12 sm12>
         <v-card>
           <v-list class="pt-0">
-            <v-tabs
-              color="primary"
-              dark
-              slider-color="yellow"
-              fixed-tabs
-            >
-              <v-tab
-                v-for="list in gameObject.lists"
-                :key="list.type"
-                @click="selectedType=list.type"
-              >
-                {{ list.name }}
-              </v-tab>
-            </v-tabs>
             <v-list>
               <template v-for="(item, index) in selectedItems">
                 <v-subheader
@@ -169,6 +155,32 @@
             </v-list>
           </v-list>
         </v-card>
+        <v-footer
+          fixed
+          height="auto"
+          color="primary"
+        >
+          <v-layout
+            justify-center
+            row
+            wrap
+          >
+            <v-tabs
+              color="primary"
+              dark
+              slider-color="yellow"
+              fixed-tabs
+            >
+              <v-tab
+                v-for="list in gameObject.lists"
+                :key="list.type"
+                @click="selectedType=list.type"
+              >
+                {{ list.name }}
+              </v-tab>
+            </v-tabs>
+          </v-layout>
+        </v-footer>
       </v-flex>
     </v-layout>
   </v-app>
