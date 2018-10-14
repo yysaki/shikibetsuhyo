@@ -5,7 +5,7 @@
     "lint": "eslint .",
     "serve": "firebase serve --only functions",
     "shell": "firebase functions:shell",
-    "start": "npm run shell",
+    "start": "echo 'hello nuxt spa'",
     "deploy": "firebase deploy --only functions",
     "logs": "firebase functions:log"
   },
