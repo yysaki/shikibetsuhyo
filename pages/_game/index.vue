@@ -269,6 +269,7 @@ export default {
     return {
       title: `${this.title} - 不思議のダンジョン 値段識別表`,
       meta: [
+        {charset: 'utf-8'},
         {name: 'viewport', content: 'width=device-width, initial-scale=1'}
       ]
     }
