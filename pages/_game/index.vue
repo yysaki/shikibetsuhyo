@@ -132,29 +132,27 @@
             </v-toolbar>
             <v-card>
               <v-list class="pt-0">
-                <v-list>
-                  <template v-for="(item, index) in selectedItems">
-                    <v-subheader
-                      v-if="index === 0 || `${item.buy}:${item.sell}` !== `${selectedItems[index-1].buy}:${selectedItems[index-1].sell}`"
-                      :key="`${item.buy}:${item.sell}`"
-                    >
-                      {{ `買: ${item.buy} /売: ${item.sell}` }}
-                    </v-subheader>
-                    <v-list-tile
-                      :key="item.name"
-                    >
-                      <v-checkbox
-                        :label="item.name"
-                        v-model="item.checked"
-                        @click.stop="clickWithSave(index)"
-                      />
-                    </v-list-tile>
-                    <v-divider
-                      v-if="index + 1 < selectedItems.length"
-                      :key="index"
+                <template v-for="(item, index) in selectedItems">
+                  <v-subheader
+                    v-if="index === 0 || `${item.buy}:${item.sell}` !== `${selectedItems[index-1].buy}:${selectedItems[index-1].sell}`"
+                    :key="`${item.buy}:${item.sell}`"
+                  >
+                    {{ `買: ${item.buy} /売: ${item.sell}` }}
+                  </v-subheader>
+                  <v-list-tile
+                    :key="item.name"
+                  >
+                    <v-checkbox
+                      :label="item.name"
+                      v-model="item.checked"
+                      @click.stop="clickWithSave(index)"
                     />
-                  </template>
-                </v-list>
+                  </v-list-tile>
+                  <v-divider
+                    v-if="index + 1 < selectedItems.length"
+                    :key="index"
+                  />
+                </template>
               </v-list>
             </v-card>
             <v-footer
