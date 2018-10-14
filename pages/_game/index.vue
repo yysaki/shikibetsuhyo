@@ -267,7 +267,10 @@ export default {
   },
   head: function () {
     return {
-      title: `${this.title} - 不思議のダンジョン 値段識別表`
+      title: `${this.title} - 不思議のダンジョン 値段識別表`,
+      meta: [
+        {name: 'viewport', content: 'width=device-width, initial-scale=1'}
+      ]
     }
   }
 };
