@@ -114,75 +114,79 @@
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
-    <v-layout row>
-      <v-flex xs12 sm12>
-        <v-toolbar
-          color="primary"
-          dark
-        >
-          <v-toolbar-title>
-            不思議のダンジョン
-          </v-toolbar-title>
-          <v-spacer/>
-          <v-toolbar-side-icon
-            @click.stop="drawer = !drawer"
-          />
-        </v-toolbar>
-        <v-card>
-          <v-list class="pt-0">
-            <v-list>
-              <template v-for="(item, index) in selectedItems">
-                <v-subheader
-                  v-if="index === 0 || `${item.buy}:${item.sell}` !== `${selectedItems[index-1].buy}:${selectedItems[index-1].sell}`"
-                  :key="`${item.buy}:${item.sell}`"
-                >
-                  {{ `買: ${item.buy} /売: ${item.sell}` }}
-                </v-subheader>
-                <v-list-tile
-                  :key="item.name"
-                >
-                  <v-checkbox
-                    :label="item.name"
-                    v-model="item.checked"
-                    @click.stop="clickWithSave(index)"
-                  />
-                </v-list-tile>
-                <v-divider
-                  v-if="index + 1 < selectedItems.length"
-                  :key="index"
-                />
-              </template>
-            </v-list>
-          </v-list>
-        </v-card>
-        <v-footer
-          fixed
-          height="auto"
-          color="primary"
-        >
-          <v-layout
-            justify-center
-            row
-            wrap
-          >
-            <v-tabs
+    <v-content>
+      <v-container class="container" fluid ma-0 pa-0 fill-height>
+        <v-layout row>
+          <v-flex xs12 sm12>
+            <v-toolbar
               color="primary"
               dark
-              slider-color="yellow"
-              fixed-tabs
             >
-              <v-tab
-                v-for="list in gameObject.lists"
-                :key="list.type"
-                @click="selectedType=list.type"
+              <v-toolbar-title>
+                不思議のダンジョン
+              </v-toolbar-title>
+              <v-spacer/>
+              <v-toolbar-side-icon
+                @click.stop="drawer = !drawer"
+              />
+            </v-toolbar>
+            <v-card>
+              <v-list class="pt-0">
+                <v-list>
+                  <template v-for="(item, index) in selectedItems">
+                    <v-subheader
+                      v-if="index === 0 || `${item.buy}:${item.sell}` !== `${selectedItems[index-1].buy}:${selectedItems[index-1].sell}`"
+                      :key="`${item.buy}:${item.sell}`"
+                    >
+                      {{ `買: ${item.buy} /売: ${item.sell}` }}
+                    </v-subheader>
+                    <v-list-tile
+                      :key="item.name"
+                    >
+                      <v-checkbox
+                        :label="item.name"
+                        v-model="item.checked"
+                        @click.stop="clickWithSave(index)"
+                      />
+                    </v-list-tile>
+                    <v-divider
+                      v-if="index + 1 < selectedItems.length"
+                      :key="index"
+                    />
+                  </template>
+                </v-list>
+              </v-list>
+            </v-card>
+            <v-footer
+              fixed
+              height="auto"
+              color="primary"
+            >
+              <v-layout
+                justify-center
+                row
+                wrap
               >
-                {{ list.name }}
-              </v-tab>
-            </v-tabs>
-          </v-layout>
-        </v-footer>
-      </v-flex>
-    </v-layout>
+                <v-tabs
+                  color="primary"
+                  dark
+                  slider-color="yellow"
+                  fixed-tabs
+                >
+                  <v-tab
+                    v-for="list in gameObject.lists"
+                    :key="list.type"
+                    @click="selectedType=list.type"
+                  >
+                    {{ list.name }}
+                  </v-tab>
+                </v-tabs>
+              </v-layout>
+            </v-footer>
+          </v-flex>
+        </v-layout>
+      </v-container>
+    </v-content>
   </v-app>
 </template>
 <script>
