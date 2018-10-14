@@ -1,7 +1,11 @@
 module.exports = {
   modules: [
+    '@nuxtjs/google-analytics',
     '@nuxtjs/vuetify'
   ],
+  'google-analytics': {
+    id: 'UA-48038483-2'
+  },
   vuetify: {
     theme: {
       primary: '#3e62ad',
