@@ -131,7 +131,7 @@
                 @click.stop="drawer = !drawer"
               />
             </v-toolbar>
-            <v-card>
+            <v-card class="pt-5 mt-3 pb-5">
               <v-list class="pt-0">
                 <template v-for="(item, index) in selectedItems">
                   <v-subheader
