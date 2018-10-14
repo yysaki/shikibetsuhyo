@@ -170,7 +170,7 @@
                   color="primary"
                   dark
                   slider-color="yellow"
-                  fixed-tabs
+                  centered
                 >
                   <v-tab
                     v-for="list in gameObject.lists"
