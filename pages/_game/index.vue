@@ -114,20 +114,20 @@
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
-    <v-toolbar
-      color="primary"
-      dark
-    >
-      <v-toolbar-title>
-        不思議のダンジョン
-      </v-toolbar-title>
-      <v-spacer/>
-      <v-toolbar-side-icon
-        @click.stop="drawer = !drawer"
-      />
-    </v-toolbar>
     <v-layout row>
       <v-flex xs12 sm12>
+        <v-toolbar
+          color="primary"
+          dark
+        >
+          <v-toolbar-title>
+            不思議のダンジョン
+          </v-toolbar-title>
+          <v-spacer/>
+          <v-toolbar-side-icon
+            @click.stop="drawer = !drawer"
+          />
+        </v-toolbar>
         <v-card>
           <v-list class="pt-0">
             <v-list>
