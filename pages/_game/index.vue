@@ -121,6 +121,7 @@
             <v-toolbar
               color="primary"
               dark
+              fixed
             >
               <v-toolbar-title>
                 不思議のダンジョン
