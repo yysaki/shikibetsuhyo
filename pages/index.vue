@@ -31,7 +31,7 @@
   </v-app>
 </template>
 <script>
-import games from '~/es6/model/game-list.js';
+import games from '~/plugins/model/game-list.js';
 export default {
   name: "index",
   data: function () {
