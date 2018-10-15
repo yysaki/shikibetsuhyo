@@ -21,7 +21,7 @@
   "scripts": {
     "dev": "nuxt --spa",
     "build": "nuxt build --spa",
-    "test-ava": "ava --verbose"
+    "test": "ava --verbose"
   },
   "ava": {
     "require": [
