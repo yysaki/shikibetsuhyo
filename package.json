@@ -10,59 +10,18 @@
     "node": ">=6.9.1",
     "npm": ">=3.10.8"
   },
-  "style": [
-    "less/style.less",
-    "node_modules/jquery-mobile-babel-safe/css/jquery.mobile-1.4.5.min.css"
-  ],
-  "browserify-shim": {
-    "jquery": "$",
-    "jquery-mobile": {
-      "depends": "jquery:$"
-    }
-  },
-  "browserify": {
-    "transform": [
-      "browserify-shim"
-    ]
-  },
   "dependencies": {
     "@nuxtjs/google-analytics": "^2.0.2",
     "@nuxtjs/vuetify": "^0.4.2",
-    "babel-cli": "^6.16.0",
-    "babel-core": "^6.17.0",
     "babel-preset-env": "^1.7.0",
-    "babelify": "^8.0.0",
-    "browserify": "^16.2.2",
-    "browserify-shim": "^3.8.12",
-    "chai": "^4.1.2",
-    "clean-css-cli": "^4.1.11",
-    "express": "^4.14.0",
     "firebase-admin": "^6.0.0",
     "firebase-functions": "^2.0.4",
-    "jquery": "^2.2.4",
-    "jquery-mobile-babel-safe": "^1.4.5-1",
-    "less-css-stream": "^1.0.0",
-    "mocha": "^5.2.0",
-    "nuxt": "^2.0.0",
-    "parcelify": "^2.2.0",
-    "pug": "^2.0.0-beta6",
-    "supertest": "^3.1.0",
-    "uglify-js": "^3.4.0",
-    "watchify": "^3.7.0"
+    "nuxt": "^2.0.0"
   },
   "scripts": {
     "dev": "nuxt --spa",
     "build": "nuxt build --spa",
-    "build-expressjs": "babel es6 -d js && browserify js/main.js -o public/js/bundle.js -p [ parcelify -o public/css/bundle.css -t less-css-stream -d . ] && npm run minify",
-    "minify": "cd public/js/ && uglifyjs bundle.js -c -o bundle.min.js --source-map \"url='bundle.min.js.map'\" && cd ../css && cleancss bundle.css -o bundle.min.css --source-map",
-    "lint": "eslint js/",
-    "postbuild-expressjs": "cp -r js/app.js functions/index.js && cp -r views functions && cp -r js/model functions/",
-    "postinstall": "npm run build",
-    "pretest": "babel es6 -d js && babel test-es6 -d test-js",
-    "start": "echo 'hello nuxt spa'",
-    "test": "npm run pretest && mocha test-js/**/*.js && npm run lint && npm run test-ava",
-    "test-ava": "ava --verbose",
-    "watch": "watchify -t babelify es6/main.js -o public/js/bundle.js -p [ parcelify -wo public/css/bundle.css -t less-css-stream -d . ] --debug --verbose"
+    "test-ava": "ava --verbose"
   },
   "ava": {
     "require": [
