@@ -190,7 +190,6 @@
 </template>
 <script>
 import games from '~/es6/model/game-list.js';
-import CookieManager from '~/es6/cookie-manager.js';
 import Vue from 'vue';
 const dummyObject = games[0];
 
