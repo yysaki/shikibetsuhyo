@@ -7,8 +7,8 @@
     "jquery-mobile": "./node_modules/jquery-mobile-babel-safe/js/jquery.mobile-1.4.5.js"
   },
   "engines": {
-    "node": ">=6.9.1",
-    "npm": ">=3.10.8"
+    "node": ">=8.12.0",
+    "npm": ">=6.4.1"
   },
   "dependencies": {
     "@nuxtjs/google-analytics": "^2.0.2",
