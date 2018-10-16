@@ -20,6 +20,7 @@
     "nuxt": "^2.0.0"
   },
   "scripts": {
+    "postinstall": "npm run build",
     "dev": "nuxt --spa",
     "build": "nuxt build --spa",
     "test": "ava --verbose"
