@@ -22,7 +22,9 @@
   "scripts": {
     "dev": "nuxt --spa",
     "build": "nuxt build --spa",
-    "test": "ava --verbose"
+    "test": "ava --verbose",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "lintfix": "eslint --fix --ext .js,.vue --ignore-path .gitignore ."
   },
   "ava": {
     "require": [
