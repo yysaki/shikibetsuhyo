@@ -262,7 +262,7 @@ export default {
 
       localStorage.setItem("shikibetsuhyo", JSON.stringify(xs))
     },
-    clickWithReset: function(index) {
+    clickWithReset: function() {
       this.dialogForReset = false
       this.drawer = false
 
