@@ -4,7 +4,7 @@ import { resolve } from "path"
 
 let nuxt = null
 
-test.before("Init Nuxt.js", async t => {
+test.before("Init Nuxt.js", async () => {
   const rootDir = resolve(__dirname, "..")
   let config = {}
   try {
@@ -85,6 +85,6 @@ test("Route /shiren/ exits and render tab header", async t => {
   t.true(html.includes("杖"))
 })
 
-test.after("Closing server", t => {
+test.after("Closing server", () => {
   nuxt.close()
 })
