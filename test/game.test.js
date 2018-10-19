@@ -1,10 +1,9 @@
 import test from "ava"
-import { resolve } from "path"
 import { Game, ItemList, Item } from "../plugins/model/game.js"
 
 test("Game should be loaded", async t => {
   var g = new Game({ title: "", shortTitle: "", lists: [] })
-  t.true(true)
+  t.true(g.shortTitle === "")
 })
 
 test("ItemList should isHeadOfGroup correctly", async t => {
