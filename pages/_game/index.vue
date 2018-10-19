@@ -189,16 +189,16 @@
   </v-app>
 </template>
 <script>
-import games from '~/plugins/model/game-list.js';
-import Vue from 'vue';
-const dummyObject = games[0];
+import games from "~/plugins/model/game-list.js"
+import Vue from "vue"
+const dummyObject = games[0]
 
 export default {
-  name: "game",
+  name: "Game",
   validate({ params }) {
     return games.map(game => game.id).includes(params.game)
   },
-  data: function () {
+  data: function() {
     return {
       gameObject: dummyObject,
       selectedType: dummyObject.lists[0].type,
@@ -207,26 +207,43 @@ export default {
       drawer: null
     }
   },
-  mounted: function () {
-    const raw = localStorage.getItem('shikibetsuhyo');
+  computed: {
+    title: function() {
+      return this.gameObject.title
+    },
+    selectedItems: function() {
+      const items = this.gameObject.lists.filter(
+        x => x.type === this.selectedType
+      )[0].items
+      const checkData = this.checkData[this.selectedType]
+      return items.map((item, index) => ({
+        name: item.name,
+        buy: item.buy,
+        sell: item.sell,
+        checked: checkData[index]
+      }))
+    }
+  },
+  mounted: function() {
+    const raw = localStorage.getItem("shikibetsuhyo")
     if (raw !== undefined && raw !== null) {
-      const xs = JSON.parse(raw);
-      const x = xs[this.gameObject.id];
+      const xs = JSON.parse(raw)
+      const x = xs[this.gameObject.id]
       if (x !== undefined && x !== null) {
-         Vue.set(this, 'checkData', x);
+        Vue.set(this, "checkData", x)
       }
     }
   },
-  asyncData: function ({ params }) {
-    const target = games.filter(game => game.id === params.game)[0];
-    var generateCheckData = function (lists) {
-      let ary = {};
+  asyncData: function({ params }) {
+    const target = games.filter(game => game.id === params.game)[0]
+    var generateCheckData = function(lists) {
+      let ary = {}
       lists.forEach(list => {
-        const type = list.type;
-        ary[type] = new Array(list.items.length).fill(false);
+        const type = list.type
+        ary[type] = new Array(list.items.length).fill(false)
       })
-      return ary;
-    };
+      return ary
+    }
 
     return {
       gameObject: target,
@@ -234,60 +251,44 @@ export default {
       checkData: generateCheckData(target.lists)
     }
   },
-  computed: {
-    title: function () {
-      return this.gameObject.title;
-    },
-    selectedItems: function () {
-      const items = this.gameObject.lists.filter(x => x.type === this.selectedType)[0].items;
-      const checkData = this.checkData[this.selectedType];
-      return items.map((item, index) => ({
-        name: item.name,
-        buy: item.buy,
-        sell: item.sell,
-        checked: checkData[index]
-      }));
-    }
-  },
   methods: {
-    clickWithSave: function (index) {
-      const current = this.checkData[this.selectedType][index];
-      this.checkData[this.selectedType].splice(index, 1, !current);
+    clickWithSave: function(index) {
+      const current = this.checkData[this.selectedType][index]
+      this.checkData[this.selectedType].splice(index, 1, !current)
 
-      const raw = localStorage.getItem('shikibetsuhyo');
-      let xs = raw !== null ? JSON.parse(raw) : {};
-      xs[this.gameObject.id] = this.checkData;
+      const raw = localStorage.getItem("shikibetsuhyo")
+      let xs = raw !== null ? JSON.parse(raw) : {}
+      xs[this.gameObject.id] = this.checkData
 
-      localStorage.setItem('shikibetsuhyo', JSON.stringify(xs));
+      localStorage.setItem("shikibetsuhyo", JSON.stringify(xs))
     },
-    clickWithReset: function (index) {
-      this.dialogForReset = false;
-      this.drawer = false;
+    clickWithReset: function(index) {
+      this.dialogForReset = false
+      this.drawer = false
 
-      let x = {};
+      let x = {}
       for (const list of this.gameObject.lists) {
-        const type = list.type;
-        x[type] = new Array(this.checkData[type].length).fill(false);
+        const type = list.type
+        x[type] = new Array(this.checkData[type].length).fill(false)
       }
 
-      const raw = localStorage.getItem('shikibetsuhyo');
-      let xs = raw !== null ? JSON.parse(raw) : {};
-      xs[this.gameObject.id] = x;
+      const raw = localStorage.getItem("shikibetsuhyo")
+      let xs = raw !== null ? JSON.parse(raw) : {}
+      xs[this.gameObject.id] = x
 
-      localStorage.setItem('shikibetsuhyo', JSON.stringify(xs));
+      localStorage.setItem("shikibetsuhyo", JSON.stringify(xs))
 
-      Vue.set(this, 'checkData', x);
+      Vue.set(this, "checkData", x)
     }
   },
-  head: function () {
+  head: function() {
     return {
       title: `${this.title} - 不思議のダンジョン 値段識別表`,
       meta: [
-        {charset: 'utf-8'},
-        {name: 'viewport', content: 'width=device-width, initial-scale=1'}
+        { charset: "utf-8" },
+        { name: "viewport", content: "width=device-width, initial-scale=1" }
       ]
     }
   }
-};
+}
 </script>
-

@@ -31,22 +31,22 @@
   </v-app>
 </template>
 <script>
-import games from '~/plugins/model/game-list.js';
+import games from "~/plugins/model/game-list.js"
 export default {
-  name: "index",
-  data: function () {
+  name: "Index",
+  data: function() {
     return {
       games: games
     }
   },
-  head () {
+  head() {
     return {
       title: "不思議のダンジョン 値段識別表",
       meta: [
-        {charset: 'utf-8'},
-        {name: 'viewport', content: 'width=device-width, initial-scale=1'}
+        { charset: "utf-8" },
+        { name: "viewport", content: "width=device-width, initial-scale=1" }
       ]
     }
   }
-};
+}
 </script>
