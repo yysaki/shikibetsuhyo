@@ -9,7 +9,9 @@ test.before("Init Nuxt.js", async () => {
   let config = {}
   try {
     config = require(resolve(rootDir, "nuxt.config.js"))
-  } catch (e) {}
+  } catch (e) {
+    /* do nothing. */
+  }
   config.rootDir = rootDir
   config.dev = false
   config.mode = "universal"
