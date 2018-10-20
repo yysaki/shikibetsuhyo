@@ -20,8 +20,8 @@
     "nuxt": "^2.0.0"
   },
   "scripts": {
-    "dev": "nuxt --spa",
-    "build": "nuxt build --spa",
+    "dev": "nuxt",
+    "build": "nuxt build",
     "test": "ava --verbose",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lintfix": "eslint --fix --ext .js,.vue --ignore-path .gitignore ."
