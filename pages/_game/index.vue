@@ -225,6 +225,9 @@ export default {
     }
   },
   mounted: function() {
+    if (!process.client) {
+      return
+    }
     const raw = localStorage.getItem("shikibetsuhyo")
     if (raw !== undefined && raw !== null) {
       const xs = JSON.parse(raw)
@@ -256,6 +259,10 @@ export default {
       const current = this.checkData[this.selectedType][index]
       this.checkData[this.selectedType].splice(index, 1, !current)
 
+      if (!process.client) {
+        return
+      }
+
       const raw = localStorage.getItem("shikibetsuhyo")
       let xs = raw !== null ? JSON.parse(raw) : {}
       xs[this.gameObject.id] = this.checkData
@@ -270,6 +277,10 @@ export default {
       for (const list of this.gameObject.lists) {
         const type = list.type
         x[type] = new Array(this.checkData[type].length).fill(false)
+      }
+
+      if (!process.client) {
+        return
       }
 
       const raw = localStorage.getItem("shikibetsuhyo")
