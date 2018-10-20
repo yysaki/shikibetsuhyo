@@ -3,7 +3,7 @@
     "public": "dist",
     "rewrites": [{
       "source": "**",
-      "destination": "/index.html"
+      "function": "ssr"
     }],
     "ignore": [
       "firebase.json",

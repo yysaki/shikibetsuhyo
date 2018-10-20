@@ -4,7 +4,7 @@
   "scripts": {
     "serve": "firebase serve --only functions",
     "shell": "firebase functions:shell",
-    "start": "echo 'hello nuxt spa'",
+    "start": "npm run shell",
     "deploy": "firebase deploy --only functions",
     "logs": "firebase functions:log"
   },
