@@ -2,9 +2,6 @@
 .nuxt/
 .sv*
 .sw*
-dist/
-functions/index.js
-functions/model/
-functions/views/
+functions/nuxt
 node_modules/
 npm-debug.log
