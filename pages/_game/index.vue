@@ -15,7 +15,7 @@
             slot="activator"
           >
             <v-list-tile-action>
-              <v-icon>delete_sweep</v-icon>
+              <icon-delete/>
             </v-list-tile-action>
             <v-list-tile-content>
               <v-list-tile-title>リストをリセットする</v-list-tile-title>
@@ -52,7 +52,7 @@
             slot="activator"
           >
             <v-list-tile-action>
-              <v-icon>info</v-icon>
+              <icon-info/>
             </v-list-tile-action>
             <v-list-tile-content>
               <v-list-tile-title>このゲームについて</v-list-tile-title>
@@ -106,7 +106,7 @@
         </v-dialog>
         <v-list-tile to="/">
           <v-list-tile-action>
-            <v-icon>home</v-icon>
+            <icon-home/>
           </v-list-tile-action>
           <v-list-tile-content>
             <v-list-tile-title>TOPに戻る</v-list-tile-title>
@@ -191,10 +191,18 @@
 <script>
 import games from "~/plugins/model/game-list.js"
 import Vue from "vue"
+import IconDelete from "~/components/atom/IconDelete.vue"
+import IconHome from "~/components/atom/IconHome.vue"
+import IconInfo from "~/components/atom/IconInfo.vue"
 const dummyObject = games[0]
 
 export default {
   name: "Game",
+  components: {
+    "icon-delete": IconDelete,
+    "icon-home": IconHome,
+    "icon-info": IconInfo
+  },
   validate({ params }) {
     return games.map(game => game.id).includes(params.game)
   },
