@@ -8,25 +8,15 @@
       temporary
     >
       <v-list dense>
-        <v-dialog
-          v-model="dialogForReset"
-        >
+        <v-dialog v-model="dialogForReset">
           <drawer-list-tile slot="activator" icon="delete_sweep">
             リストをリセットする
           </drawer-list-tile>
 
-          <v-card>
-            <v-card-title
-              class="primary"
-            >
-              リストをリセットする
-            </v-card-title>
-            <v-card-text>
-              このゲームのリストにチェックした情報をクリアします。よろしいですか？
-            </v-card-text>
-
-            <v-divider/>
-            <v-card-actions>
+          <base-card>
+            <template slot="title">リストをリセットする</template>
+            このゲームのリストにチェックした情報をクリアします。よろしいですか？
+            <template slot="actions">
               <v-spacer/>
               <v-btn
                 flat
@@ -35,8 +25,8 @@
               >
                 はい
               </v-btn>
-            </v-card-actions>
-          </v-card>
+            </template>
+          </base-card>
         </v-dialog>
         <v-dialog
           v-model="dialogForAbout"
@@ -45,40 +35,32 @@
             このゲームについて
           </drawer-list-tile>
 
-          <v-card>
-            <v-card-title
-              class="primary"
-            >
-              このゲームについて
-            </v-card-title>
-            <v-card-text>
-              <p>
-                このサイトは
-                <a :href="gameObject.developerUrl" target="_blank">
-                  {{ gameObject.developerName }}
-                </a>
-                様が発売した
-                <a :href="gameObject.gameUrl" target="_blank">
-                  {{ gameObject.title }}
-                </a>
-                にて識別済みアイテムを記録するためのチェックリストです。
-              </p>
-              <p>
-                スマートフォンでの使用を想定しており、チェックした情報はCookieに保存されます。新しくプレイし直す時は「Clear」から情報をリセットして下さい。
-              </p>
-              <p>
-                このサイトでは未識別で登場しうる全てのアイテムをリストアップしています。「もっと不思議のダンジョン」のプレイにお役立て頂ければと思います。
-              </p>
-              <p>
-                参考にさせていただいたサイト:
-                <a :href="gameObject.referenceUrl" target="_blank">
-                  {{ gameObject.referenceName }}
-                </a>
-              </p>
-            </v-card-text>
-
-            <v-divider/>
-            <v-card-actions>
+          <base-card>
+            <template slot="title">このゲームについて</template>
+            <p>
+              このサイトは
+              <a :href="gameObject.developerUrl" target="_blank">
+                {{ gameObject.developerName }}
+              </a>
+              様が発売した
+              <a :href="gameObject.gameUrl" target="_blank">
+                {{ gameObject.title }}
+              </a>
+              にて識別済みアイテムを記録するためのチェックリストです。
+            </p>
+            <p>
+              スマートフォンでの使用を想定しており、チェックした情報はCookieに保存されます。新しくプレイし直す時は「Clear」から情報をリセットして下さい。
+            </p>
+            <p>
+              このサイトでは未識別で登場しうる全てのアイテムをリストアップしています。「もっと不思議のダンジョン」のプレイにお役立て頂ければと思います。
+            </p>
+            <p>
+              参考にさせていただいたサイト:
+              <a :href="gameObject.referenceUrl" target="_blank">
+                {{ gameObject.referenceName }}
+              </a>
+            </p>
+            <template slot="actions">
               <v-spacer/>
               <v-btn
                 flat
@@ -87,8 +69,8 @@
               >
                 リストに戻る
               </v-btn>
-            </v-card-actions>
-          </v-card>
+            </template>
+          </base-card>
         </v-dialog>
         <drawer-list-tile icon="home">
           TOPに戻る
@@ -173,11 +155,15 @@
 import games from "~/plugins/model/game-list.js"
 import Vue from "vue"
 import DrawerListTile from "~/components/molecules/DrawerListTile.vue"
+import BaseCard from "~/components/molecules/BaseCard.vue"
 const dummyObject = games[0]
 
 export default {
   name: "Game",
-  components: { DrawerListTile },
+  components: {
+    BaseCard,
+    DrawerListTile
+  },
   validate({ params }) {
     return games.map(game => game.id).includes(params.game)
   },
