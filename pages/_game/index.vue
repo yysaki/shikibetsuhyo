@@ -11,16 +11,9 @@
         <v-dialog
           v-model="dialogForReset"
         >
-          <v-list-tile
-            slot="activator"
-          >
-            <v-list-tile-action>
-              <base-icon name="delete_sweep"/>
-            </v-list-tile-action>
-            <v-list-tile-content>
-              <v-list-tile-title>リストをリセットする</v-list-tile-title>
-            </v-list-tile-content>
-          </v-list-tile>
+          <drawer-list-tile slot="activator" icon="delete_sweep">
+            リストをリセットする
+          </drawer-list-tile>
 
           <v-card>
             <v-card-title
@@ -48,16 +41,9 @@
         <v-dialog
           v-model="dialogForAbout"
         >
-          <v-list-tile
-            slot="activator"
-          >
-            <v-list-tile-action>
-              <base-icon name="info"/>
-            </v-list-tile-action>
-            <v-list-tile-content>
-              <v-list-tile-title>このゲームについて</v-list-tile-title>
-            </v-list-tile-content>
-          </v-list-tile>
+          <drawer-list-tile slot="activator" icon="info">
+            このゲームについて
+          </drawer-list-tile>
 
           <v-card>
             <v-card-title
@@ -104,14 +90,9 @@
             </v-card-actions>
           </v-card>
         </v-dialog>
-        <v-list-tile to="/">
-          <v-list-tile-action>
-            <base-icon name="home"/>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>TOPに戻る</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
+        <drawer-list-tile icon="home">
+          TOPに戻る
+        </drawer-list-tile>
       </v-list>
     </v-navigation-drawer>
     <v-content>
@@ -191,14 +172,12 @@
 <script>
 import games from "~/plugins/model/game-list.js"
 import Vue from "vue"
-import BaseIcon from "~/components/atoms/BaseIcon.vue"
+import DrawerListTile from "~/components/molecules/DrawerListTile.vue"
 const dummyObject = games[0]
 
 export default {
   name: "Game",
-  components: {
-    "base-icon": BaseIcon
-  },
+  components: { DrawerListTile },
   validate({ params }) {
     return games.map(game => game.id).includes(params.game)
   },
