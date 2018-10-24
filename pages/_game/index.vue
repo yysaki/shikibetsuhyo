@@ -37,29 +37,7 @@
 
           <base-card>
             <template slot="title">このゲームについて</template>
-            <p>
-              このサイトは
-              <a :href="gameObject.developerUrl" target="_blank">
-                {{ gameObject.developerName }}
-              </a>
-              様が発売した
-              <a :href="gameObject.gameUrl" target="_blank">
-                {{ gameObject.title }}
-              </a>
-              にて識別済みアイテムを記録するためのチェックリストです。
-            </p>
-            <p>
-              スマートフォンでの使用を想定しており、チェックした情報はCookieに保存されます。新しくプレイし直す時は「Clear」から情報をリセットして下さい。
-            </p>
-            <p>
-              このサイトでは未識別で登場しうる全てのアイテムをリストアップしています。「もっと不思議のダンジョン」のプレイにお役立て頂ければと思います。
-            </p>
-            <p>
-              参考にさせていただいたサイト:
-              <a :href="gameObject.referenceUrl" target="_blank">
-                {{ gameObject.referenceName }}
-              </a>
-            </p>
+            <about-statement :game="gameObject"/>
             <template slot="actions">
               <v-spacer/>
               <v-btn
@@ -154,6 +132,7 @@
 <script>
 import games from "~/plugins/model/game-list.js"
 import Vue from "vue"
+import AboutStatement from "~/components/molecules/AboutStatement.vue"
 import DrawerListTile from "~/components/molecules/DrawerListTile.vue"
 import BaseCard from "~/components/organisms/BaseCard.vue"
 const dummyObject = games[0]
@@ -161,6 +140,7 @@ const dummyObject = games[0]
 export default {
   name: "Game",
   components: {
+    AboutStatement,
     BaseCard,
     DrawerListTile
   },
