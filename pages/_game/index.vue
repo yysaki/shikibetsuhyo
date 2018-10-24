@@ -155,7 +155,7 @@
 import games from "~/plugins/model/game-list.js"
 import Vue from "vue"
 import DrawerListTile from "~/components/molecules/DrawerListTile.vue"
-import BaseCard from "~/components/molecules/BaseCard.vue"
+import BaseCard from "~/components/organisms/BaseCard.vue"
 const dummyObject = games[0]
 
 export default {
