@@ -9,12 +9,24 @@
 
     <v-divider/>
     <v-card-actions>
-      <slot name="actions"/>
+      <v-spacer/>
+      <v-btn
+        flat
+        color="info"
+        @click="handleClick"
+      >
+        <slot name="button-label"/>
+      </v-btn>
     </v-card-actions>
   </v-card>
 </template>
 <script>
 export default {
-  name: "BaseCard"
+  name: "BaseCard",
+  methods: {
+    handleClick(ev) {
+      this.$emit("click", ev)
+    }
+  }
 }
 </script>
