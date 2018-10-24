@@ -1,5 +1,5 @@
 <template>
-  <v-list-tile>
+  <v-list-tile :to="to">
     <v-list-tile-action>
       <base-icon :name="icon"/>
     </v-list-tile-action>
@@ -17,6 +17,11 @@ export default {
     icon: {
       type: String,
       required: true
+    },
+    to: {
+      type: String,
+      default: "",
+      required: false
     }
   }
 }

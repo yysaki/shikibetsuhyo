@@ -50,7 +50,7 @@
             </template>
           </base-card>
         </v-dialog>
-        <drawer-list-tile icon="home">
+        <drawer-list-tile to="/" icon="home">
           TOPに戻る
         </drawer-list-tile>
       </v-list>
