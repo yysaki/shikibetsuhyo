@@ -8,48 +8,22 @@
       temporary
     >
       <v-list dense>
-        <v-dialog v-model="dialogForReset">
-          <drawer-list-tile slot="activator" icon="delete_sweep">
-            リストをリセットする
-          </drawer-list-tile>
-
-          <base-card>
-            <template slot="title">リストをリセットする</template>
-            このゲームのリストにチェックした情報をクリアします。よろしいですか？
-            <template slot="actions">
-              <v-spacer/>
-              <v-btn
-                flat
-                color="info"
-                @click="clickWithReset"
-              >
-                はい
-              </v-btn>
-            </template>
-          </base-card>
-        </v-dialog>
-        <v-dialog
-          v-model="dialogForAbout"
+        <drawer-list-tile-dialog
+          icon="delete_sweep"
+          title="リストをリセットする"
+          button-label="はい"
+          @click="clickWithReset"
         >
-          <drawer-list-tile slot="activator" icon="info">
-            このゲームについて
-          </drawer-list-tile>
-
-          <base-card>
-            <template slot="title">このゲームについて</template>
-            <about-statement :game="gameObject"/>
-            <template slot="actions">
-              <v-spacer/>
-              <v-btn
-                flat
-                color="info"
-                @click="dialogForAbout = drawer = false"
-              >
-                リストに戻る
-              </v-btn>
-            </template>
-          </base-card>
-        </v-dialog>
+          このゲームのリストにチェックした情報をクリアします。よろしいですか？
+        </drawer-list-tile-dialog>
+        <drawer-list-tile-dialog
+          icon="info"
+          title="このゲームについて"
+          button-label="リストに戻る"
+          @click="drawer = false"
+        >
+          <about-statement :game="gameObject"/>
+        </drawer-list-tile-dialog>
         <drawer-list-tile to="/" icon="home">
           TOPに戻る
         </drawer-list-tile>
@@ -134,15 +108,15 @@ import games from "~/plugins/model/game-list.js"
 import Vue from "vue"
 import AboutStatement from "~/components/molecules/AboutStatement.vue"
 import DrawerListTile from "~/components/molecules/DrawerListTile.vue"
-import BaseCard from "~/components/organisms/BaseCard.vue"
+import DrawerListTileDialog from "~/components/organisms/DrawerListTileDialog.vue"
 const dummyObject = games[0]
 
 export default {
   name: "Game",
   components: {
     AboutStatement,
-    BaseCard,
-    DrawerListTile
+    DrawerListTile,
+    DrawerListTileDialog
   },
   validate({ params }) {
     return games.map(game => game.id).includes(params.game)
@@ -151,8 +125,6 @@ export default {
     return {
       gameObject: dummyObject,
       selectedType: dummyObject.lists[0].type,
-      dialogForAbout: null,
-      dialogForReset: null,
       drawer: null
     }
   },
@@ -219,7 +191,6 @@ export default {
       localStorage.setItem("shikibetsuhyo", JSON.stringify(xs))
     },
     clickWithReset: function() {
-      this.dialogForReset = false
       this.drawer = false
 
       let x = {}
