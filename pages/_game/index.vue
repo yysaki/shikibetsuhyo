@@ -132,6 +132,9 @@ export default {
     title: function() {
       return this.gameObject.title
     },
+    gameId: function() {
+      return this.gameObject.id
+    },
     selectedItems: function() {
       const items = this.gameObject.lists.filter(
         x => x.type === this.selectedType
@@ -152,7 +155,7 @@ export default {
     const raw = localStorage.getItem("shikibetsuhyo")
     if (raw !== undefined && raw !== null) {
       const xs = JSON.parse(raw)
-      const x = xs[this.gameObject.id]
+      const x = xs[this.gameId]
       if (x !== undefined && x !== null) {
         Vue.set(this, "checkData", x)
       }
@@ -186,7 +189,7 @@ export default {
 
       const raw = localStorage.getItem("shikibetsuhyo")
       let xs = raw !== null ? JSON.parse(raw) : {}
-      xs[this.gameObject.id] = this.checkData
+      xs[this.gameId] = this.checkData
 
       localStorage.setItem("shikibetsuhyo", JSON.stringify(xs))
     },
@@ -205,7 +208,7 @@ export default {
 
       const raw = localStorage.getItem("shikibetsuhyo")
       let xs = raw !== null ? JSON.parse(raw) : {}
-      xs[this.gameObject.id] = x
+      xs[this.gameId] = x
 
       localStorage.setItem("shikibetsuhyo", JSON.stringify(xs))
 
