@@ -44,8 +44,21 @@ export default {
       title: "不思議のダンジョン 値段識別表",
       meta: [
         { charset: "utf-8" },
-        { name: "viewport", content: "width=device-width, initial-scale=1" }
-      ]
+        { name: "viewport", content: "width=device-width, initial-scale=1" },
+        { name: "og:type", content: "website" },
+        { name: "og:title", content: "不思議のダンジョン 値段識別表" },
+        {
+          property: "og:description",
+          content:
+            "ローグライクゲームのプレイ中、店売りの値段で判別した識別済みアイテムを記録するためのチェックリストです。"
+        },
+        {
+          property: "og:url",
+          content: "https://shikibetsuhyo.yysaki.com"
+        },
+        { property: "og:site_name", content: "不思議のダンジョン 値段識別表" }
+      ],
+      link: [{ rel: "canonical", href: "https://shikibetsuhyo.yysaki.com" }]
     }
   }
 }
