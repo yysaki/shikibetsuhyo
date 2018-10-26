@@ -46,31 +46,10 @@
                 @click.stop="drawer = !drawer"
               />
             </v-toolbar>
-            <v-card class="pt-5 mt-3 pb-5">
-              <v-list class="pt-0">
-                <template v-for="(item, index) in selectedItems">
-                  <v-subheader
-                    v-if="index === 0 || item.subheader !== selectedItems[index-1].subheader"
-                    :key="item.subheader"
-                  >
-                    {{ item.subheader }}
-                  </v-subheader>
-                  <v-list-tile
-                    :key="item.name"
-                  >
-                    <v-checkbox
-                      :label="item.name"
-                      :input-value="item.checked"
-                      @click.stop="clickWithSave(index)"
-                    />
-                  </v-list-tile>
-                  <v-divider
-                    v-if="index + 1 < selectedItems.length"
-                    :key="index"
-                  />
-                </template>
-              </v-list>
-            </v-card>
+            <the-list
+              :items="selectedItems"
+              @click="clickWithSave"
+            />
             <v-footer
               fixed
               height="auto"
@@ -109,6 +88,7 @@ import Vue from "vue"
 import AboutStatement from "~/components/molecules/AboutStatement.vue"
 import DrawerListTile from "~/components/molecules/DrawerListTile.vue"
 import DrawerListTileDialog from "~/components/organisms/DrawerListTileDialog.vue"
+import TheList from "~/components/organisms/TheList.vue"
 const dummyObject = games[0]
 
 export default {
@@ -116,7 +96,8 @@ export default {
   components: {
     AboutStatement,
     DrawerListTile,
-    DrawerListTileDialog
+    DrawerListTileDialog,
+    TheList
   },
   validate({ params }) {
     return games.map(game => game.id).includes(params.game)
