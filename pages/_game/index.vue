@@ -50,32 +50,10 @@
               :items="selectedItems"
               @click="clickWithSave"
             />
-            <v-footer
-              fixed
-              height="auto"
-              color="primary"
-            >
-              <v-layout
-                justify-center
-                row
-                wrap
-              >
-                <v-tabs
-                  color="primary"
-                  dark
-                  slider-color="yellow"
-                  centered
-                >
-                  <v-tab
-                    v-for="list in gameObject.lists"
-                    :key="list.type"
-                    @click="selectedType=list.type"
-                  >
-                    {{ list.name }}
-                  </v-tab>
-                </v-tabs>
-              </v-layout>
-            </v-footer>
+            <the-footer
+              :lists="gameObject.lists"
+              @click="changeType"
+            />
           </v-flex>
         </v-layout>
       </v-container>
@@ -88,6 +66,7 @@ import Vue from "vue"
 import AboutStatement from "~/components/molecules/AboutStatement.vue"
 import DrawerListTile from "~/components/molecules/DrawerListTile.vue"
 import DrawerListTileDialog from "~/components/organisms/DrawerListTileDialog.vue"
+import TheFooter from "~/components/organisms/TheFooter.vue"
 import TheList from "~/components/organisms/TheList.vue"
 const dummyObject = games[0]
 
@@ -97,6 +76,7 @@ export default {
     AboutStatement,
     DrawerListTile,
     DrawerListTileDialog,
+    TheFooter,
     TheList
   },
   validate({ params }) {
@@ -162,6 +142,9 @@ export default {
     }
   },
   methods: {
+    changeType: function(type) {
+      this.selectedType = type
+    },
     clickWithSave: function(index) {
       const current = this.checkData[this.selectedType][index]
       this.checkData[this.selectedType].splice(index, 1, !current)
