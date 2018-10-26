@@ -60,7 +60,7 @@
                   >
                     <v-checkbox
                       :label="item.name"
-                      v-model="item.checked"
+                      :input-value="item.checked"
                       @click.stop="clickWithSave(index)"
                     />
                   </v-list-tile>
