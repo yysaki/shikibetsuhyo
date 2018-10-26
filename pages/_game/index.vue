@@ -50,10 +50,10 @@
               <v-list class="pt-0">
                 <template v-for="(item, index) in selectedItems">
                   <v-subheader
-                    v-if="index === 0 || `${item.buy}:${item.sell}` !== `${selectedItems[index-1].buy}:${selectedItems[index-1].sell}`"
-                    :key="`${item.buy}:${item.sell}`"
+                    v-if="index === 0 || item.subheader !== selectedItems[index-1].subheader"
+                    :key="item.subheader"
                   >
-                    {{ `買: ${item.buy} /売: ${item.sell}` }}
+                    {{ item.subheader }}
                   </v-subheader>
                   <v-list-tile
                     :key="item.name"
@@ -145,8 +145,7 @@ export default {
       const checkData = this.checkData[this.selectedType]
       return items.map((item, index) => ({
         name: item.name,
-        buy: item.buy,
-        sell: item.sell,
+        subheader: `買: ${item.buy} /売: ${item.sell}`,
         checked: checkData[index]
       }))
     }
