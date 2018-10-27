@@ -10,7 +10,7 @@
             />
             <the-list
               :items="selectedItems"
-              @click="clickWithSave"
+              @click="handleClickItem"
             />
             <the-footer
               :lists="gameObject.lists"
@@ -102,7 +102,7 @@ export default {
     changeType: function(type) {
       this.selectedType = type
     },
-    clickWithSave: function(index) {
+    handleClickItem: function(index) {
       const current = this.checkData[this.selectedType][index]
       this.checkData[this.selectedType].splice(index, 1, !current)
 
