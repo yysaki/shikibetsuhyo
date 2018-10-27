@@ -12,7 +12,7 @@
         icon="delete_sweep"
         title="リストをリセットする"
         button-label="はい"
-        @click="handleClickWithReset"
+        @click="handleResetList"
       >
         このゲームのリストにチェックした情報をクリアします。よろしいですか？
       </drawer-list-tile-dialog>
@@ -52,8 +52,8 @@ export default {
     handleClick(val) {
       this.$emit("input", val)
     },
-    handleClickWithReset() {
-      this.$emit("clickWithReset")
+    handleResetList() {
+      this.$emit("resetList")
     }
   }
 }

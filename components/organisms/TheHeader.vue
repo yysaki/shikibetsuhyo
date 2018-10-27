@@ -8,7 +8,7 @@
       right
       temporary
       @input="handleChangeDrawer"
-      @clickWithReset="handleClickWithReset"
+      @resetList="handleResetList"
     />
     <v-toolbar
       color="primary"
@@ -46,9 +46,9 @@ export default {
     handleChangeDrawer(val) {
       this.drawer = val
     },
-    handleClickWithReset() {
+    handleResetList() {
       this.drawer = false
-      this.$emit("clickWithReset")
+      this.$emit("resetList")
     }
   }
 }

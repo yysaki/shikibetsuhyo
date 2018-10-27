@@ -6,7 +6,7 @@
           <v-flex xs12 sm12>
             <the-header
               :game="gameObject"
-              @clickWithReset="clickWithReset"
+              @resetList="handleResetList"
             />
             <the-list
               :items="selectedItems"
@@ -116,7 +116,7 @@ export default {
 
       localStorage.setItem("shikibetsuhyo", JSON.stringify(xs))
     },
-    clickWithReset: function() {
+    handleResetList: function() {
       let x = {}
       for (const list of this.gameObject.lists) {
         const type = list.type
