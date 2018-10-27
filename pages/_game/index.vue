@@ -1,32 +1,13 @@
 <template>
   <v-app id="geme">
-    <the-navigation-drawer
-      :drawer="drawer"
-      :game="gameObject"
-      app
-      fixed
-      right
-      temporary
-      @input="changeDrawer"
-      @clickWithReset="clickWithReset"
-    />
     <v-content>
       <v-container class="container" fluid ma-0 pa-0 fill-height>
         <v-layout row>
           <v-flex xs12 sm12>
-            <v-toolbar
-              color="primary"
-              dark
-              fixed
-            >
-              <v-toolbar-title>
-                不思議のダンジョン
-              </v-toolbar-title>
-              <v-spacer/>
-              <v-toolbar-side-icon
-                @click.stop="drawer = !drawer"
-              />
-            </v-toolbar>
+            <the-header
+              :game="gameObject"
+              @clickWithReset="clickWithReset"
+            />
             <the-list
               :items="selectedItems"
               @click="clickWithSave"
@@ -45,16 +26,16 @@
 import games from "~/plugins/model/game-list.js"
 import Vue from "vue"
 import TheFooter from "~/components/organisms/TheFooter.vue"
+import TheHeader from "~/components/organisms/TheHeader.vue"
 import TheList from "~/components/organisms/TheList.vue"
-import TheNavigationDrawer from "~/components/organisms/TheNavigationDrawer.vue"
 const dummyObject = games[0]
 
 export default {
   name: "Game",
   components: {
     TheFooter,
-    TheList,
-    TheNavigationDrawer
+    TheHeader,
+    TheList
   },
   validate({ params }) {
     return games.map(game => game.id).includes(params.game)
@@ -62,8 +43,7 @@ export default {
   data: function() {
     return {
       gameObject: dummyObject,
-      selectedType: dummyObject.lists[0].type,
-      drawer: false
+      selectedType: dummyObject.lists[0].type
     }
   },
   computed: {
@@ -119,9 +99,6 @@ export default {
     }
   },
   methods: {
-    changeDrawer: function(val) {
-      this.drawer = val
-    },
     changeType: function(type) {
       this.selectedType = type
     },
@@ -140,8 +117,6 @@ export default {
       localStorage.setItem("shikibetsuhyo", JSON.stringify(xs))
     },
     clickWithReset: function() {
-      this.drawer = false
-
       let x = {}
       for (const list of this.gameObject.lists) {
         const type = list.type
