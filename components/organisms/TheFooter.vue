@@ -18,7 +18,7 @@
         <v-tab
           v-for="list in lists"
           :key="list.type"
-          @click="handleClick(list.type)"
+          @click="handleSelectType(list.type)"
         >
           {{ list.name }}
         </v-tab>
@@ -36,8 +36,8 @@ export default {
     }
   },
   methods: {
-    handleClick(type) {
-      this.$emit("click", type)
+    handleSelectType(type) {
+      this.$emit("selectType", type)
     }
   }
 }

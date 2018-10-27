@@ -14,7 +14,7 @@
             />
             <the-footer
               :lists="gameObject.lists"
-              @click="changeType"
+              @selectType="handleSelectType"
             />
           </v-flex>
         </v-layout>
@@ -99,7 +99,7 @@ export default {
     }
   },
   methods: {
-    changeType: function(type) {
+    handleSelectType: function(type) {
       this.selectedType = type
     },
     handleClickItem: function(index) {
