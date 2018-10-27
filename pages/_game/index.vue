@@ -1,35 +1,15 @@
 <template>
   <v-app id="geme">
-    <v-navigation-drawer
-      :value="drawer"
+    <the-navigation-drawer
+      :drawer="drawer"
+      :game="gameObject"
       app
       fixed
       right
       temporary
       @input="changeDrawer"
-    >
-      <v-list dense>
-        <drawer-list-tile-dialog
-          icon="delete_sweep"
-          title="リストをリセットする"
-          button-label="はい"
-          @click="clickWithReset"
-        >
-          このゲームのリストにチェックした情報をクリアします。よろしいですか？
-        </drawer-list-tile-dialog>
-        <drawer-list-tile-dialog
-          icon="info"
-          title="このゲームについて"
-          button-label="リストに戻る"
-          @click="drawer = false"
-        >
-          <about-statement :game="gameObject"/>
-        </drawer-list-tile-dialog>
-        <drawer-list-tile to="/" icon="home" class="tile-home">
-          TOPに戻る
-        </drawer-list-tile>
-      </v-list>
-    </v-navigation-drawer>
+      @clickWithReset="clickWithReset"
+    />
     <v-content>
       <v-container class="container" fluid ma-0 pa-0 fill-height>
         <v-layout row>
@@ -64,21 +44,17 @@
 <script>
 import games from "~/plugins/model/game-list.js"
 import Vue from "vue"
-import AboutStatement from "~/components/molecules/AboutStatement.vue"
-import DrawerListTile from "~/components/molecules/DrawerListTile.vue"
-import DrawerListTileDialog from "~/components/organisms/DrawerListTileDialog.vue"
 import TheFooter from "~/components/organisms/TheFooter.vue"
 import TheList from "~/components/organisms/TheList.vue"
+import TheNavigationDrawer from "~/components/organisms/TheNavigationDrawer.vue"
 const dummyObject = games[0]
 
 export default {
   name: "Game",
   components: {
-    AboutStatement,
-    DrawerListTile,
-    DrawerListTileDialog,
     TheFooter,
-    TheList
+    TheList,
+    TheNavigationDrawer
   },
   validate({ params }) {
     return games.map(game => game.id).includes(params.game)
