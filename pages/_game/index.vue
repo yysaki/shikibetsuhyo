@@ -1,11 +1,12 @@
 <template>
   <v-app id="geme">
     <v-navigation-drawer
-      v-model="drawer"
+      :value="drawer"
       app
       fixed
       right
       temporary
+      @input="changeDrawer"
     >
       <v-list dense>
         <drawer-list-tile-dialog
@@ -86,7 +87,7 @@ export default {
     return {
       gameObject: dummyObject,
       selectedType: dummyObject.lists[0].type,
-      drawer: null
+      drawer: false
     }
   },
   computed: {
@@ -142,6 +143,9 @@ export default {
     }
   },
   methods: {
+    changeDrawer: function(val) {
+      this.drawer = val
+    },
     changeType: function(type) {
       this.selectedType = type
     },
