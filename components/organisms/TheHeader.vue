@@ -1,6 +1,7 @@
 <template>
   <div>
     <the-navigation-drawer
+      v-if="showSideIcon"
       :drawer="drawer"
       :game="game"
       app
@@ -18,8 +19,9 @@
       <v-toolbar-title>
         不思議のダンジョン
       </v-toolbar-title>
-      <v-spacer/>
+      <v-spacer v-if="showSideIcon"/>
       <v-toolbar-side-icon
+        v-if="showSideIcon"
         @click.stop="drawer = !drawer"
       />
     </v-toolbar>
@@ -34,7 +36,11 @@ export default {
   props: {
     game: {
       type: Object,
-      required: true
+      default: () => new Object()
+    },
+    showSideIcon: {
+      type: Boolean,
+      default: false
     }
   },
   data: function() {

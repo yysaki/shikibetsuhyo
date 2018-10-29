@@ -6,6 +6,7 @@
           <v-flex xs12 sm12>
             <the-header
               :game="gameObject"
+              :show-side-icon="true"
               @resetList="handleResetList"
             />
             <the-list
