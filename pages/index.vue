@@ -3,6 +3,7 @@
     <v-toolbar
       color="primary"
       dark
+      fixed
     >
       <v-toolbar-title>
         不思議のダンジョン
@@ -10,7 +11,7 @@
     </v-toolbar>
     <v-layout row>
       <v-flex xs12 sm12>
-        <v-card>
+        <v-card class="pt-5 mt-3">
           <v-list>
             <template v-for="(game, index) in games">
               <v-list-tile
