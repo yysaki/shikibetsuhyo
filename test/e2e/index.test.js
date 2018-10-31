@@ -97,6 +97,37 @@ test("Route /shiren/ exits and render tab header", async t => {
   t.true(tabs.includes("杖"))
 })
 
+test("Test checkbox state changing", async t => {
+  const page = await browser.newPage()
+  await page.goto("http://localhost:4000/shiren/", { waitUntil: "load" })
+
+  let control = await page.$(".v-input")
+  let checked = await control.$eval("input", node => node.checked)
+  t.is(checked, false)
+
+  control.click()
+  await page.waitFor(500)
+  checked = await control.$eval("input", node => node.checked)
+  t.is(checked, true)
+
+  // test localStorage save data
+  await page.reload({ waitUntil: "load" })
+  control = await page.$(".v-input")
+  checked = await control.$eval("input", node => node.checked)
+  t.is(checked, true)
+
+  // test reset method
+  await page.click("button.v-toolbar__side-icon")
+  await page.waitFor(500)
+  await page.click("#tile-delete_sweep")
+  await page.waitFor(500)
+  await page.click("#button-delete_sweep")
+  await page.waitFor(500)
+  control = await page.$(".v-input")
+  checked = await control.$eval("input", node => node.checked)
+  t.is(checked, false)
+})
+
 test("Test router-link", async t => {
   const page = await browser.newPage()
   await page.goto("http://localhost:4000")
