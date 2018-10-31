@@ -2,11 +2,11 @@
   <v-dialog
     v-model="isVisible"
   >
-    <drawer-list-tile slot="activator" :icon="icon" :id="icon">
+    <drawer-list-tile slot="activator" :icon="icon" :id="`tile-${icon}`">
       {{ title }}
     </drawer-list-tile>
 
-    <base-card @click="handleClick">
+    <base-card :icon="icon" @click="handleClick">
       <template slot="title">{{ title }}</template>
       <slot/>
       <template slot="button-label">{{ buttonLabel }}</template>

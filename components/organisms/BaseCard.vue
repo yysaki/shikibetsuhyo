@@ -11,6 +11,7 @@
     <v-card-actions>
       <v-spacer/>
       <v-btn
+        :id="`button-${icon}`"
         flat
         color="info"
         @click="handleClick"
@@ -23,6 +24,12 @@
 <script>
 export default {
   name: "BaseCard",
+  props: {
+    icon: {
+      type: String,
+      default: ""
+    }
+  },
   methods: {
     handleClick(ev) {
       this.$emit("click", ev)
