@@ -2,7 +2,7 @@
   <v-dialog
     v-model="isVisible"
   >
-    <drawer-list-tile slot="activator" :icon="icon">
+    <drawer-list-tile slot="activator" :icon="icon" :id="icon">
       {{ title }}
     </drawer-list-tile>
 
