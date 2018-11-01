@@ -2,23 +2,11 @@
   <v-app id="index">
     <v-layout row>
       <v-flex xs12 sm12>
-        <v-card class="pt-5 mt-3">
-          <the-header/>
-          <v-list>
-            <template v-for="(game, index) in games">
-              <v-list-tile
-                :key="game.id"
-                :to="`/${game.id}/`"
-              >
-                {{ game.title }}
-              </v-list-tile>
-              <v-divider
-                v-if="index + 1 < games.length"
-                :key="index"
-              />
-            </template>
-          </v-list>
-        </v-card>
+        <the-header/>
+        <the-list
+          :items="items"
+          list-category="link"
+        />
       </v-flex>
     </v-layout>
   </v-app>
@@ -26,15 +14,26 @@
 <script>
 import games from "~/plugins/model/game-list.js"
 import TheHeader from "~/components/organisms/TheHeader.vue"
+import TheList from "~/components/organisms/TheList.vue"
 
 export default {
   name: "Index",
   components: {
-    TheHeader
+    TheHeader,
+    TheList
   },
   data: function() {
     return {
       games: games
+    }
+  },
+  computed: {
+    items: function() {
+      return games.map(game => ({
+        name: game.title,
+        subheader: "風来のシレンシリーズ",
+        to: `/${game.id}/`
+      }))
     }
   },
   head() {
