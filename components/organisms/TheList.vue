@@ -12,6 +12,7 @@
           :key="item.name"
         >
           <v-checkbox
+            v-if="listCategory === 'checkbox'"
             :label="item.name"
             :input-value="item.checked"
             @click.stop="handleClick(index)"
@@ -31,6 +32,10 @@ export default {
   props: {
     items: {
       type: Array,
+      required: true
+    },
+    listCategory: {
+      type: String,
       required: true
     }
   },

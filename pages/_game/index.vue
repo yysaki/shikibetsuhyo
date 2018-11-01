@@ -11,6 +11,7 @@
             />
             <the-list
               :items="selectedItems"
+              list-category="checkbox"
               @click="handleClickItem"
             />
             <the-footer
