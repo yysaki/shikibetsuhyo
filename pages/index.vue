@@ -1,17 +1,9 @@
 <template>
   <v-app id="index">
-    <v-toolbar
-      color="primary"
-      dark
-      fixed
-    >
-      <v-toolbar-title>
-        不思議のダンジョン
-      </v-toolbar-title>
-    </v-toolbar>
     <v-layout row>
       <v-flex xs12 sm12>
         <v-card class="pt-5 mt-3">
+          <the-header/>
           <v-list>
             <template v-for="(game, index) in games">
               <v-list-tile
@@ -33,8 +25,13 @@
 </template>
 <script>
 import games from "~/plugins/model/game-list.js"
+import TheHeader from "~/components/organisms/TheHeader.vue"
+
 export default {
   name: "Index",
+  components: {
+    TheHeader
+  },
   data: function() {
     return {
       games: games
