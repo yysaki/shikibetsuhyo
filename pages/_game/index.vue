@@ -30,7 +30,6 @@ import Vue from "vue"
 import TheFooter from "~/components/organisms/TheFooter.vue"
 import TheHeader from "~/components/organisms/TheHeader.vue"
 import TheList from "~/components/organisms/TheList.vue"
-const dummyObject = games[0]
 
 export default {
   name: "Game",
@@ -41,12 +40,6 @@ export default {
   },
   validate({ params }) {
     return games.map(game => game.id).includes(params.game)
-  },
-  data: function() {
-    return {
-      gameObject: dummyObject,
-      selectedType: dummyObject.lists[0].type
-    }
   },
   computed: {
     title: function() {
