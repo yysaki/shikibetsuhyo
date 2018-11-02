@@ -63,11 +63,15 @@ export default {
         x => x.type === this.selectedType
       )[0].items
       const checkData = this.checkData[this.selectedType]
-      return items.map((item, index) => ({
-        name: item.name,
-        subheader: `買: ${item.buy} /売: ${item.sell}`,
-        checked: checkData[index]
-      }))
+      return items.map((item, index) => {
+        const buy = item.buy >= 0 ? item.buy.toString() : "-"
+        const sell = item.sell >= 0 ? item.sell.toString() : "-"
+        return {
+          name: item.name,
+          subheader: `買: ${buy} /売: ${sell}`,
+          checked: checkData[index]
+        }
+      })
     }
   },
   mounted: function() {
