@@ -42,15 +42,6 @@ export default {
     return games.map(game => game.id).includes(params.game)
   },
   computed: {
-    title: function() {
-      return this.game.title
-    },
-    shortTitle: function() {
-      return this.game.shortTitle
-    },
-    gameId: function() {
-      return this.game.id
-    },
     selectedItems: function() {
       const items = this.game.lists.filter(x => x.type === this.selectedType)[0]
         .items
@@ -73,7 +64,7 @@ export default {
     const raw = localStorage.getItem("shikibetsuhyo")
     if (raw !== undefined && raw !== null) {
       const xs = JSON.parse(raw)
-      const x = xs[this.gameId]
+      const x = xs[this.game.id]
       if (x !== undefined && x !== null) {
         Vue.set(this, "checkData", x)
       }
@@ -110,7 +101,7 @@ export default {
 
       const raw = localStorage.getItem("shikibetsuhyo")
       let xs = raw !== null ? JSON.parse(raw) : {}
-      xs[this.gameId] = this.checkData
+      xs[this.game.id] = this.checkData
 
       localStorage.setItem("shikibetsuhyo", JSON.stringify(xs))
     },
@@ -127,7 +118,7 @@ export default {
 
       const raw = localStorage.getItem("shikibetsuhyo")
       let xs = raw !== null ? JSON.parse(raw) : {}
-      xs[this.gameId] = x
+      xs[this.game.id] = x
 
       localStorage.setItem("shikibetsuhyo", JSON.stringify(xs))
 
@@ -136,31 +127,31 @@ export default {
   },
   head: function() {
     return {
-      title: `${this.title} - 不思議のダンジョン 値段識別表`,
+      title: `${this.game.title} - 不思議のダンジョン 値段識別表`,
       meta: [
         { charset: "utf-8" },
         { name: "viewport", content: "width=device-width, initial-scale=1" },
         { name: "og:type", content: "website" },
         {
           name: "og:title",
-          content: this.title + " - 不思議のダンジョン 値段識別表"
+          content: this.game.title + " - 不思議のダンジョン 値段識別表"
         },
         {
           property: "og:description",
           content:
-            this.shortTitle +
+            this.game.shortTitle +
             "のプレイ中、店売りの値段で判別した識別済みアイテムを記録するためのチェックリストです。"
         },
         {
           property: "og:url",
-          content: "https://shikibetsuhyo.yysaki.com/" + this.gameId + "/"
+          content: "https://shikibetsuhyo.yysaki.com/" + this.game.id + "/"
         },
         { property: "og:site_name", content: "不思議のダンジョン 値段識別表" }
       ],
       link: [
         {
           rel: "canonical",
-          href: "https://shikibetsuhyo.yysaki.com/" + this.gameId + "/"
+          href: "https://shikibetsuhyo.yysaki.com/" + this.game.id + "/"
         }
       ]
     }
