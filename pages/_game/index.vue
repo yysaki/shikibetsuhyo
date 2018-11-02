@@ -5,7 +5,7 @@
         <v-layout row>
           <v-flex xs12 sm12>
             <the-header
-              :game="gameObject"
+              :game="game"
               :show-side-icon="true"
               @resetList="handleResetList"
             />
@@ -15,7 +15,7 @@
               @click="handleClickItem"
             />
             <the-footer
-              :lists="gameObject.lists"
+              :lists="game.lists"
               @selectType="handleSelectType"
             />
           </v-flex>
@@ -43,18 +43,17 @@ export default {
   },
   computed: {
     title: function() {
-      return this.gameObject.title
+      return this.game.title
     },
     shortTitle: function() {
-      return this.gameObject.shortTitle
+      return this.game.shortTitle
     },
     gameId: function() {
-      return this.gameObject.id
+      return this.game.id
     },
     selectedItems: function() {
-      const items = this.gameObject.lists.filter(
-        x => x.type === this.selectedType
-      )[0].items
+      const items = this.game.lists.filter(x => x.type === this.selectedType)[0]
+        .items
       const checkData = this.checkData[this.selectedType]
       return items.map((item, index) => {
         const buy = item.buy >= 0 ? item.buy.toString() : "-"
@@ -92,7 +91,7 @@ export default {
     }
 
     return {
-      gameObject: target,
+      game: target,
       selectedType: target.lists[0].type,
       checkData: generateCheckData(target.lists)
     }
@@ -117,7 +116,7 @@ export default {
     },
     handleResetList: function() {
       let x = {}
-      for (const list of this.gameObject.lists) {
+      for (const list of this.game.lists) {
         const type = list.type
         x[type] = new Array(this.checkData[type].length).fill(false)
       }
