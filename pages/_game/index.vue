@@ -1,5 +1,5 @@
 <template>
-  <v-app id="geme">
+  <v-app id="game">
     <v-content>
       <v-container class="container" fluid ma-0 pa-0 fill-height>
         <v-layout row>
