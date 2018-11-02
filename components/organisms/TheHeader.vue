@@ -4,10 +4,6 @@
       v-if="showSideIcon"
       :drawer="drawer"
       :game="game"
-      app
-      fixed
-      right
-      temporary
       @input="handleChangeDrawer"
       @resetList="handleResetList"
     />
