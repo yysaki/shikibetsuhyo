@@ -5,9 +5,9 @@ before_install:
   - 'npm i -g eslint'
   - 'npm i -g eslint-plugin-promise'
 script:
+  - 'npm run build'
   - 'npm run test'
   - 'npm run lint'
-  - 'npm run build'
 deploy:
   provider: firebase
   skip_cleanup: true
