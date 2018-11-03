@@ -144,6 +144,17 @@ test("Test router-link", async t => {
   t.is(page.url(), "http://localhost:4000/")
 })
 
+test("Test sitemap", async t => {
+  const page = await browser.newPage()
+  await page.goto("http://localhost:4000/sitemap.xml")
+  t.is(page.url(), "http://localhost:4000/sitemap.xml")
+  const content = await page.content()
+  t.true(content.includes("http://www.sitemaps.org/schemas/sitemap/0.9"))
+  t.true(
+    content.includes("<loc>https://shikibetsuhyo.yysaki.com/shiren/</loc>")
+  )
+})
+
 test.after("Close browser", async () => {
   await browser.close()
 })
