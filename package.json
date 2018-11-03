@@ -23,11 +23,12 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "test": "ava --verbose",
+    "test": "ava",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lintfix": "eslint --fix --ext .js,.vue --ignore-path .gitignore ."
   },
   "ava": {
+    "verbose": true,
     "require": [
       "babel-register"
     ]
