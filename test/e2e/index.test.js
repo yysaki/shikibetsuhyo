@@ -102,19 +102,16 @@ test("Test checkbox state changing", async t => {
   await page.goto("http://localhost:4000/shiren/", { waitUntil: "load" })
 
   let control = await page.$(".v-input")
-  let checked = await control.$eval("input", node => node.checked)
-  t.is(checked, false)
+  t.is(await control.$eval("input", node => node.checked), false)
 
   control.click()
   await page.waitFor(500)
-  checked = await control.$eval("input", node => node.checked)
-  t.is(checked, true)
+  t.is(await control.$eval("input", node => node.checked), true)
 
   // test localStorage save data
   await page.reload({ waitUntil: "load" })
   control = await page.$(".v-input")
-  checked = await control.$eval("input", node => node.checked)
-  t.is(checked, true)
+  t.is(await control.$eval("input", node => node.checked), true)
 
   // test reset method
   await page.click("button.v-toolbar__side-icon")
@@ -124,8 +121,7 @@ test("Test checkbox state changing", async t => {
   await page.click("#button-delete_sweep")
   await page.waitFor(500)
   control = await page.$(".v-input")
-  checked = await control.$eval("input", node => node.checked)
-  t.is(checked, false)
+  t.is(await control.$eval("input", node => node.checked), false)
 })
 
 test("Test router-link", async t => {
