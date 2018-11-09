@@ -20,7 +20,8 @@
     "firebase-functions": "^2.0.5",
     "firebase-tools": "^5.1.1",
     "nuxt": "^2.0.0",
-    "pug": "^2.0.3"
+    "pug": "^2.0.3",
+    "sitemap": "^2.1.0"
   },
   "private": true
 }

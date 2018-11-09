@@ -2,9 +2,6 @@
   "hosting": {
     "public": "public",
     "rewrites": [{
-      "source": "/sitemap.xml",
-      "destination": "/sitemap.xml"
-    }, {
       "source": "**",
       "function": "ssr"
     }],
