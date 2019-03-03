@@ -80,8 +80,7 @@ test("Test checkbox state changing", async t => {
   t.is(await control.$eval("input", node => node.checked), false)
 
   let input = await page.$(".v-input input")
-  input.click()
-  await page.waitFor(500)
+  await input.click()
   t.is(await control.$eval("input", node => node.checked), true)
 
   // test localStorage save data
