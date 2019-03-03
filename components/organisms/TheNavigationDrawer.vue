@@ -22,7 +22,7 @@
         button-label="リストに戻る"
         @click="handleClick(false)"
       >
-        <about-statement :game="game"/>
+        <about-statement :game="game" />
       </drawer-list-tile-dialog>
       <drawer-list-tile to="/" icon="home" class="tile-home">
         TOPに戻る

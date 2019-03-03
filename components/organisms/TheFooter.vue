@@ -1,20 +1,7 @@
 <template>
-  <v-footer
-    fixed
-    height="auto"
-    color="primary"
-  >
-    <v-layout
-      justify-center
-      row
-      wrap
-    >
-      <v-tabs
-        color="primary"
-        dark
-        slider-color="yellow"
-        centered
-      >
+  <v-footer fixed height="auto" color="primary">
+    <v-layout justify-center row wrap>
+      <v-tabs color="primary" dark slider-color="yellow" centered>
         <v-tab
           v-for="list in lists"
           :key="list.type"

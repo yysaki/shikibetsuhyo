@@ -1,12 +1,9 @@
 <template>
-  <v-card
-    :class="{ 'pb-5': listCategory === 'checkbox' }"
-    class="pt-5 mt-3"
-  >
+  <v-card :class="{ 'pb-5': listCategory === 'checkbox' }" class="pt-5 mt-3">
     <v-list class="pt-0">
       <template v-for="(item, index) in items">
         <v-subheader
-          v-if="index === 0 || item.subheader !== items[index-1].subheader"
+          v-if="index === 0 || item.subheader !== items[index - 1].subheader"
           :key="item.subheader"
         >
           {{ item.subheader }}
@@ -25,10 +22,7 @@
             @click.stop="handleClick(index)"
           />
         </v-list-tile>
-        <v-divider
-          v-if="index + 1 < items.length"
-          :key="index"
-        />
+        <v-divider v-if="index + 1 < items.length" :key="index" />
       </template>
     </v-list>
   </v-card>

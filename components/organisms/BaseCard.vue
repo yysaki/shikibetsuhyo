@@ -1,22 +1,17 @@
 <template>
   <v-card>
     <v-card-title class="primary">
-      <slot name="title"/>
+      <slot name="title" />
     </v-card-title>
     <v-card-text>
-      <slot/>
+      <slot />
     </v-card-text>
 
-    <v-divider/>
+    <v-divider />
     <v-card-actions>
-      <v-spacer/>
-      <v-btn
-        :id="`button-${icon}`"
-        flat
-        color="info"
-        @click="handleClick"
-      >
-        <slot name="button-label"/>
+      <v-spacer />
+      <v-btn :id="`button-${icon}`" flat color="info" @click="handleClick">
+        <slot name="button-label" />
       </v-btn>
     </v-card-actions>
   </v-card>

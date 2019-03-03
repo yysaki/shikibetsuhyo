@@ -2,11 +2,8 @@
   <v-app id="index">
     <v-layout row>
       <v-flex xs12 sm12>
-        <the-header/>
-        <the-list
-          :items="items"
-          list-category="link"
-        />
+        <the-header />
+        <the-list :items="items" list-category="link" />
       </v-flex>
     </v-layout>
   </v-app>

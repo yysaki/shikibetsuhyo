@@ -7,19 +7,12 @@
       @input="handleChangeDrawer"
       @resetList="handleResetList"
     />
-    <v-toolbar
-      color="primary"
-      dark
-      fixed
-    >
+    <v-toolbar color="primary" dark fixed>
       <v-toolbar-title>
         不思議のダンジョン
       </v-toolbar-title>
-      <v-spacer v-if="showSideIcon"/>
-      <v-toolbar-side-icon
-        v-if="showSideIcon"
-        @click.stop="drawer = !drawer"
-      />
+      <v-spacer v-if="showSideIcon" />
+      <v-toolbar-side-icon v-if="showSideIcon" @click.stop="drawer = !drawer" />
     </v-toolbar>
   </div>
 </template>

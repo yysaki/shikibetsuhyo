@@ -14,10 +14,7 @@
               list-category="checkbox"
               @click="handleClickItem"
             />
-            <the-footer
-              :lists="game.lists"
-              @selectType="handleSelectType"
-            />
+            <the-footer :lists="game.lists" @selectType="handleSelectType" />
           </v-flex>
         </v-layout>
       </v-container>
@@ -57,19 +54,6 @@ export default {
       })
     }
   },
-  mounted: function() {
-    if (!process.client) {
-      return
-    }
-    const raw = localStorage.getItem("shikibetsuhyo")
-    if (raw !== undefined && raw !== null) {
-      const xs = JSON.parse(raw)
-      const x = xs[this.game.id]
-      if (x !== undefined && x !== null) {
-        Vue.set(this, "checkData", x)
-      }
-    }
-  },
   asyncData: function({ params }) {
     const target = games.filter(game => game.id === params.game)[0]
     var generateCheckData = function(lists) {
@@ -85,6 +69,19 @@ export default {
       game: target,
       selectedType: target.lists[0].type,
       checkData: generateCheckData(target.lists)
+    }
+  },
+  mounted: function() {
+    if (!process.client) {
+      return
+    }
+    const raw = localStorage.getItem("shikibetsuhyo")
+    if (raw !== undefined && raw !== null) {
+      const xs = JSON.parse(raw)
+      const x = xs[this.game.id]
+      if (x !== undefined && x !== null) {
+        Vue.set(this, "checkData", x)
+      }
     }
   },
   methods: {

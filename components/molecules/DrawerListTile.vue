@@ -1,10 +1,10 @@
 <template>
   <v-list-tile :to="to">
     <v-list-tile-action>
-      <base-icon :name="icon"/>
+      <base-icon :name="icon" />
     </v-list-tile-action>
     <v-list-tile-content>
-      <slot/>
+      <slot />
     </v-list-tile-content>
   </v-list-tile>
 </template>
