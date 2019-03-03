@@ -48,6 +48,8 @@
   },
   "homepage": "https://github.com/yysaki/shikibetsuhyo",
   "devDependencies": {
+    "acorn": "^6.1.1",
+    "acorn-dynamic-import": "^4.0.0",
     "ava": "^0.25.0",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.7.0",
@@ -57,6 +59,7 @@
     "eslint-plugin-promise": "^4.0.0",
     "eslint-plugin-vue": "^4.7.1",
     "prettier": "^1.14.3",
-    "puppeteer": "^1.9.0"
+    "puppeteer": "^1.9.0",
+    "webpack": "4.28.4"
   }
 }
