@@ -79,7 +79,8 @@ test("Test checkbox state changing", async t => {
   let control = await page.$(".v-input")
   t.is(await control.$eval("input", node => node.checked), false)
 
-  control.click()
+  let input = await page.$(".v-input input")
+  input.click()
   await page.waitFor(500)
   t.is(await control.$eval("input", node => node.checked), true)
 
