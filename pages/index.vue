@@ -33,7 +33,7 @@ export default {
       }))
     }
   },
-  head() {
+  head: function() {
     return {
       title: "不思議のダンジョン 値段識別表",
       meta: [
