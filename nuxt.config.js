@@ -2,7 +2,8 @@ module.exports = {
   buildDir: "functions/nuxt",
   modules: ["@nuxtjs/google-analytics", "@nuxtjs/vuetify"],
   "google-analytics": {
-    id: "UA-48038483-2"
+    id: "UA-48038483-2",
+    dev: false
   },
   vuetify: {
     theme: {

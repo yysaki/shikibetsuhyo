@@ -134,6 +134,12 @@ export default {
           content: this.game.title + " - 不思議のダンジョン 値段識別表"
         },
         {
+          name: "description",
+          content:
+            this.game.shortTitle +
+            "のプレイ中、店売りの値段で判別した識別済みアイテムを記録するためのチェックリストです。"
+        },
+        {
           property: "og:description",
           content:
             this.game.shortTitle +

@@ -42,6 +42,11 @@ export default {
         { name: "og:type", content: "website" },
         { name: "og:title", content: "不思議のダンジョン 値段識別表" },
         {
+          name: "description",
+          content:
+            "ローグライクゲームのプレイ中、店売りの値段で判別した識別済みアイテムを記録するためのチェックリストです。"
+        },
+        {
           property: "og:description",
           content:
             "ローグライクゲームのプレイ中、店売りの値段で判別した識別済みアイテムを記録するためのチェックリストです。"
