@@ -50,7 +50,11 @@ export default {
           property: "og:url",
           content: "https://shikibetsuhyo.yysaki.com"
         },
-        { property: "og:site_name", content: "不思議のダンジョン 値段識別表" }
+        { property: "og:site_name", content: "不思議のダンジョン 値段識別表" },
+        {
+          name: "google-site-verification",
+          content: "hDdgqDadHGux_ItxZzlEyWDE2mSiHMyz1cr5T1B8zLE"
+        }
       ],
       link: [{ rel: "canonical", href: "https://shikibetsuhyo.yysaki.com" }]
     }
