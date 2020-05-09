@@ -1,27 +1,42 @@
 const functions = require("firebase-functions")
 const { Nuxt } = require("nuxt")
 const express = require("express")
-const sm = require("sitemap")
+const { SitemapStream, streamToPromise } = require("sitemap")
 const app = express()
 
-const urls = ["shiren", "shiren2", "shiren3", "shiren4", "shiren5"]
-  .map((name) => `/${name}/`)
-  .concat(["/"])
-const sitemap = sm.createSitemap({
-  hostname: "https://shikibetsuhyo.yysaki.com",
-  cacheTime: 1000 * 60 * 15,
-  urls: urls.map((url) => ({ url: url })),
-})
-
+let sitemap
 app.get("/sitemap.xml", (req, res) => {
-  sitemap.toXML((err, xml) => {
-    if (err) {
-      return res.status(500).end()
-    }
-    res.header("Content-Type", "application/xml")
-    res.send(xml)
-    return true
-  })
+  res.header("Content-Type", "application/xml")
+  if (sitemap) {
+    res.send(sitemap)
+    return
+  }
+
+  try {
+    const smStream = new SitemapStream({
+      hostname: "https://shikibetsuhyo.yysaki.com",
+    })
+
+    const urls = ["shiren", "shiren2", "shiren3", "shiren4", "shiren5"]
+      .map((name) => `/${name}/`)
+      .concat(["/"])
+    urls.forEach((url) => {
+      smStream.write({ url, changeFreq: "monthly" })
+    })
+    smStream.end()
+
+    streamToPromise(smStream)
+      .then((sm) => (sitemap = sm))
+      .catch((e) => {
+        throw e
+      })
+    smStream.pipe(res).on("error", (e) => {
+      throw e
+    })
+  } catch (e) {
+    console.error(e)
+    res.status(500).end()
+  }
 })
 
 const nuxt = new Nuxt({ buildDir: "nuxt", dev: false })
