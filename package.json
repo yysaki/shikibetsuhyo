@@ -30,14 +30,11 @@
   },
   "ava": {
     "verbose": true,
-    "require": [
-      "babel-register"
-    ]
-  },
-  "babel": {
-    "presets": [
-      "env"
-    ]
+    "babel": {
+      "compileAsTests": [
+        "plugins/**/*"
+      ]
+    }
   },
   "repository": {
     "type": "git",
