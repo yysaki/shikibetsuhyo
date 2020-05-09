@@ -21,7 +21,7 @@
     "firebase-tools": "^8.2.0",
     "nuxt": "^2.12.2",
     "pug": "^2.0.3",
-    "sitemap": "^2.1.0"
+    "sitemap": "^6.1.2"
   },
   "private": true
 }
