@@ -16,13 +16,13 @@ export default {
   props: {
     icon: {
       type: String,
-      required: true
+      required: true,
     },
     to: {
       type: String,
       default: "",
-      required: false
-    }
-  }
+      required: false,
+    },
+  },
 }
 </script>

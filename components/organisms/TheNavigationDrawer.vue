@@ -41,12 +41,12 @@ export default {
   props: {
     drawer: {
       type: Boolean,
-      required: true
+      required: true,
     },
     game: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
   methods: {
     handleClick(val) {
@@ -54,7 +54,7 @@ export default {
     },
     handleResetList() {
       this.$emit("resetList")
-    }
-  }
+    },
+  },
 }
 </script>

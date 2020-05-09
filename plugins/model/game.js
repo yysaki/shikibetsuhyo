@@ -19,15 +19,15 @@ class ItemList {
     this.items = listish.items
 
     var hs = {}
-    this.items.forEach(item => {
+    this.items.forEach((item) => {
       var key = JSON.stringify([item.buy, item.sell])
       if (!hs[key]) hs[key] = item
     })
-    this._heads = Object.keys(hs).map(key => hs[key])
+    this._heads = Object.keys(hs).map((key) => hs[key])
   }
 
   isHeadOfGroup(item) {
-    return this._heads.some(i => i.equals(item))
+    return this._heads.some((i) => i.equals(item))
   }
 }
 

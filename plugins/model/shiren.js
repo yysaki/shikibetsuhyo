@@ -28,8 +28,8 @@ export default new Game({
         new Item({ name: "しあわせの腕輪", buy: 10000, sell: 5000 }),
         new Item({ name: "痛恨の腕輪", buy: 10000, sell: 5000 }),
         new Item({ name: "値切の腕輪", buy: 10000, sell: 5000 }),
-        new Item({ name: "識別の腕輪", buy: 30000, sell: 15000 })
-      ]
+        new Item({ name: "識別の腕輪", buy: 30000, sell: 15000 }),
+      ],
     }),
     new ItemList({
       type: "kusa",
@@ -55,8 +55,8 @@ export default new Game({
         new Item({ name: "混乱草", buy: 3000, sell: 1500 }),
         new Item({ name: "睡眠草", buy: 5000, sell: 2500 }),
         new Item({ name: "復活の草", buy: 5000, sell: 2500 }),
-        new Item({ name: "天使の種", buy: 10000, sell: 1500 })
-      ]
+        new Item({ name: "天使の種", buy: 10000, sell: 1500 }),
+      ],
     }),
     new ItemList({
       type: "makimono",
@@ -86,8 +86,8 @@ export default new Game({
         new Item({ name: "白紙の巻物", buy: 3000, sell: 1000 }),
         new Item({ name: "ジェノサイドの巻物", buy: 50000, sell: 750 }),
         new Item({ name: "聖域の巻物", buy: -1, sell: -1 }),
-        new Item({ name: "全滅の巻物", buy: -1, sell: -1 })
-      ]
+        new Item({ name: "全滅の巻物", buy: -1, sell: -1 }),
+      ],
     }),
     new ItemList({
       type: "tsubo",
@@ -109,8 +109,8 @@ export default new Game({
         new Item({ name: "うっぷんばらしの壺", buy: 7500, sell: 1500 }),
         new Item({ name: "割れない壺", buy: 10000, sell: 1500 }),
         new Item({ name: "強化の壺", buy: 10000, sell: 5000 }),
-        new Item({ name: "ガイバラの壺", buy: 15000, sell: 1500 })
-      ]
+        new Item({ name: "ガイバラの壺", buy: 15000, sell: 1500 }),
+      ],
     }),
     new ItemList({
       type: "tsue",
@@ -126,8 +126,8 @@ export default new Game({
         new Item({ name: "かなしばりの杖", buy: 1000, sell: 500 }),
         new Item({ name: "封印の杖    ", buy: 1000, sell: 500 }),
         new Item({ name: "身がわりの杖", buy: 1000, sell: 500 }),
-        new Item({ name: "ブフーの杖", buy: 2000, sell: 500 })
-      ]
-    })
-  ]
+        new Item({ name: "ブフーの杖", buy: 2000, sell: 500 }),
+      ],
+    }),
+  ],
 })

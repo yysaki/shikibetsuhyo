@@ -47,8 +47,8 @@ export default new Game({
         new Item({ name: "透視の腕輪", buy: 30000, sell: 10500 }),
         new Item({ name: "マタギの腕輪", buy: 30000, sell: 10500 }),
         new Item({ name: "無心の腕輪", buy: 30000, sell: 10500 }),
-        new Item({ name: "VIPの腕輪", buy: 50000, sell: 17500 })
-      ]
+        new Item({ name: "VIPの腕輪", buy: 50000, sell: 17500 }),
+      ],
     }),
     new ItemList({
       type: "kusa",
@@ -87,8 +87,8 @@ export default new Game({
         new Item({ name: "無敵草", buy: 2000, sell: 700 }),
         new Item({ name: "物忘れの草", buy: 2000, sell: 700 }),
         new Item({ name: "超不幸の種", buy: 5000, sell: 1750 }),
-        new Item({ name: "天使の種", buy: 5000, sell: 1750 })
-      ]
+        new Item({ name: "天使の種", buy: 5000, sell: 1750 }),
+      ],
     }),
     new ItemList({
       type: "makimono",
@@ -145,8 +145,8 @@ export default new Game({
         new Item({ name: "全滅の巻物", buy: 3000, sell: 1050 }),
         new Item({ name: "迷子の巻物", buy: 3000, sell: 1050 }),
         new Item({ name: "白紙の巻物", buy: 5000, sell: 1750 }),
-        new Item({ name: "ねだやしの巻物", buy: 10000, sell: 3500 })
-      ]
+        new Item({ name: "ねだやしの巻物", buy: 10000, sell: 3500 }),
+      ],
     }),
     new ItemList({
       type: "tsubo",
@@ -185,8 +185,8 @@ export default new Game({
         new Item({ name: "弱化の壺", buy: 10000, sell: 3500 }),
         new Item({ name: "強イヒの壺", buy: 10000, sell: 3500 }),
         new Item({ name: "福寄せの壺", buy: 10000, sell: 3500 }),
-        new Item({ name: "厄寄せの壺", buy: 10000, sell: 3500 })
-      ]
+        new Item({ name: "厄寄せの壺", buy: 10000, sell: 3500 }),
+      ],
     }),
     new ItemList({
       type: "tsue",
@@ -215,8 +215,8 @@ export default new Game({
         new Item({ name: "しわよせの杖", buy: 1800, sell: 630 }),
         new Item({ name: "土塊の杖", buy: 1800, sell: 630 }),
         new Item({ name: "トンネルの杖", buy: 1800, sell: 630 }),
-        new Item({ name: "不幸の杖", buy: 1800, sell: 630 })
-      ]
+        new Item({ name: "不幸の杖", buy: 1800, sell: 630 }),
+      ],
     }),
     new ItemList({
       type: "huda",
@@ -234,8 +234,8 @@ export default new Game({
         new Item({ name: "ゾワゾワの札", buy: 600, sell: 210 }),
         new Item({ name: "鈍足の札", buy: 600, sell: 210 }),
         new Item({ name: "バクスイの札", buy: 600, sell: 210 }),
-        new Item({ name: "封印の札", buy: 600, sell: 210 })
-      ]
-    })
-  ]
+        new Item({ name: "封印の札", buy: 600, sell: 210 }),
+      ],
+    }),
+  ],
 })

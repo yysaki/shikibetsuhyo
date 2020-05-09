@@ -23,32 +23,32 @@ export default {
   name: "DrawerListTileDialog",
   components: {
     BaseCard,
-    DrawerListTile
+    DrawerListTile,
   },
   props: {
     icon: {
       type: String,
-      required: true
+      required: true,
     },
     title: {
       type: String,
-      required: true
+      required: true,
     },
     buttonLabel: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
-  data: function() {
+  data: function () {
     return {
-      isVisible: false
+      isVisible: false,
     }
   },
   methods: {
     handleClick(ev) {
       this.isVisible = false
       this.$emit("click", ev)
-    }
-  }
+    },
+  },
 }
 </script>

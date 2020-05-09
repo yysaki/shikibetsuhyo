@@ -32,8 +32,8 @@ export default new Game({
         new Item({ name: "紙一重の腕輪", buy: 15000, sell: 7500 }),
         new Item({ name: "ハラヘラズの腕輪", buy: 15000, sell: 7500 }),
         new Item({ name: "ハラヘリの腕輪", buy: 15000, sell: 7500 }),
-        new Item({ name: "ワナ師の腕輪", buy: 25000, sell: 1000 })
-      ]
+        new Item({ name: "ワナ師の腕輪", buy: 25000, sell: 1000 }),
+      ],
     }),
     new ItemList({
       type: "kusa",
@@ -60,8 +60,8 @@ export default new Game({
         new Item({ name: "しあわせ草", buy: 2000, sell: 1000 }),
         new Item({ name: "不幸の種", buy: 2000, sell: 1000 }),
         new Item({ name: "復活の草", buy: 2500, sell: 1250 }),
-        new Item({ name: "天使の種", buy: 3000, sell: 1500 })
-      ]
+        new Item({ name: "天使の種", buy: 3000, sell: 1500 }),
+      ],
     }),
     new ItemList({
       type: "makimono",
@@ -93,8 +93,8 @@ export default new Game({
         new Item({ name: "白紙の巻物", buy: 5000, sell: 2500 }),
         new Item({ name: "聖域の巻物", buy: 7500, sell: 2500 }),
         new Item({ name: "聖城の巻物", buy: 7500, sell: 2500 }),
-        new Item({ name: "ねだやしの巻物", buy: 25000, sell: 400 })
-      ]
+        new Item({ name: "ねだやしの巻物", buy: 25000, sell: 400 }),
+      ],
     }),
     new ItemList({
       type: "tsubo",
@@ -112,8 +112,8 @@ export default new Game({
         new Item({ name: "合成の壺", buy: 8000, sell: 4000 }),
         new Item({ name: "モンスターの壺", buy: 10000, sell: 1 }),
         new Item({ name: "形見の壺", buy: 10000, sell: 5000 }),
-        new Item({ name: "強化の壺", buy: 15000, sell: 7500 })
-      ]
+        new Item({ name: "強化の壺", buy: 15000, sell: 7500 }),
+      ],
     }),
     new ItemList({
       type: "tsue",
@@ -137,8 +137,8 @@ export default new Game({
         new Item({ name: "火ばしらの杖", buy: 2500, sell: 1200 }),
         new Item({ name: "しあわせの杖", buy: 3000, sell: 1000 }),
         new Item({ name: "草投げの杖", buy: 3000, sell: 1200 }),
-        new Item({ name: "草受けの杖", buy: 3000, sell: 1400 })
-      ]
-    })
-  ]
+        new Item({ name: "草受けの杖", buy: 3000, sell: 1400 }),
+      ],
+    }),
+  ],
 })

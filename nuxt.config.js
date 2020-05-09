@@ -3,7 +3,7 @@ module.exports = {
   modules: ["@nuxtjs/google-analytics", "@nuxtjs/vuetify"],
   "google-analytics": {
     id: "UA-48038483-2",
-    dev: false
+    dev: false,
   },
   vuetify: {
     theme: {
@@ -13,7 +13,7 @@ module.exports = {
       error: "#f44336",
       warning: "#ffeb3b",
       info: "#2196f3",
-      success: "#4caf50"
-    }
-  }
+      success: "#4caf50",
+    },
+  },
 }

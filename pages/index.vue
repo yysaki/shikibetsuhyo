@@ -17,23 +17,23 @@ export default {
   name: "Index",
   components: {
     TheHeader,
-    TheList
+    TheList,
   },
-  data: function() {
+  data: function () {
     return {
-      games: games
+      games: games,
     }
   },
   computed: {
-    items: function() {
-      return games.map(game => ({
+    items: function () {
+      return games.map((game) => ({
         name: game.title,
         subheader: "風来のシレンシリーズ",
-        to: `/${game.id}/`
+        to: `/${game.id}/`,
       }))
-    }
+    },
   },
-  head: function() {
+  head: function () {
     return {
       title: "不思議のダンジョン 値段識別表",
       meta: [
@@ -44,25 +44,25 @@ export default {
         {
           name: "description",
           content:
-            "ローグライクゲームのプレイ中、店売りの値段で判別した識別済みアイテムを記録するためのチェックリストです。"
+            "ローグライクゲームのプレイ中、店売りの値段で判別した識別済みアイテムを記録するためのチェックリストです。",
         },
         {
           property: "og:description",
           content:
-            "ローグライクゲームのプレイ中、店売りの値段で判別した識別済みアイテムを記録するためのチェックリストです。"
+            "ローグライクゲームのプレイ中、店売りの値段で判別した識別済みアイテムを記録するためのチェックリストです。",
         },
         {
           property: "og:url",
-          content: "https://shikibetsuhyo.yysaki.com"
+          content: "https://shikibetsuhyo.yysaki.com",
         },
         { property: "og:site_name", content: "不思議のダンジョン 値段識別表" },
         {
           name: "google-site-verification",
-          content: "hDdgqDadHGux_ItxZzlEyWDE2mSiHMyz1cr5T1B8zLE"
-        }
+          content: "hDdgqDadHGux_ItxZzlEyWDE2mSiHMyz1cr5T1B8zLE",
+        },
       ],
-      link: [{ rel: "canonical", href: "https://shikibetsuhyo.yysaki.com" }]
+      link: [{ rel: "canonical", href: "https://shikibetsuhyo.yysaki.com" }],
     }
-  }
+  },
 }
 </script>

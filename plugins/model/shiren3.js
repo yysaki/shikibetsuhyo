@@ -48,8 +48,8 @@ export default new Game({
         new Item({ name: "必着の腕輪", buy: 15000, sell: 3000 }),
         new Item({ name: "まもりの腕輪", buy: 15000, sell: 3000 }),
         new Item({ name: "盾の腕輪", buy: 20000, sell: 4000 }),
-        new Item({ name: "魔転換の腕輪", buy: 20000, sell: 4000 })
-      ]
+        new Item({ name: "魔転換の腕輪", buy: 20000, sell: 4000 }),
+      ],
     }),
     new ItemList({
       type: "kusa",
@@ -84,8 +84,8 @@ export default new Game({
         new Item({ name: "忌火起草", buy: -1, sell: -1 }),
         new Item({ name: "千年丸", buy: -1, sell: -1 }),
         new Item({ name: "超不幸の種", buy: -1, sell: -1 }),
-        new Item({ name: "物忘れの草", buy: -1, sell: -1 })
-      ]
+        new Item({ name: "物忘れの草", buy: -1, sell: -1 }),
+      ],
     }),
     new ItemList({
       type: "makimono",
@@ -126,8 +126,8 @@ export default new Game({
         new Item({ name: "困った時の巻物", buy: 3000, sell: 600 }),
         new Item({ name: "聖域の巻物", buy: 3000, sell: 600 }),
         new Item({ name: "全滅の巻物", buy: 3000, sell: 600 }),
-        new Item({ name: "おめでとうの巻物", buy: -1, sell: 2 })
-      ]
+        new Item({ name: "おめでとうの巻物", buy: -1, sell: 2 }),
+      ],
     }),
     new ItemList({
       type: "tsubo",
@@ -155,8 +155,8 @@ export default new Game({
         new Item({ name: "割れない壺", buy: 1500, sell: 300 }),
         new Item({ name: "うっぷんの壺", buy: 3000, sell: 600 }),
         new Item({ name: "強化の壺", buy: 3000, sell: 600 }),
-        new Item({ name: "弱化の壺", buy: 3000, sell: 600 })
-      ]
+        new Item({ name: "弱化の壺", buy: 3000, sell: 600 }),
+      ],
     }),
     new ItemList({
       type: "tsue",
@@ -214,8 +214,8 @@ export default new Game({
         new Item({ name: "ドルイの杖", buy: 1000, sell: 100 }),
         new Item({ name: "ヒョウカイの杖", buy: 1000, sell: 100 }),
         new Item({ name: "不幸の杖", buy: 1000, sell: 100 }),
-        new Item({ name: "ブフーの杖", buy: 2000, sell: 200 })
-      ]
-    })
-  ]
+        new Item({ name: "ブフーの杖", buy: 2000, sell: 200 }),
+      ],
+    }),
+  ],
 })

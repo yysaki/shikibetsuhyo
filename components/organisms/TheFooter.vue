@@ -19,13 +19,13 @@ export default {
   props: {
     lists: {
       type: Array,
-      required: true
-    }
+      required: true,
+    },
   },
   methods: {
     handleSelectType(type) {
       this.$emit("selectType", type)
-    }
-  }
+    },
+  },
 }
 </script>

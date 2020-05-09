@@ -33,17 +33,17 @@ export default {
   props: {
     items: {
       type: Array,
-      required: true
+      required: true,
     },
     listCategory: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
   methods: {
     handleClick(index) {
       this.$emit("click", index)
-    }
-  }
+    },
+  },
 }
 </script>

@@ -33,32 +33,16 @@ export default {
   components: {
     TheFooter,
     TheHeader,
-    TheList
+    TheList,
   },
   validate({ params }) {
-    return games.map(game => game.id).includes(params.game)
+    return games.map((game) => game.id).includes(params.game)
   },
-  computed: {
-    selectedItems: function() {
-      const items = this.game.lists.filter(x => x.type === this.selectedType)[0]
-        .items
-      const checkData = this.checkData[this.selectedType]
-      return items.map((item, index) => {
-        const buy = item.buy >= 0 ? item.buy.toString() : "-"
-        const sell = item.sell >= 0 ? item.sell.toString() : "-"
-        return {
-          name: item.name,
-          subheader: `買: ${buy} /売: ${sell}`,
-          checked: checkData[index]
-        }
-      })
-    }
-  },
-  asyncData: function({ params }) {
-    const target = games.filter(game => game.id === params.game)[0]
-    var generateCheckData = function(lists) {
+  asyncData: function ({ params }) {
+    const target = games.filter((game) => game.id === params.game)[0]
+    var generateCheckData = function (lists) {
       let ary = {}
-      lists.forEach(list => {
+      lists.forEach((list) => {
         const type = list.type
         ary[type] = new Array(list.items.length).fill(false)
       })
@@ -68,10 +52,27 @@ export default {
     return {
       game: target,
       selectedType: target.lists[0].type,
-      checkData: generateCheckData(target.lists)
+      checkData: generateCheckData(target.lists),
     }
   },
-  mounted: function() {
+  computed: {
+    selectedItems: function () {
+      const items = this.game.lists.filter(
+        (x) => x.type === this.selectedType
+      )[0].items
+      const checkData = this.checkData[this.selectedType]
+      return items.map((item, index) => {
+        const buy = item.buy >= 0 ? item.buy.toString() : "-"
+        const sell = item.sell >= 0 ? item.sell.toString() : "-"
+        return {
+          name: item.name,
+          subheader: `買: ${buy} /売: ${sell}`,
+          checked: checkData[index],
+        }
+      })
+    },
+  },
+  mounted: function () {
     if (!process.client) {
       return
     }
@@ -85,10 +86,10 @@ export default {
     }
   },
   methods: {
-    handleSelectType: function(type) {
+    handleSelectType: function (type) {
       this.selectedType = type
     },
-    handleClickItem: function(index) {
+    handleClickItem: function (index) {
       const current = this.checkData[this.selectedType][index]
       this.checkData[this.selectedType].splice(index, 1, !current)
 
@@ -102,12 +103,12 @@ export default {
 
       localStorage.setItem("shikibetsuhyo", JSON.stringify(xs))
     },
-    handleResetList: function() {
+    handleResetList: function () {
       let x = {}
-      for (const list of this.game.lists) {
+      this.game.lists.forEach((list) => {
         const type = list.type
         x[type] = new Array(this.checkData[type].length).fill(false)
-      }
+      })
 
       if (!process.client) {
         return
@@ -120,9 +121,9 @@ export default {
       localStorage.setItem("shikibetsuhyo", JSON.stringify(xs))
 
       Vue.set(this, "checkData", x)
-    }
+    },
   },
-  head: function() {
+  head: function () {
     return {
       title: `${this.game.title} - 不思議のダンジョン 値段識別表`,
       meta: [
@@ -131,37 +132,37 @@ export default {
         { name: "og:type", content: "website" },
         {
           name: "og:title",
-          content: this.game.title + " - 不思議のダンジョン 値段識別表"
+          content: this.game.title + " - 不思議のダンジョン 値段識別表",
         },
         {
           name: "description",
           content:
             this.game.shortTitle +
-            "のプレイ中、店売りの値段で判別した識別済みアイテムを記録するためのチェックリストです。"
+            "のプレイ中、店売りの値段で判別した識別済みアイテムを記録するためのチェックリストです。",
         },
         {
           property: "og:description",
           content:
             this.game.shortTitle +
-            "のプレイ中、店売りの値段で判別した識別済みアイテムを記録するためのチェックリストです。"
+            "のプレイ中、店売りの値段で判別した識別済みアイテムを記録するためのチェックリストです。",
         },
         {
           property: "og:url",
-          content: "https://shikibetsuhyo.yysaki.com/" + this.game.id + "/"
+          content: "https://shikibetsuhyo.yysaki.com/" + this.game.id + "/",
         },
         { property: "og:site_name", content: "不思議のダンジョン 値段識別表" },
         {
           name: "google-site-verification",
-          content: "hDdgqDadHGux_ItxZzlEyWDE2mSiHMyz1cr5T1B8zLE"
-        }
+          content: "hDdgqDadHGux_ItxZzlEyWDE2mSiHMyz1cr5T1B8zLE",
+        },
       ],
       link: [
         {
           rel: "canonical",
-          href: "https://shikibetsuhyo.yysaki.com/" + this.game.id + "/"
-        }
-      ]
+          href: "https://shikibetsuhyo.yysaki.com/" + this.game.id + "/",
+        },
+      ],
     }
-  }
+  },
 }
 </script>

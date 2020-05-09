@@ -25,16 +25,16 @@ export default {
   props: {
     game: {
       type: Object,
-      default: () => new Object()
+      default: () => new Object(),
     },
     showSideIcon: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
-  data: function() {
+  data: function () {
     return {
-      drawer: false
+      drawer: false,
     }
   },
   methods: {
@@ -44,7 +44,7 @@ export default {
     handleResetList() {
       this.drawer = false
       this.$emit("resetList")
-    }
-  }
+    },
+  },
 }
 </script>

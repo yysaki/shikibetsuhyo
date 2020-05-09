@@ -22,13 +22,13 @@ export default {
   props: {
     icon: {
       type: String,
-      default: ""
-    }
+      default: "",
+    },
   },
   methods: {
     handleClick(ev) {
       this.$emit("click", ev)
-    }
-  }
+    },
+  },
 }
 </script>

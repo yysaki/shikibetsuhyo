@@ -5,12 +5,12 @@ const sm = require("sitemap")
 const app = express()
 
 const urls = ["shiren", "shiren2", "shiren3", "shiren4", "shiren5"]
-  .map(name => `/${name}/`)
+  .map((name) => `/${name}/`)
   .concat(["/"])
 const sitemap = sm.createSitemap({
   hostname: "https://shikibetsuhyo.yysaki.com",
   cacheTime: 1000 * 60 * 15,
-  urls: urls.map(url => ({ url: url }))
+  urls: urls.map((url) => ({ url: url })),
 })
 
 app.get("/sitemap.xml", (req, res) => {
@@ -29,7 +29,7 @@ const nuxt = new Nuxt({ buildDir: "nuxt", dev: false })
 function handleRequest(req, res) {
   res.set("Cache-Control", "public, max-age=300, s-maxage=600")
   return new Promise((resolve, reject) => {
-    nuxt.render(req, res, promise => {
+    nuxt.render(req, res, (promise) => {
       promise.then(resolve).catch(reject)
     })
   })
