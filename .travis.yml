@@ -12,6 +12,7 @@ deploy:
   provider: firebase
   on:
     branch: master
+  project: $FIREBASE_PROJECT
   edge: true
 notifications:
   slack:

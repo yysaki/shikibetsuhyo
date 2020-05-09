@@ -1,4 +1,5 @@
 .firebase/
+.firebaserc
 .nuxt/
 .sv*
 .sw*
