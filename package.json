@@ -7,7 +7,7 @@
     "jquery-mobile": "./node_modules/jquery-mobile-babel-safe/js/jquery.mobile-1.4.5.js"
   },
   "engines": {
-    "node": ">=8.12.0",
+    "node": ">=10.20.1",
     "npm": ">=6.4.1"
   },
   "dependencies": {
