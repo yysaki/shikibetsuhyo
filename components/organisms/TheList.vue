@@ -8,7 +8,7 @@
         >
           {{ item.subheader }}
         </v-subheader>
-        <v-list-tile
+        <v-list-item
           :key="item.name"
           :to="listCategory === 'link' ? item.to : ''"
         >
@@ -21,7 +21,7 @@
             :input-value="item.checked"
             @click.stop="handleClick(index)"
           />
-        </v-list-tile>
+        </v-list-item>
         <v-divider v-if="index + 1 < items.length" :key="index" />
       </template>
     </v-list>
