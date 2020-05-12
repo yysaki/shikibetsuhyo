@@ -40,11 +40,6 @@ app.get("/sitemap.xml", (req, res) => {
 })
 
 const nuxt = new Nuxt({ buildDir: "nuxt", dev: false })
+app.use(nuxt.render)
 
-function handleRequest(req, res) {
-  res.set("Cache-Control", "public, max-age=300, s-maxage=600")
-  return nuxt.render(req, res)
-}
-
-app.use(handleRequest)
 exports.ssr = functions.https.onRequest(app)
