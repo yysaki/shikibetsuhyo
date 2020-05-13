@@ -1,5 +1,5 @@
 <template>
-  <v-card :class="{ 'pb-5': listCategory === 'checkbox' }" class="pt-5 mt-3">
+  <v-card :class="{ 'pb-12': listCategory === 'checkbox' }" class="pt-12 mt-4">
     <v-list class="pt-0">
       <template v-for="(item, index) in items">
         <v-subheader
