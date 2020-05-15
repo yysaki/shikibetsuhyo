@@ -2,7 +2,7 @@
   <v-app id="game">
     <v-content>
       <v-container class="container" fluid ma-0 pa-0 fill-height>
-        <v-layout row>
+        <v-row>
           <v-flex xs12 sm12>
             <the-header
               :game="game"
@@ -16,7 +16,7 @@
             />
             <the-footer :lists="game.lists" @selectType="handleSelectType" />
           </v-flex>
-        </v-layout>
+        </v-row>
       </v-container>
     </v-content>
   </v-app>
