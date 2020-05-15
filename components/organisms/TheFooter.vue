@@ -1,6 +1,6 @@
 <template>
-  <v-footer fixed height="auto" color="primary">
-    <v-container>
+  <v-footer class="pa-0" fixed height="auto" color="primary">
+    <v-container class="pa-0">
       <v-row class="justify-center">
         <v-tabs background-color="primary" dark slider-color="yellow" centered>
           <v-tab
@@ -15,6 +15,11 @@
     </v-container>
   </v-footer>
 </template>
+<style>
+.v-tab {
+  min-width: 40px;
+}
+</style>
 <script>
 export default {
   name: "TheFooter",
