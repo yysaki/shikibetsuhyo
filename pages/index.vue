@@ -1,11 +1,17 @@
 <template>
   <v-app id="index">
-    <v-layout row>
-      <v-flex xs12 sm12>
-        <the-header />
-        <the-list :items="items" list-category="link" />
-      </v-flex>
-    </v-layout>
+    <v-content>
+      <v-container class="container" fluid ma-0 pa-0 fill-height>
+        <v-row sm="12">
+          <v-col sm="12">
+            <the-header />
+          </v-col>
+          <v-col sm="12">
+            <the-list :items="items" list-category="link" />
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-content>
   </v-app>
 </template>
 <script>

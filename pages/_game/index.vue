@@ -2,20 +2,24 @@
   <v-app id="game">
     <v-content>
       <v-container class="container" fluid ma-0 pa-0 fill-height>
-        <v-row>
-          <v-flex xs12 sm12>
+        <v-row sm="12">
+          <v-col sm="12">
             <the-header
               :game="game"
               :show-side-icon="true"
               @resetList="handleResetList"
             />
+          </v-col>
+          <v-col sm="12">
             <the-list
               :items="selectedItems"
               list-category="checkbox"
               @click="handleClickItem"
             />
+          </v-col>
+          <v-col sm="12">
             <the-footer :lists="game.lists" @selectType="handleSelectType" />
-          </v-flex>
+          </v-col>
         </v-row>
       </v-container>
     </v-content>
