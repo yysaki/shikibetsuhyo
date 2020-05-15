@@ -1,6 +1,6 @@
 <template>
-  <v-card :class="{ 'pb-12': listCategory === 'checkbox' }" class="pt-12 mt-4">
-    <v-list class="pt-0">
+  <v-card :class="{ 'pb-12 pt-4 mt-4': listCategory === 'checkbox' }">
+    <v-list class="pt-0 pb-0">
       <template v-for="(item, index) in items">
         <v-subheader
           v-if="index === 0 || item.subheader !== items[index - 1].subheader"
@@ -12,15 +12,18 @@
           :key="item.name"
           :to="listCategory === 'link' ? item.to : ''"
         >
-          <template v-if="listCategory === 'link'">
-            {{ item.name }}
+          <template>
+            <v-list-item-content v-if="listCategory === 'link'">
+              {{ item.name }}
+            </v-list-item-content>
+            <v-list-item-action v-else>
+              <v-checkbox
+                :label="item.name"
+                :input-value="item.checked"
+                @click.stop="handleClick(index)"
+              />
+            </v-list-item-action>
           </template>
-          <v-checkbox
-            v-else
-            :label="item.name"
-            :input-value="item.checked"
-            @click.stop="handleClick(index)"
-          />
         </v-list-item>
         <v-divider v-if="index + 1 < items.length" :key="index" />
       </template>
