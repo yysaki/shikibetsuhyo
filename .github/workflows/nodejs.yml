@@ -26,32 +26,6 @@ jobs:
         run: npm run test
       - name: Lint
         run: npm run lint
-      - name: Archive Artifact
-        uses: actions/upload-artifact@master
-        with:
-          name: dist
-          path: functions/nuxt
-  deploy:
-    name: Deploy
-    if: github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/master'
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Repo
-        uses: actions/checkout@master
-      - uses: actions/cache@v1
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-      - name: Install Dependencies
-        run: npm install
-      - name: Download Artifact
-        uses: actions/download-artifact@master
-        with:
-          name: dist
-          path: functions/nuxt
       - name: Deploy to develop Firebase
         if: github.ref == 'refs/heads/develop'
         uses: w9jds/firebase-action@master
