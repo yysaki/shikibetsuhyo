@@ -21,6 +21,7 @@
     "sitemap": "^6.1.2"
   },
   "scripts": {
+    "install-functions": "cd functions/ && npm install",
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",

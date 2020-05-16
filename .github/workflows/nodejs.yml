@@ -1,9 +1,5 @@
 name: Build and Deploy
-on:
-  push:
-    branches:
-      - master
-      - develop
+on: [push, pull_request]
 
 jobs:
   build:
@@ -26,6 +22,9 @@ jobs:
         run: npm run test
       - name: Lint
         run: npm run lint
+      - name: Prepare Cloud Function
+        if: github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/master'
+        run: npm run install-functions
       - name: Deploy to develop Firebase
         if: github.ref == 'refs/heads/develop'
         uses: w9jds/firebase-action@master
