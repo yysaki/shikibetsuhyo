@@ -1,6 +1,9 @@
 <template>
   <v-dialog v-model="isVisible">
     <drawer-list-tile :id="`tile-${icon}`" slot="activator" :icon="icon">
+      <template v-slot:icon>
+        <slot name="icon" />
+      </template>
       {{ title }}
     </drawer-list-tile>
 

@@ -6,6 +6,9 @@ module.exports = {
     dev: false,
   },
   vuetify: {
+    icons: {
+      iconfont: "mdi",
+    },
     theme: {
       light: true,
       themes: {
