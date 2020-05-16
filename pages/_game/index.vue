@@ -1,23 +1,23 @@
 <template>
   <v-app id="game">
     <v-content>
-      <v-container class="container" fluid ma-0 pa-0 fill-height>
-        <v-row sm="12">
-          <v-col sm="12">
+      <v-container class="container" fluid>
+        <v-row>
+          <v-col cols="12">
             <the-header
               :game="game"
               :show-side-icon="true"
               @resetList="handleResetList"
             />
           </v-col>
-          <v-col sm="12">
+          <v-col cols="12" class="ma-0 pa-0">
             <the-list
               :items="selectedItems"
               list-category="checkbox"
               @click="handleClickItem"
             />
           </v-col>
-          <v-col sm="12">
+          <v-col cols="12">
             <the-footer :lists="game.lists" @selectType="handleSelectType" />
           </v-col>
         </v-row>

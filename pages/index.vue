@@ -1,12 +1,12 @@
 <template>
   <v-app id="index">
     <v-content>
-      <v-container class="container" fluid ma-0 pa-0 fill-height>
-        <v-row sm="12">
-          <v-col sm="12">
+      <v-container class="container" fluid>
+        <v-row>
+          <v-col cols="12">
             <the-header />
           </v-col>
-          <v-col sm="12">
+          <v-col cols="12" class="ma-0 pa-0">
             <the-list :items="items" list-category="link" />
           </v-col>
         </v-row>
