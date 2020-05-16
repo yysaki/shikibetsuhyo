@@ -61,7 +61,7 @@ routeTests.forEach(([path, title]) => {
 test("Route /shiren/ exits and render tab header", async (t) => {
   const page = await browser.newPage()
   await page.goto("http://localhost:4000/shiren5/")
-  const tabs = await page.$$eval(".v-tabs__item", (ts) =>
+  const tabs = await page.$$eval(".v-tab", (ts) =>
     ts.map((tab) => tab.textContent.trim())
   )
 
@@ -89,7 +89,7 @@ test("Test checkbox state changing", async (t) => {
   t.is(await control.$eval("input", (node) => node.checked), true)
 
   // test reset method
-  await page.click("button.v-toolbar__side-icon")
+  await page.click("button.v-app-bar__nav-icon")
   await page.waitFor(500)
   await page.click("#tile-delete_sweep")
   await page.waitFor(500)
@@ -104,11 +104,11 @@ test("Test router-link", async (t) => {
   await page.goto("http://localhost:4000")
   t.is(page.url(), "http://localhost:4000/")
 
-  await page.click("a.v-list__tile--link")
+  await page.click("a.v-list-item--link")
   await page.waitFor(500)
   t.is(page.url(), "http://localhost:4000/shiren/")
 
-  await page.click("button.v-toolbar__side-icon")
+  await page.click("button.v-app-bar__nav-icon")
   await page.waitFor(500)
   await page.click(".tile-home")
   await page.waitFor(500)
