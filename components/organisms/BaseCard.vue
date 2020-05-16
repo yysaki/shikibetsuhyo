@@ -10,7 +10,7 @@
     <v-divider />
     <v-card-actions>
       <v-spacer />
-      <v-btn :id="`button-${icon}`" flat color="info" @click="handleClick">
+      <v-btn :id="`button-${icon}`" text color="info" @click="handleClick">
         <slot name="button-label" />
       </v-btn>
     </v-card-actions>

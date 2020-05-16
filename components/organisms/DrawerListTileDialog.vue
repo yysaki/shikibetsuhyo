@@ -1,11 +1,15 @@
 <template>
   <v-dialog v-model="isVisible">
-    <drawer-list-tile :id="`tile-${icon}`" slot="activator" :icon="icon">
-      <template v-slot:icon>
-        <slot name="icon" />
-      </template>
-      {{ title }}
-    </drawer-list-tile>
+    <template v-slot:activator="{ on }">
+      <v-list-item :id="`tile-${icon}`" v-on="on">
+        <v-list-item-action>
+          <slot name="icon" />
+        </v-list-item-action>
+        <v-list-item-content>
+          {{ title }}
+        </v-list-item-content>
+      </v-list-item>
+    </template>
 
     <base-card :icon="icon" @click="handleClick">
       <template slot="title">
@@ -20,13 +24,11 @@
 </template>
 <script>
 import BaseCard from "~/components/organisms/BaseCard.vue"
-import DrawerListTile from "~/components/molecules/DrawerListTile.vue"
 
 export default {
   name: "DrawerListTileDialog",
   components: {
     BaseCard,
-    DrawerListTile,
   },
   props: {
     icon: {
