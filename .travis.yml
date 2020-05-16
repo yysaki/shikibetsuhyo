@@ -9,11 +9,16 @@ script:
   - 'npm run test'
   - 'npm run lint'
 deploy:
-  provider: firebase
-  on:
-    branch: master
-  project: $FIREBASE_PROJECT
-  edge: true
+  - provider: firebase
+    on:
+      branch: master
+    project: $FIREBASE_PROJECT
+    edge: true
+  - provider: firebase
+    on:
+      branch: develop
+    project: $FIREBASE_PROJECT_DEVELOP
+    edge: true
 notifications:
   slack:
     secure: "HlIAbOYzTlSfHv4obMUc1siFhY7pCRj/B9tkURyobFKaLDCT53H6wOi30XPngJkWJpVI63po9o15XHOpDsfH/gqR90a0vwkYh1RviLWW06AbBk8mnQXeaoxk/vzAusqG0cnag8xTQzQkRSsD39iC3nPIQoJOJ03UPOuO8ajB7JNVATSK96H9solJSWvS5kiHlCKkim3ZUBaQBJdEsPlWSIiRJwmRGBtjJdQH6/eBkKyQV8NUaq5WMFadiFCA7SgVjSK0l5U3i9utBRm56HTzxyO4knfnZ6XIC2pPAOmTKZzI3jAE3Cm3hzSX3tbaD1shTX+mZI78afeZSXCnzB4R7R7erS9wF3P81mpwYSYB0L8qkM/L9RJpS/TefehRU2Rk8ycHY3YG9YTZcipW4N8eA3BnCiUibuRRUc91y6dy8VyYBeqmFSWWxrC6UG8oCdSAZdWWXPclC/jiQ19tZIGbiJUUjLqwSSlKkr7iraBkhDVzHOa35VG7+xBMTJXDcvxT3z979dB54XxhOCLwew7RpbQrj/J1HBjvN2B7Ty6BKR6ZdNqynnMZvs+7agx8rHJ1aShKCZLMZarL9BgkjezXLH/7L8Wwku14XlsNbPYqbHeW3T2ZBMXM+m9Q0mlX2ArDfzwSmT/wTs2z9UPRA8EFqBhkuC4ZrDxRSmmUUxPsdBc="
