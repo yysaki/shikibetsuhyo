@@ -11,6 +11,7 @@
     "npm": ">=6.4.1"
   },
   "dependencies": {
+    "@mdi/js": "^5.2.45",
     "@nuxtjs/google-analytics": "^2.2.3",
     "@nuxtjs/vuetify": "^1.11.2",
     "babel-preset-env": "^1.7.0",
@@ -47,7 +48,6 @@
   "homepage": "https://github.com/yysaki/shikibetsuhyo",
   "devDependencies": {
     "@ava/babel": "^1.0.1",
-    "@mdi/js": "^5.2.45",
     "acorn": "^7.2.0",
     "acorn-dynamic-import": "^4.0.0",
     "ava": "^3.8.2",
