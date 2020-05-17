@@ -22,8 +22,9 @@
     "sitemap": "^6.1.2"
   },
   "scripts": {
-    "install-functions": "npm run clean:functions && npm run build && cd functions/ && npm install",
-    "clean:functions": "rimraf functions/node_modules && rimraf functions/nuxt",
+    "install-functions": "npm run clean && npm install && npm run build && cd functions/ && npm install",
+    "clean": "npm cache verify && npx rimraf node_modules && npm run clean:functions",
+    "clean:functions": "npx rimraf functions/node_modules && npx rimraf functions/nuxt",
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
