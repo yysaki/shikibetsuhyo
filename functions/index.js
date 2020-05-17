@@ -44,7 +44,7 @@ const nuxt = new Nuxt({
   ...config,
   buildDir: "nuxt",
   dev: false,
-  debug: true,
+  debug: false,
 })
 app.use(async (req, res) => {
   await nuxt.ready()

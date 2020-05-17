@@ -1,7 +1,10 @@
 module.exports = {
   build: {
-    extend(config) {
-      config.devtool = "eval-source-map"
+    extend(config, { isClient }) {
+      if (isClient) {
+        config.devtool =
+          process.env.NODE_ENV === "development" ? "eval-source-map" : ""
+      }
     },
   },
   buildDir: "functions/nuxt",
