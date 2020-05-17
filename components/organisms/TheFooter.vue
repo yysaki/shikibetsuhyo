@@ -16,7 +16,7 @@
   </v-footer>
 </template>
 <style>
-.v-tab {
+.v-footer .v-tab {
   min-width: 40px;
 }
 </style>
