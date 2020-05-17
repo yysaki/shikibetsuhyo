@@ -1,4 +1,9 @@
 module.exports = {
+  build: {
+    extend(config) {
+      config.devtool = "eval-source-map"
+    },
+  },
   buildDir: "functions/nuxt",
   modules: [
     ["@nuxtjs/google-analytics", { id: "UA-48038483-2", dev: false }],
