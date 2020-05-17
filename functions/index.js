@@ -39,7 +39,7 @@ app.get("/sitemap.xml", (req, res) => {
   }
 })
 
-const nuxt = new Nuxt({ buildDir: "nuxt", dev: false })
+const nuxt = new Nuxt({ buildDir: "nuxt", dev: false, debug: true })
 app.use(nuxt.render)
 
 exports.ssr = functions.https.onRequest(app)
