@@ -12,14 +12,14 @@
   },
   "dependencies": {
     "@mdi/js": "^5.2.45",
-    "@nuxtjs/google-analytics": "^2.2.3",
+    "@nuxtjs/google-analytics": "^2.3.0",
     "@nuxtjs/vuetify": "^1.11.2",
     "babel-preset-env": "^1.7.0",
     "firebase-admin": "^8.12.1",
     "firebase-functions": "^3.6.1",
-    "firebase-tools": "^8.2.0",
+    "firebase-tools": "^8.3.0",
     "nuxt": "^2.12.2",
-    "sitemap": "^6.1.2"
+    "sitemap": "^6.1.4"
   },
   "scripts": {
     "install-functions": "npm run clean && npm install && npm run build && cd functions/ && npm install",
@@ -61,7 +61,7 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-vue": "^6.2.2",
     "prettier": "^2.0.5",
-    "puppeteer": "^3.0.4",
+    "puppeteer": "^3.1.0",
     "rimraf": "^3.0.2",
     "webpack": "4.43.0"
   }
