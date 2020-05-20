@@ -1,7 +1,7 @@
 不思議のダンジョン 値段識別表
 =============================
 
-[![Build Status](https://secure.travis-ci.org/yysaki/shikibetsuhyo.png?branch=master)](http://travis-ci.org/yysaki/shikibetsuhyo)
+![](https://github.com/yysaki/shikibetsuhyo/workflows/Build%20and%20Deploy/badge.svg?branch=master)
 
 [https://shikibetsuhyo.yysaki.com](https://shikibetsuhyo.yysaki.com)
 
