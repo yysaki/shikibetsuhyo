@@ -24,7 +24,7 @@ jobs:
         run: npm run lint
       - name: Prepare Cloud Function
         if: github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/master'
-        run: npm run install-functions
+        run: npm run generate
       - name: Deploy to develop Firebase
         if: github.ref == 'refs/heads/develop'
         uses: w9jds/firebase-action@master
