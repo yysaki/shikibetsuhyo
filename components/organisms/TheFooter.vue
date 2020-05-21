@@ -2,7 +2,13 @@
   <v-footer class="pa-0" fixed height="auto" color="primary">
     <v-container class="pa-0">
       <v-row class="justify-center">
-        <v-tabs background-color="primary" dark slider-color="yellow" centered>
+        <v-tabs
+          background-color="primary"
+          dark
+          slider-color="yellow"
+          fixed-tabs
+          show-arrows
+        >
           <v-tab
             v-for="list in lists"
             :key="list.type"
@@ -15,11 +21,6 @@
     </v-container>
   </v-footer>
 </template>
-<style>
-.v-footer .v-tab {
-  min-width: 40px;
-}
-</style>
 <script>
 export default {
   name: "TheFooter",
