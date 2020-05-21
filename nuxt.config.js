@@ -1,3 +1,5 @@
+const games = require("./plugins/model/game-list.js").default
+
 module.exports = {
   build: {
     extend(config, { isClient }) {
@@ -7,7 +9,11 @@ module.exports = {
       }
     },
   },
-  buildDir: "functions/nuxt",
+  generate: {
+    routes() {
+      return games.map((game) => `/${game.id}/`)
+    },
+  },
   modules: [
     ["@nuxtjs/google-analytics", { id: "UA-48038483-2", dev: false }],
     [

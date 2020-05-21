@@ -3,6 +3,7 @@
 .nuxt/
 .sv*
 .sw*
+dist/
 functions/nuxt
 node_modules/
 npm-debug.log
