@@ -30,15 +30,6 @@ export default {
       games: games,
     }
   },
-  computed: {
-    items: function () {
-      return games.map((game) => ({
-        name: game.title,
-        subheader: "風来のシレンシリーズ",
-        to: `/${game.id}/`,
-      }))
-    },
-  },
   head: function () {
     return {
       title: "不思議のダンジョン 値段識別表",
@@ -69,6 +60,15 @@ export default {
       ],
       link: [{ rel: "canonical", href: "https://shikibetsuhyo.yysaki.com" }],
     }
+  },
+  computed: {
+    items: function () {
+      return games.map((game) => ({
+        name: game.title,
+        subheader: "風来のシレンシリーズ",
+        to: `/${game.id}/`,
+      }))
+    },
   },
 }
 </script>

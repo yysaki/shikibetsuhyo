@@ -8,9 +8,7 @@
       @resetList="handleResetList"
     />
     <v-app-bar color="primary" dark fixed>
-      <v-toolbar-title>
-        不思議のダンジョン
-      </v-toolbar-title>
+      <v-toolbar-title> 不思議のダンジョン </v-toolbar-title>
       <v-spacer v-if="showSideIcon" />
       <v-app-bar-nav-icon v-if="showSideIcon" @click.stop="drawer = !drawer" />
     </v-app-bar>

@@ -1,6 +1,6 @@
 <template>
   <v-dialog v-model="isVisible">
-    <template v-slot:activator="{ on }">
+    <template #activator="{ on }">
       <v-list-item :id="`tile-${icon}`" v-on="on">
         <v-list-item-action>
           <slot name="icon" />

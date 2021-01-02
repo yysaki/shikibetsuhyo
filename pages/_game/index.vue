@@ -59,6 +59,47 @@ export default {
       checkData: generateCheckData(target.lists),
     }
   },
+  head: function () {
+    return {
+      title: `${this.game.title} - 不思議のダンジョン 値段識別表`,
+      meta: [
+        { charset: "utf-8" },
+        { name: "viewport", content: "width=device-width, initial-scale=1" },
+        { name: "og:type", content: "website" },
+        {
+          name: "og:title",
+          content: this.game.title + " - 不思議のダンジョン 値段識別表",
+        },
+        {
+          name: "description",
+          content:
+            this.game.shortTitle +
+            "のプレイ中、店売りの値段で判別した識別済みアイテムを記録するためのチェックリストです。",
+        },
+        {
+          property: "og:description",
+          content:
+            this.game.shortTitle +
+            "のプレイ中、店売りの値段で判別した識別済みアイテムを記録するためのチェックリストです。",
+        },
+        {
+          property: "og:url",
+          content: "https://shikibetsuhyo.yysaki.com/" + this.game.id + "/",
+        },
+        { property: "og:site_name", content: "不思議のダンジョン 値段識別表" },
+        {
+          name: "google-site-verification",
+          content: "hDdgqDadHGux_ItxZzlEyWDE2mSiHMyz1cr5T1B8zLE",
+        },
+      ],
+      link: [
+        {
+          rel: "canonical",
+          href: "https://shikibetsuhyo.yysaki.com/" + this.game.id + "/",
+        },
+      ],
+    }
+  },
   computed: {
     selectedItems: function () {
       const items = this.game.lists.filter(
@@ -126,47 +167,6 @@ export default {
 
       Vue.set(this, "checkData", x)
     },
-  },
-  head: function () {
-    return {
-      title: `${this.game.title} - 不思議のダンジョン 値段識別表`,
-      meta: [
-        { charset: "utf-8" },
-        { name: "viewport", content: "width=device-width, initial-scale=1" },
-        { name: "og:type", content: "website" },
-        {
-          name: "og:title",
-          content: this.game.title + " - 不思議のダンジョン 値段識別表",
-        },
-        {
-          name: "description",
-          content:
-            this.game.shortTitle +
-            "のプレイ中、店売りの値段で判別した識別済みアイテムを記録するためのチェックリストです。",
-        },
-        {
-          property: "og:description",
-          content:
-            this.game.shortTitle +
-            "のプレイ中、店売りの値段で判別した識別済みアイテムを記録するためのチェックリストです。",
-        },
-        {
-          property: "og:url",
-          content: "https://shikibetsuhyo.yysaki.com/" + this.game.id + "/",
-        },
-        { property: "og:site_name", content: "不思議のダンジョン 値段識別表" },
-        {
-          name: "google-site-verification",
-          content: "hDdgqDadHGux_ItxZzlEyWDE2mSiHMyz1cr5T1B8zLE",
-        },
-      ],
-      link: [
-        {
-          rel: "canonical",
-          href: "https://shikibetsuhyo.yysaki.com/" + this.game.id + "/",
-        },
-      ],
-    }
   },
 }
 </script>
