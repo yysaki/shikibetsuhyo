@@ -47,7 +47,7 @@ jobs:
         with:
           node-version: 12.22.9
           cache: 'npm'
-      - run: npm ci --ignore-scripts
+      - run: npm ci # for puppeteer
       - run: npm run test
   deploy:
     runs-on: ubuntu-latest
