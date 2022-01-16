@@ -7,8 +7,7 @@ on:
   pull_request:
 
 jobs:
-  build:
-    name: Build
+  install:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -16,16 +15,52 @@ jobs:
         with:
           node-version: 12.22.9
           cache: 'npm'
-      - name: Install Dependencies
-        run: npm install
-      - name: Build
-        run: npm run build
-      - name: Test
-        run: npm run test
-      - name: Lint
-        run: npm run lint
+      - run: npm install
+  build:
+    runs-on: ubuntu-latest
+    needs: install
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 12.22.9
+          cache: 'npm'
+      - run: npm install
+      - run: npm run build
+  lint:
+    runs-on: ubuntu-latest
+    needs: install
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 12.22.9
+          cache: 'npm'
+      - run: npm install
+      - run: npm run lint
+  test:
+    runs-on: ubuntu-latest
+    needs: install
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 12.22.9
+          cache: 'npm'
+      - run: npm install
+      - run: npm run test
+  deploy:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push'
+    needs: [build, lint, test]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 12.22.9
+          cache: 'npm'
+      - run: npm install
       - name: Prepare Cloud Function
-        if: github.event_name == 'push'
         run: npm run generate
       - name: Deploy to develop Firebase
         if: github.ref == 'refs/heads/develop'
