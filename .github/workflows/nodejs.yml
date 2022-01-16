@@ -1,5 +1,10 @@
 name: Build and Deploy
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - develop
+      - master
+  pull_request:
 
 jobs:
   build:
@@ -26,7 +31,7 @@ jobs:
       - name: Lint
         run: npm run lint
       - name: Prepare Cloud Function
-        if: github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/master'
+        if: github.event_name == 'push'
         run: npm run generate
       - name: Deploy to develop Firebase
         if: github.ref == 'refs/heads/develop'
