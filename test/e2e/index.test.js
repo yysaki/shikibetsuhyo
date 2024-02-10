@@ -56,6 +56,7 @@ const routeTests = [
     "/shiren5",
     "風来のシレン5 フォーチュンタワーと運命のダイス - 不思議のダンジョン 値段識別表",
   ],
+  ["/shiren6", "風来のシレン6 とぐろ島探検録 - 不思議のダンジョン 値段識別表"],
 ]
 routeTests.forEach(([path, title]) => {
   test(`Route ${path} exits and render HTML`, async (t) => {
