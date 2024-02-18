@@ -7,7 +7,15 @@ let browser = null
 let nuxt = null
 
 test.before("Launch browser", async () => {
-  browser = await puppeteer.launch()
+  browser = await puppeteer.launch({
+    headless: true,
+    args: [
+      "--no-sandbox",
+      "--disable-setuid-sandbox",
+      "--disable-dev-shm-usage",
+      "--single-process",
+    ],
+  })
 })
 
 test.before("Init Nuxt.js", async () => {
@@ -48,6 +56,7 @@ const routeTests = [
     "/shiren5",
     "風来のシレン5 フォーチュンタワーと運命のダイス - 不思議のダンジョン 値段識別表",
   ],
+  ["/shiren6", "風来のシレン6 とぐろ島探検録 - 不思議のダンジョン 値段識別表"],
 ]
 routeTests.forEach(([path, title]) => {
   test(`Route ${path} exits and render HTML`, async (t) => {
