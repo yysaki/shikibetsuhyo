@@ -7,7 +7,15 @@ let browser = null
 let nuxt = null
 
 test.before("Launch browser", async () => {
-  browser = await puppeteer.launch()
+  browser = await puppeteer.launch({
+    headless: true,
+    args: [
+      "--no-sandbox",
+      "--disable-setuid-sandbox",
+      "--disable-dev-shm-usage",
+      "--single-process",
+    ],
+  })
 })
 
 test.before("Init Nuxt.js", async () => {
