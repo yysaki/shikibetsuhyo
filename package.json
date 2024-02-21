@@ -18,7 +18,7 @@
     "firebase-admin": "^8.12.1",
     "firebase-functions": "^3.6.1",
     "firebase-tools": "^8.3.0",
-    "nuxt": "^2.12.2",
+    "nuxt": "^2.17.3",
     "sitemap": "^6.1.4"
   },
   "scripts": {
