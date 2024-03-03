@@ -23,10 +23,10 @@
   },
   "scripts": {
     "dev": "nuxt",
-    "build": "nuxt build",
+    "build": "node --openssl-legacy-provider node_modules/.bin/nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate && cp static/* dist/.",
-    "test": "ava --timeout=2m",
+    "generate": "node --openssl-legacy-provider node_modules/.bin/nuxt generate && cp static/* dist/.",
+    "test": "node --openssl-legacy-provider node_modules/.bin/ava --timeout=2m",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lintfix": "eslint --fix --ext .js,.vue --ignore-path .gitignore ."
   },
