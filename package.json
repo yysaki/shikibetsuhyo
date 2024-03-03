@@ -7,7 +7,7 @@
     "jquery-mobile": "./node_modules/jquery-mobile-babel-safe/js/jquery.mobile-1.4.5.js"
   },
   "engines": {
-    "node": ">=14.21.3",
+    "node": ">=16.20.2",
     "npm": ">=8.3.1"
   },
   "dependencies": {
@@ -49,7 +49,6 @@
   "devDependencies": {
     "@ava/babel": "^1.0.1",
     "acorn": "^7.2.0",
-    "acorn-dynamic-import": "^4.0.0",
     "ava": "^3.15.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.17.0",
