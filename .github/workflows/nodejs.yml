@@ -64,7 +64,7 @@ jobs:
         run: npm run generate
       - name: Deploy to develop Firebase
         if: github.ref == 'refs/heads/develop'
-        uses: w9jds/firebase-action@v13
+        uses: w9jds/firebase-action@v13.4.0
         with:
           args: deploy
         env:
@@ -72,7 +72,7 @@ jobs:
           PROJECT_ID: ${{ secrets.PROJECT_DEV_ID }}
       - name: Deploy to production Firebase
         if: github.ref == 'refs/heads/master'
-        uses: w9jds/firebase-action@v13
+        uses: w9jds/firebase-action@v13.4.0
         with:
           args: deploy
         env:
