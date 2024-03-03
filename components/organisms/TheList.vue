@@ -12,18 +12,16 @@
           :key="item.name"
           :to="listCategory === 'link' ? item.to : ''"
         >
-          <template>
-            <v-list-item-content v-if="listCategory === 'link'">
-              {{ item.name }}
-            </v-list-item-content>
-            <v-list-item-action v-else>
-              <v-checkbox
-                :label="item.name"
-                :input-value="item.checked"
-                @click.stop="handleClick(index)"
-              />
-            </v-list-item-action>
-          </template>
+          <v-list-item-content v-if="listCategory === 'link'">
+            {{ item.name }}
+          </v-list-item-content>
+          <v-list-item-action v-else>
+            <v-checkbox
+              :label="item.name"
+              :input-value="item.checked"
+              @click.stop="handleClick(index)"
+            />
+          </v-list-item-action>
         </v-list-item>
         <v-divider v-if="index + 1 < items.length" :key="index" />
       </template>
