@@ -28,7 +28,7 @@ test.before("Init Nuxt.js", async () => {
   }
   config.rootDir = rootDir
   config.dev = false
-  config.mode = "universal"
+  config.ssr = "true"
   nuxt = new Nuxt(config)
   await new Builder(nuxt).build()
   nuxt.listen(4000, "localhost")

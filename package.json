@@ -7,7 +7,7 @@
     "jquery-mobile": "./node_modules/jquery-mobile-babel-safe/js/jquery.mobile-1.4.5.js"
   },
   "engines": {
-    "node": ">=12.22.9",
+    "node": ">=20.11.0",
     "npm": ">=8.3.1"
   },
   "dependencies": {
@@ -23,10 +23,10 @@
   },
   "scripts": {
     "dev": "nuxt",
-    "build": "nuxt build",
+    "build": "node --openssl-legacy-provider node_modules/.bin/nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate && cp static/* dist/.",
-    "test": "ava --timeout=2m",
+    "generate": "node --openssl-legacy-provider node_modules/.bin/nuxt generate && cp static/* dist/.",
+    "test": "node --openssl-legacy-provider node_modules/.bin/ava --timeout=2m",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lintfix": "eslint --fix --ext .js,.vue --ignore-path .gitignore ."
   },
@@ -49,7 +49,6 @@
   "devDependencies": {
     "@ava/babel": "^1.0.1",
     "acorn": "^7.2.0",
-    "acorn-dynamic-import": "^4.0.0",
     "ava": "^3.15.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.17.0",
