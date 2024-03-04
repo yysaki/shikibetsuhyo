@@ -14,9 +14,9 @@ class Game {
   toJSON = () => {
     return {
       id: this.id,
-      title: this.id,
+      title: this.title,
       shortTitle: this.shortTitle,
-      gameURL: this.gameUrl,
+      gameUrl: this.gameUrl,
       developerName: this.developerName,
       developerUrl: this.developerUrl,
       referenceName: this.referenceName,
