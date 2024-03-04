@@ -10,6 +10,20 @@ class Game {
     this.referenceUrl = gameish.referenceUrl
     this.lists = gameish.lists
   }
+
+  toJSON = () => {
+    return {
+      id: this.id,
+      title: this.id,
+      shortTitle: this.shortTitle,
+      gameURL: this.gameUrl,
+      developerName: this.developerName,
+      developerUrl: this.developerUrl,
+      referenceName: this.referenceName,
+      referenceUrl: this.referenceUrl,
+      lists: this.lists,
+    }
+  }
 }
 
 class ItemList {
